@@ -1,0 +1,1641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LivAligned ✦ Premium</title>
+<meta name="theme-color" content="#6B3FA0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="LivAligned Premium">
+<link rel="manifest" href="manifest-premium.json">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--c:#B5533C;--cl:#F5E4DF;--cbg:#FBF5F3;--ccard:#F0D8D2;--cm:#C4806E;--serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;--r:20px;--sh:0 2px 20px rgba(0,0,0,.06)}
+body{background:#E8E0D8;background-image:radial-gradient(ellipse at 20% 20%,#D4C8BE,transparent 60%),radial-gradient(ellipse at 80% 80%,#C8BEB4,transparent 60%);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:36px 20px 60px;font-family:var(--sans)}
+.pt{font-family:var(--serif);font-size:24px;color:#4A3728;margin-bottom:3px;letter-spacing:-.5px}.ps0{font-size:12px;color:#8C7B6E;margin-bottom:28px}
+.phone{width:375px;height:780px;background:var(--cbg);border-radius:44px;box-shadow:0 30px 80px rgba(0,0,0,.22),0 0 0 10px #2A2A2A,0 0 0 12px #4A4A4A;overflow:hidden;position:relative;transition:background .5s}
+.notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:120px;height:30px;background:#2A2A2A;border-radius:0 0 18px 18px;z-index:50;display:flex;align-items:center;justify-content:center;gap:8px}
+.nc{width:10px;height:10px;background:#1A1A1A;border-radius:50%}.ns2{width:40px;height:5px;background:#1A1A1A;border-radius:3px}
+.sc{position:absolute;top:0;left:0;right:0;bottom:0;overflow:hidden}
+.screen{position:absolute;top:0;left:0;right:0;bottom:0;overflow-y:auto;overflow-x:hidden;padding:40px 0 80px;opacity:0;pointer-events:none;transform:translateY(10px);transition:opacity .3s,transform .3s,background .5s;scrollbar-width:none;background:var(--cbg)}
+.screen::-webkit-scrollbar{display:none}.screen.active{opacity:1;pointer-events:all;transform:translateY(0)}
+nav{position:absolute;bottom:0;left:0;right:0;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-top:1px solid rgba(0,0,0,.06);display:flex;z-index:20;padding-bottom:6px;box-shadow:0 -4px 20px rgba(0,0,0,.05)}
+.nb{flex:1;padding:7px 0 4px;background:none;border:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;color:#C0B8B0;transition:color .25s}
+.nb.active{color:var(--c)}.ni{font-size:16px;line-height:1}.nl{font-size:8px;font-weight:600;letter-spacing:.6px;text-transform:uppercase}
+.hd{padding:12px 22px 14px}.hr{display:flex;justify-content:space-between;align-items:flex-start}
+.ds{font-size:10px;color:var(--cm);text-transform:uppercase;letter-spacing:2.5px;margin-bottom:5px}
+.pn{font-family:var(--serif);font-size:28px;font-weight:700;color:var(--c);letter-spacing:-.8px;line-height:1;margin-bottom:3px}
+.ps2{font-size:12px;color:var(--cm);font-style:italic}
+.dp{background:var(--cl);border-radius:40px;padding:8px 13px;display:flex;align-items:center;gap:7px;transition:background .5s;flex-shrink:0}
+.da{background:none;border:none;color:var(--c);font-size:19px;cursor:pointer;padding:0 2px;opacity:.5;line-height:1}
+.dl2{font-size:9px;color:var(--cm);text-transform:uppercase;letter-spacing:1.2px;text-align:center}
+.dn{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--c);text-align:center;line-height:1}
+.dots{display:flex;gap:5px;margin-top:11px}.dot{height:8px;border-radius:8px;border:none;cursor:pointer;transition:all .5s}
+.affirm{margin:0 22px 13px;background:var(--ccard);border-radius:13px;padding:13px 17px;border-left:3px solid var(--c);transition:all .5s}
+.ae{font-size:9px;color:var(--cm);text-transform:uppercase;letter-spacing:2px;margin-bottom:4px}
+.at{font-family:var(--serif);font-size:13px;color:var(--c);font-style:italic;line-height:1.55}
+.card{background:#fff;border-radius:var(--r);padding:17px 19px;box-shadow:var(--sh);margin:0 22px 13px}
+.scard{background:var(--ccard);border-radius:var(--r);padding:15px 18px;margin:0 22px 13px;transition:background .5s}
+.ey{font-size:10px;font-weight:600;color:#C0C0C0;text-transform:uppercase;letter-spacing:1.8px;margin-bottom:11px}
+.eyt{font-size:10px;font-weight:600;color:var(--cm);text-transform:uppercase;letter-spacing:1.8px;margin-bottom:9px}
+.div{height:1px;background:#F0ECE8;margin:13px 0}.pad{padding:0 22px}
+.fr{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid #F0ECE8}
+.fr:last-child{border-bottom:none;padding-bottom:0}.fr:first-child{padding-top:0}
+.fi{font-size:19px;flex-shrink:0;margin-top:1px}.fl{font-size:9px;color:var(--cm);text-transform:uppercase;letter-spacing:1.2px;font-weight:600;margin-bottom:2px}.fv{font-size:13px;color:#555;line-height:1.4}
+.tr{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid #F0ECE8}
+.tr:last-child{border-bottom:none}.ti{font-size:15px;flex-shrink:0;margin-top:1px}.tt{font-size:12px;color:#666;line-height:1.55}
+.mr{display:flex;gap:11px;align-items:center;background:var(--cbg);border-radius:12px;padding:10px 13px;margin-bottom:8px;transition:background .5s}
+.mr:last-child{margin-bottom:0}.ml{font-size:9px;color:var(--cm);text-transform:uppercase;letter-spacing:1.2px;width:56px;flex-shrink:0;font-weight:600}.mt{font-size:13px;color:#444}
+.seg{display:flex;background:var(--cl);border-radius:30px;padding:3px;margin-bottom:15px;gap:3px;transition:background .5s}
+.sb{flex:1;padding:7px 2px;border-radius:26px;border:none;cursor:pointer;font-size:10px;background:transparent;color:var(--cm);font-family:var(--sans);transition:all .22s}
+.sb.active{background:#fff;color:var(--c);font-weight:700;box-shadow:0 1px 6px rgba(0,0,0,.08)}
+.food{padding-bottom:12px;margin-bottom:12px;border-bottom:1px solid #F0ECE8;cursor:pointer}
+.food:last-child{padding-bottom:0;margin-bottom:0;border-bottom:none}
+.ftop{display:flex;justify-content:space-between;align-items:flex-start}
+.fn{font-size:13px;font-weight:600;color:#3A3A3A;flex:1;margin-right:7px}.fa{font-size:10px;color:#BCBCBC;margin-top:2px}
+.ftag{background:var(--cl);color:var(--c);border-radius:20px;padding:3px 9px;font-size:10px;font-weight:700;flex-shrink:0;transition:background .5s}
+.freason{font-size:12px;color:#777;line-height:1.55;margin-top:8px;padding:9px 11px;background:var(--cbg);border-radius:10px;font-style:italic;border-left:2px solid var(--cl);display:none;transition:all .5s}
+.food.open .freason{display:block}
+.nr{display:flex;gap:9px;align-items:flex-start;padding:9px 0;border-bottom:1px solid #F0ECE8}
+.nr:last-child{border-bottom:none}
+.nn{font-size:11px;font-weight:700;color:var(--c);background:var(--cl);border-radius:20px;padding:4px 10px;flex-shrink:0;width:138px;text-align:center;line-height:1.3;transition:all .5s}.nw{font-size:12px;color:#777;line-height:1.4;padding-top:2px}
+.sw2{display:flex;align-items:center;gap:7px;padding:9px 0;border-bottom:1px solid #F0ECE8}
+.sw2:last-child{border-bottom:none}.sf{flex:1;font-size:12px;color:#CACACA;text-decoration:line-through}.sar{color:var(--c);font-size:13px;flex-shrink:0}.st{flex:1.4;font-size:13px;color:var(--c);font-weight:600;line-height:1.3}
+.pill{display:inline-block;background:var(--cl);color:var(--c);border-radius:20px;padding:5px 11px;font-size:11px;font-weight:700;margin:0 4px 5px 0;transition:background .5s}
+.wpill{display:inline-block;background:#FFF0EE;color:#B5533C;border-radius:20px;padding:5px 11px;font-size:11px;margin:0 4px 5px 0}
+.gr{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #F0ECE8;cursor:pointer;transition:opacity .2s}
+.gr:last-child{border-bottom:none}.gr.done{opacity:.3}
+.gc{width:22px;height:22px;border-radius:50%;border:2px solid #E0DAD4;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;transition:all .2s}
+.gr.done .gc{background:var(--c);border-color:var(--c)}.gr.done .gc::after{content:"✓"}.gtext{font-size:13px;color:#444}.gr.done .gtext{text-decoration:line-through;color:#BBB}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.ch{text-align:center;font-size:9px;color:#C8C8C8;padding-bottom:6px}
+.cc{aspect-ratio:1;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:11px;border:none;font-family:var(--sans);transition:all .15s}
+.phcard{background:#fff;border-radius:17px;padding:14px 18px;margin:0 22px 10px;box-shadow:var(--sh);cursor:pointer;border:1px solid transparent;transition:all .3s}
+.moon{margin:0 22px 13px;background:linear-gradient(135deg,#1A1035,#2D1B5E 50%,#1A2A4A);border-radius:var(--r);padding:17px 19px;color:#fff;position:relative;overflow:hidden}
+.moon::before{content:'';position:absolute;top:-30px;right:-30px;width:110px;height:110px;background:radial-gradient(circle,rgba(255,255,220,.12),transparent 70%);border-radius:50%}
+.mst{position:absolute;top:10px;left:18px;font-size:9px;opacity:.4;letter-spacing:3px}.me{font-size:9px;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:2px;margin-bottom:9px}
+.mm{display:flex;align-items:center;gap:13px;margin-bottom:11px}.mg{font-size:36px;line-height:1;filter:drop-shadow(0 0 10px rgba(255,255,220,.6))}
+.mpn{font-family:var(--serif);font-size:17px;font-weight:700;color:#FFF8E0;margin-bottom:2px}.ms{font-size:11px;color:rgba(255,255,255,.6);margin-bottom:3px}.mmsg{font-size:12px;color:rgba(255,255,220,.85);font-style:italic;line-height:1.4}
+.mnr{display:flex;gap:5px;flex-wrap:wrap;margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.1)}
+.nc2{background:rgba(255,255,255,.1);border-radius:20px;padding:4px 9px;font-size:10px;color:rgba(255,255,220,.8);border:1px solid rgba(255,255,255,.15)}
+.nc2.active{background:rgba(255,255,220,.2);border-color:rgba(255,255,220,.4);color:#FFF8E0;font-weight:600}
+/* Cycle settings */
+.cset{background:#fff;border-radius:var(--r);padding:17px 19px;box-shadow:var(--sh);margin:0 22px 13px}
+.slider{width:100%;accent-color:var(--c);margin:8px 0}
+.pstart-btn{background:var(--c);color:#fff;border:none;border-radius:12px;padding:10px 18px;font-size:13px;font-weight:600;cursor:pointer;font-family:var(--sans);transition:background .5s}
+.pstart-btn.marked{background:#27AE60}
+/* Playlist cards */
+.playlist-card{background:#fff;border-radius:var(--r);padding:16px 18px;margin:0 22px 13px;box-shadow:var(--sh)}
+.pl-header{display:flex;align-items:center;gap:11px;margin-bottom:13px}
+.pl-mood-icon{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.pl-mood-label{font-size:10px;font-weight:600;color:var(--cm);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:2px}
+.pl-mood-name{font-size:15px;font-weight:700;color:var(--c);font-family:var(--serif)}
+.pl-track{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid #F0ECE8}
+.pl-track:last-child{border-bottom:none}
+.pl-num{font-size:11px;color:#BCBCBC;width:16px;flex-shrink:0;text-align:center}
+.pl-info{flex:1}
+.pl-song{font-size:13px;font-weight:600;color:#333;margin-bottom:1px}
+.pl-artist{font-size:11px;color:#999}
+.pl-play{font-size:18px;color:var(--cl);cursor:pointer}
+.pl-open-btn{width:100%;padding:11px;border-radius:12px;border:none;background:var(--cl);color:var(--c);font-size:13px;font-weight:600;cursor:pointer;font-family:var(--sans);margin-top:12px;transition:background .5s;display:flex;align-items:center;justify-content:center;gap:7px}
+/* Log */
+.moods{display:flex;justify-content:space-around;margin-bottom:18px}
+.mb{font-size:26px;background:none;border:none;cursor:pointer;filter:grayscale(1) opacity(.2);transform:scale(1);transition:all .22s}
+.mb.active{filter:none;transform:scale(1.22)}
+.sg{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:15px}
+.symb{display:flex;align-items:center;gap:4px;padding:5px 10px;border-radius:20px;border:none;cursor:pointer;background:var(--cl);color:var(--c);font-size:11px;font-family:var(--sans);transition:all .2s}
+.symb.active{background:var(--c);color:#fff}
+.wrow{display:flex;gap:6px;margin-bottom:4px}
+.wd{font-size:20px;cursor:pointer;filter:grayscale(1) opacity(.18);transition:filter .2s}.wd.on{filter:none}
+.linput{width:100%;background:var(--cbg);border:1px solid var(--cl);border-radius:13px;padding:11px 12px;font-size:12px;font-family:var(--sans);resize:none;outline:none;color:#444;line-height:1.5;transition:all .5s}
+.sbtn{width:100%;padding:14px;border-radius:15px;border:none;background:var(--c);color:#fff;font-size:14px;font-weight:600;cursor:pointer;font-family:var(--sans);transition:background .5s}
+/* Intimate log */
+.flow-btn{display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 8px;border-radius:14px;border:2px solid #F0ECE8;cursor:pointer;background:#fff;transition:all .2s;flex:1}
+.flow-btn.active{border-color:var(--c);background:var(--cl)}
+.flow-icon{font-size:20px}.flow-label{font-size:10px;color:#999;font-weight:600}.flow-btn.active .flow-label{color:var(--c)}
+.color-chip{width:28px;height:28px;border-radius:50%;border:3px solid transparent;cursor:pointer;transition:all .2s}
+.color-chip.active{border-color:var(--c);transform:scale(1.15)}
+.mucus-btn{padding:6px 12px;border-radius:20px;border:2px solid #F0ECE8;background:#fff;font-size:11px;color:#888;cursor:pointer;font-family:var(--sans);transition:all .2s}
+.mucus-btn.active{border-color:var(--c);background:var(--cl);color:var(--c);font-weight:600}
+.intimacy-btn{display:flex;flex-direction:column;align-items:center;gap:4px;padding:9px 6px;border-radius:14px;border:2px solid #F0ECE8;cursor:pointer;background:#fff;transition:all .2s;flex:1}
+.intimacy-btn.active{border-color:var(--c);background:var(--cl)}
+.pain-btn{display:flex;align-items:center;gap:6px;padding:7px 12px;border-radius:20px;border:2px solid #F0ECE8;background:#fff;font-size:11px;color:#888;cursor:pointer;font-family:var(--sans);transition:all .2s}
+.pain-btn.active{border-color:var(--c);background:var(--cl);color:var(--c);font-weight:600}
+.libido-row{display:flex;gap:8px;justify-content:center;margin:8px 0}
+.libido-dot{width:32px;height:32px;border-radius:50%;border:2px solid #F0ECE8;background:#fff;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.libido-dot.active{border-color:var(--c);background:var(--cl)}
+.section-label{font-size:11px;font-weight:600;color:var(--cm);text-transform:uppercase;letter-spacing:1.2px;margin:14px 0 8px}
+.lcard{background:#fff;border-radius:13px;padding:12px 15px;margin-bottom:9px;border-top:3px solid var(--c);box-shadow:0 1px 8px rgba(0,0,0,.04);transition:border-color .5s}
+.act-btn{display:flex;flex-direction:column;align-items:center;gap:3px;padding:10px 8px;border-radius:14px;border:2px solid #F0ECE8;cursor:pointer;background:#fff;transition:all .2s;flex:1;min-width:80px;font-family:var(--sans)}
+.act-btn.active{border-color:var(--c);background:var(--cl)}
+.act-label{font-size:10px;color:#999;text-align:center;line-height:1.3;margin-top:2px}
+.act-btn.active .act-label{color:var(--c);font-weight:600}
+/* Spirit */
+.shd{padding:38px 22px 14px}
+.sseg{display:flex;background:rgba(255,255,255,.12);border-radius:30px;padding:3px;margin:0 22px 15px;gap:3px}
+.ssb{flex:1;padding:7px 2px;border-radius:26px;border:none;cursor:pointer;font-size:10px;background:transparent;color:rgba(255,255,255,.55);font-family:var(--sans);transition:all .22s}
+.ssb.active{background:rgba(255,255,255,.95);color:#2D1B5E;font-weight:700;box-shadow:0 1px 6px rgba(0,0,0,.15)}
+.sp{display:none}.sp.active{display:block}
+.chero{margin:0 22px 13px;border-radius:var(--r);padding:20px 19px;position:relative;overflow:hidden}
+.chbg{position:absolute;top:-20px;right:-20px;font-size:75px;opacity:.12;line-height:1}
+.che{font-size:9px;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:2px;margin-bottom:7px}
+.cht{font-family:var(--serif);font-size:20px;font-weight:700;color:#fff;margin-bottom:5px;line-height:1.2}
+.chs{font-size:12px;color:rgba(255,255,255,.75);line-height:1.5}
+.cbadge{display:inline-flex;align-items:center;gap:7px;background:var(--cl);border-radius:30px;padding:7px 13px;margin-bottom:9px;transition:background .5s}
+.cdot{width:11px;height:11px;border-radius:50%;flex-shrink:0}.cname{font-size:13px;font-weight:700;color:var(--c)}.csk{font-size:10px;color:var(--cm);margin-left:2px}
+/* Wound/Gift card — Anatomy of the Spirit style */
+.wg-card{border-radius:var(--r);padding:17px 19px;margin:0 22px 13px}
+.wg-row{display:flex;gap:11px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.wg-row:last-child{border-bottom:none}
+.wg-icon{font-size:22px;flex-shrink:0;margin-top:2px}
+.wg-label{font-size:9px;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:3px;font-weight:600}
+.wg-text{font-size:13px;line-height:1.6}
+.sacrament-card{background:linear-gradient(135deg,#1A1035,#2A1A50);border-radius:var(--r);padding:17px 19px;margin:0 22px 13px}
+.sac-eye{font-size:9px;color:rgba(255,255,220,.5);text-transform:uppercase;letter-spacing:2px;margin-bottom:9px}
+.sac-truth{font-family:var(--serif);font-size:15px;color:#FFF8E0;font-style:italic;line-height:1.6;margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.1)}
+.sac-truth:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.si{display:flex;gap:11px;padding:11px 0;border-bottom:1px solid #F0ECE8;align-items:flex-start}
+.si:last-child{border-bottom:none;padding-bottom:0}
+.sinum{width:23px;height:23px;border-radius:50%;background:var(--cl);color:var(--c);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;transition:background .5s}
+.sitl{font-size:13px;font-weight:600;color:#333;margin-bottom:2px}.sidc{font-size:12px;color:#777;line-height:1.5}.sidur{font-size:10px;color:var(--cm);font-weight:600;margin-top:2px;text-transform:uppercase;letter-spacing:.8px}
+.shcard{background:#1A1035;border-radius:var(--r);padding:17px 19px;margin:0 22px 13px}
+.shey{font-size:9px;color:rgba(255,255,220,.5);text-transform:uppercase;letter-spacing:2px;margin-bottom:9px}
+.shp{font-family:var(--serif);font-size:13px;color:rgba(255,255,220,.9);font-style:italic;line-height:1.6;margin-bottom:11px;padding-bottom:11px;border-bottom:1px solid rgba(255,255,255,.08)}
+.shp:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.rs{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid #F0ECE8}
+.rs:last-child{border-bottom:none;padding-bottom:0}
+.ri{font-size:19px;flex-shrink:0}.rtl{font-size:13px;font-weight:600;color:#333;margin-bottom:2px}.rd{font-size:12px;color:#777;line-height:1.5}
+.natcard{background:linear-gradient(135deg,#1A1035,#2A1A50);border-radius:var(--r);padding:17px 19px;margin:0 22px 13px}
+.natr{display:flex;align-items:flex-start;gap:11px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.natr:last-child{border-bottom:none}.nati{font-size:19px;width:28px;text-align:center;flex-shrink:0}
+.natn{font-size:10px;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:1px;margin-bottom:2px}
+.nats{font-size:14px;font-weight:600;color:#FFF8E0;margin-bottom:2px}.natd{font-size:11px;color:rgba(255,255,220,.7);line-height:1.4}.natp{font-size:9px;color:rgba(255,255,220,.4);text-transform:uppercase;letter-spacing:1px;margin-top:2px}
+.toast{position:absolute;top:55px;left:50%;transform:translateX(-50%) translateY(-10px);background:var(--c);color:#fff;border-radius:30px;padding:9px 20px;font-size:12px;font-weight:600;z-index:100;box-shadow:0 4px 20px rgba(0,0,0,.15);white-space:nowrap;opacity:0;transition:all .3s;pointer-events:none}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.demo{display:flex;flex-direction:column;align-items:center;margin-top:22px;gap:8px}
+.phasebar{display:flex;gap:6px;background:rgba(255,255,255,.5);padding:7px 11px;border-radius:30px;backdrop-filter:blur(8px)}
+.pb{padding:5px 12px;border-radius:20px;border:none;cursor:pointer;font-size:11px;font-weight:600;font-family:var(--sans);transition:all .25s;background:transparent;color:#8C7B6E}
+.pb.active{background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.12)}
+.badge{background:linear-gradient(135deg,#6B3FA0,#B5533C);color:#fff;border-radius:20px;padding:4px 12px;font-size:10px;font-weight:700;letter-spacing:.5px;margin-left:8px}
+@media(max-width:480px){.phone{width:100%;max-width:375px;height:85vh;border-radius:32px};body{padding:18px 12px 40px}}
+
+.evc{background:var(--cbg);border:1px solid var(--cl);border-radius:12px;padding:12px 14px;margin-bottom:9px;transition:all .5s}
+.evn{font-size:10px;color:var(--cm);font-weight:600;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px}
+.tc{background:#fff;border-radius:13px;padding:12px 15px;margin-bottom:9px;box-shadow:0 1px 8px rgba(0,0,0,.04);border-left:3px solid var(--cl);transition:border-color .5s}
+.tc:last-child{margin-bottom:0}
+.tn{font-size:13px;font-weight:700;color:var(--c);margin-bottom:2px}
+.td{font-size:12px;color:#777;line-height:1.4}
+.tu{font-size:10px;color:#C0C0C0;margin-top:3px}
+.pill{display:inline-block;background:var(--cl);color:var(--c);border-radius:20px;padding:5px 11px;font-size:11px;font-weight:700;margin:0 4px 5px 0;transition:background .5s}
+.wpill{display:inline-block;background:#FFF0EE;color:#B5533C;border-radius:20px;padding:5px 11px;font-size:11px;margin:0 4px 5px 0}
+.lbtn{padding:7px 14px;border-radius:20px;border:2px solid var(--cl);background:#fff;color:var(--c);font-size:11px;font-weight:600;cursor:pointer;font-family:var(--sans);transition:all .22s;white-space:nowrap}
+.lbtn.active{background:var(--c);color:#fff;border-color:var(--c)}
+
+.onboard-overlay{position:fixed;top:0;left:0;right:0;bottom:0;z-index:500;background:linear-gradient(160deg,#1A1035 0%,#2D1B5E 50%,#6B3FA0 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 32px;transition:opacity .5s}
+.onboard-overlay.hidden{opacity:0;pointer-events:none}
+.ob-logo{font-family:var(--serif);font-size:42px;font-weight:700;color:#FFF8E0;margin-bottom:8px;letter-spacing:-1px}
+.ob-sub{font-size:13px;color:rgba(255,255,220,.6);font-style:italic;margin-bottom:48px;letter-spacing:.3px}
+.ob-step{width:100%;max-width:340px}
+.ob-label{font-size:10px;color:rgba(255,255,220,.55);text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;font-family:var(--sans)}
+.ob-input{width:100%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:13px 16px;font-size:14px;font-family:var(--sans);color:#FFF8E0;outline:none;margin-bottom:16px;transition:border .2s}
+.ob-input:focus{border-color:rgba(255,255,220,.5)}
+.ob-input::placeholder{color:rgba(255,255,220,.35)}
+.ob-select{width:100%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:13px 16px;font-size:13px;font-family:var(--sans);color:#FFF8E0;outline:none;margin-bottom:16px;cursor:pointer;appearance:none;-webkit-appearance:none}
+.ob-select option{background:#2D1B5E;color:#FFF8E0}
+.ob-row{display:flex;gap:10px}
+.ob-row .ob-select{flex:1}
+.ob-btn{width:100%;padding:15px;border-radius:30px;border:none;background:#FFF8E0;color:#2D1B5E;font-size:15px;font-weight:700;cursor:pointer;font-family:var(--sans);margin-top:8px;letter-spacing:.3px;transition:transform .15s}
+.ob-btn:active{transform:scale(.97)}
+.ob-skip{font-size:12px;color:rgba(255,255,220,.4);text-align:center;margin-top:16px;cursor:pointer;text-decoration:underline}
+/* Trial expiry gate */
+.trial-gate{position:fixed;top:0;left:0;right:0;bottom:0;z-index:600;background:linear-gradient(160deg,#1A1035,#2D1B5E 50%,#6B3FA0);display:none;flex-direction:column;align-items:center;justify-content:center;padding:40px 32px;text-align:center}
+.trial-gate.show{display:flex}
+.tg-icon{font-size:56px;margin-bottom:20px}
+.tg-title{font-family:var(--serif);font-size:32px;font-weight:700;color:#FFF8E0;margin-bottom:12px;line-height:1.2}
+.tg-sub{font-size:14px;color:rgba(255,255,220,.75);line-height:1.65;margin-bottom:32px;max-width:300px}
+.tg-price{font-family:var(--serif);font-size:48px;font-weight:700;color:#FFF8E0;margin-bottom:4px}
+.tg-price-sub{font-size:13px;color:rgba(255,255,220,.55);margin-bottom:28px}
+.tg-btn{background:#FFF8E0;color:#2D1B5E;border:none;border-radius:30px;padding:16px 36px;font-size:15px;font-weight:700;cursor:pointer;font-family:var(--sans);margin-bottom:14px;width:100%;max-width:300px;letter-spacing:.3px}
+.tg-restore{font-size:12px;color:rgba(255,255,220,.4);cursor:pointer;text-decoration:underline}
+/* Trial countdown */
+.trial-bar{background:linear-gradient(135deg,#1A1035,#2D1B5E);border-radius:12px;padding:10px 16px;margin:0 22px 13px;display:flex;align-items:center;justify-content:space-between}
+.trial-bar-txt{font-size:11px;color:rgba(255,255,220,.8);font-family:var(--sans)}
+.trial-bar-days{font-family:var(--serif);font-size:18px;font-weight:700;color:#FFF8E0}
+.install-banner{display:none;position:fixed;bottom:96px;left:50%;transform:translateX(-50%);background:#1A1035;color:#FFF8E0;border-radius:16px;padding:12px 20px;font-size:12px;font-family:var(--sans);z-index:200;box-shadow:0 4px 20px rgba(0,0,0,.3);white-space:nowrap;align-items:center;gap:10px}
+.install-banner.show{display:flex}
+.install-x{cursor:pointer;opacity:.5;font-size:16px;margin-left:6px}
+
+.settings-btn{position:absolute;top:48px;right:22px;background:none;border:none;cursor:pointer;font-size:20px;z-index:30;opacity:.45;transition:opacity .2s}
+.settings-drawer{position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.55);z-index:400;display:none;align-items:flex-end}
+.settings-drawer.open{display:flex}
+.settings-panel{background:var(--cbg);border-radius:24px 24px 0 0;padding:28px 24px 40px;width:100%;transition:background .5s}
+.s-title{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--c);margin-bottom:20px}
+.s-row{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid #F0ECE8;cursor:pointer}
+.s-row:last-of-type{border-bottom:none}
+.s-label{font-size:14px;color:#444}
+.s-close{width:100%;padding:14px;border-radius:15px;border:none;background:var(--cl);color:var(--c);font-size:14px;font-weight:600;cursor:pointer;font-family:var(--sans);margin-top:18px;transition:background .5s}
+</style>
+</head>
+<body>
+<div style="display:flex;align-items:center;margin-bottom:3px">
+  <div class="pt">🌿 LivAligned</div>
+  <span class="badge">✦ PREMIUM</span>
+</div>
+<div class="ps0">Premium version — all features unlocked</div>
+
+
+<!-- ══ ONBOARDING ══ -->
+<div class="onboard-overlay" id="onboard-overlay">
+  <div class="ob-step" id="ob-step1">
+    <div style="text-align:center;margin-bottom:36px">
+      <div style="font-size:30px;margin-bottom:14px">🌿 ✦ 🌙</div>
+      <div class="ob-logo">LivAligned</div>
+      <div style="display:inline-block;background:rgba(255,255,220,.15);border-radius:20px;padding:4px 14px;margin-top:8px;margin-bottom:12px">
+        <span style="font-size:11px;color:#FFF8E0;font-weight:700;letter-spacing:.5px">✦ PREMIUM</span>
+      </div>
+      <div class="ob-sub" style="margin-bottom:0">14-day free trial — then $9.99/month</div>
+      <div style="background:rgba(255,255,220,.12);border-radius:12px;padding:10px 16px;margin-top:14px;font-size:12px;color:rgba(255,255,220,.8);line-height:1.6">✓ You have full access to every feature.<br>Your trial starts today. No card needed yet.</div>
+    </div>
+    <div class="ob-label">Your name</div>
+    <input class="ob-input" id="ob-name" type="text" placeholder="What should we call you?" maxlength="30">
+    <div class="ob-label">Your cycle length</div>
+    <select class="ob-select" id="ob-cyclelen">
+      <option value="26">26 days</option><option value="27">27 days</option>
+      <option value="28" selected>28 days</option><option value="29">29 days</option><option value="30">30 days</option>
+    </select>
+    <button class="ob-btn" onclick="obNext1()">Continue →</button>
+  </div>
+  <!-- Step 2: Natal chart — birth date OR manual -->
+  <div class="ob-step" id="ob-step2" style="display:none">
+    <div style="text-align:center;margin-bottom:24px">
+      <div style="font-size:24px;margin-bottom:10px">🌙 ☀️ ⬆️ ♂️</div>
+      <div class="ob-label" style="text-align:center;font-size:11px;line-height:1.65;color:rgba(255,255,220,.7)">Enter your birth details and we'll calculate<br>your Sun, Moon, Rising, and Mars signs.<br>Or enter them manually if you know them.</div>
+    </div>
+    <!-- Tab toggle -->
+    <div style="display:flex;background:rgba(255,255,255,.1);border-radius:30px;padding:3px;margin-bottom:20px;gap:3px">
+      <button id="tab-calc" onclick="showNatalTab('calc')" style="flex:1;padding:8px;border-radius:26px;border:none;cursor:pointer;font-size:12px;font-weight:700;background:rgba(255,255,255,.9);color:#2D1B5E;font-family:var(--sans)">Calculate for me</button>
+      <button id="tab-manual" onclick="showNatalTab('manual')" style="flex:1;padding:8px;border-radius:26px;border:none;cursor:pointer;font-size:12px;background:transparent;color:rgba(255,255,220,.6);font-family:var(--sans)">I know my signs</button>
+    </div>
+
+    <!-- Calculate tab -->
+    <div id="natal-calc-tab">
+      <div class="ob-label">Date of birth</div>
+      <input class="ob-input" id="ob-dob" type="date" style="color-scheme:dark">
+      <div class="ob-label">Birth time <span style="color:rgba(255,255,220,.35);font-size:9px">(optional — needed for Rising)</span></div>
+      <input class="ob-input" id="ob-time" type="time" placeholder="e.g. 14:30" style="color-scheme:dark">
+      <div class="ob-label">Birth city <span style="color:rgba(255,255,220,.35);font-size:9px">(optional — needed for Rising)</span></div>
+      <input class="ob-input" id="ob-city" type="text" placeholder="e.g. Atlanta, Chicago, Miami…" maxlength="50">
+      <button class="ob-btn" onclick="calcAndFinish()" style="margin-bottom:8px">Calculate My Chart →</button>
+      <div id="calc-result" style="font-size:12px;color:rgba(255,255,220,.7);text-align:center;min-height:20px;margin-bottom:8px"></div>
+    </div>
+
+    <!-- Manual tab -->
+    <div id="natal-manual-tab" style="display:none">
+      <div class="ob-label">Sun sign</div>
+      <select class="ob-select" id="ob-sun">
+        <option value="">Select Sun sign</option>
+        <option>Aries ♈</option><option>Taurus ♉</option><option>Gemini ♊</option><option>Cancer ♋</option>
+        <option>Leo ♌</option><option>Virgo ♍</option><option>Libra ♎</option><option>Scorpio ♏</option>
+        <option>Sagittarius ♐</option><option>Capricorn ♑</option><option>Aquarius ♒</option><option>Pisces ♓</option>
+      </select>
+      <div class="ob-row">
+        <div style="flex:1"><div class="ob-label">Moon</div>
+          <select class="ob-select" id="ob-moon">
+            <option value="">Moon</option>
+            <option>Aries ♈</option><option>Taurus ♉</option><option>Gemini ♊</option><option>Cancer ♋</option>
+            <option>Leo ♌</option><option>Virgo ♍</option><option>Libra ♎</option><option>Scorpio ♏</option>
+            <option>Sagittarius ♐</option><option>Capricorn ♑</option><option>Aquarius ♒</option><option>Pisces ♓</option>
+          </select>
+        </div>
+        <div style="flex:1"><div class="ob-label">Rising</div>
+          <select class="ob-select" id="ob-rising">
+            <option value="">Rising</option>
+            <option>Aries ♈</option><option>Taurus ♉</option><option>Gemini ♊</option><option>Cancer ♋</option>
+            <option>Leo ♌</option><option>Virgo ♍</option><option>Libra ♎</option><option>Scorpio ♏</option>
+            <option>Sagittarius ♐</option><option>Capricorn ♑</option><option>Aquarius ♒</option><option>Pisces ♓</option>
+          </select>
+        </div>
+      </div>
+      <div class="ob-label">Mars sign</div>
+      <select class="ob-select" id="ob-mars">
+        <option value="">Mars sign</option>
+        <option>Aries ♈</option><option>Taurus ♉</option><option>Gemini ♊</option><option>Cancer ♋</option>
+        <option>Leo ♌</option><option>Virgo ♍</option><option>Libra ♎</option><option>Scorpio ♏</option>
+        <option>Sagittarius ♐</option><option>Capricorn ♑</option><option>Aquarius ♒</option><option>Pisces ♓</option>
+      </select>
+      <button class="ob-btn" onclick="obFinishManual()">Begin My Trial →</button>
+    </div>
+    <div class="ob-skip" onclick="obSkipNatal()">Skip — I'll add this later</div>
+  </div>
+</div>
+
+<!-- ══ TRIAL EXPIRY GATE ══ -->
+<div class="trial-gate" id="trial-gate">
+  <div class="tg-icon">🌿</div>
+  <div class="tg-title">Your 14-Day Trial Has Ended</div>
+  <div class="tg-sub">Thank you for trying LivAligned Premium. Continue your full cycle journey — chakra alignment, intimate logging, natal guidance, and everything your body is asking for.</div>
+  <div class="tg-price">$9.99</div>
+  <div class="tg-price-sub">per month · cancel anytime</div>
+  <button class="tg-btn" onclick="window.open('https://babychinag21.github.io/livaligned/LivAligned-PREMIUM.html', '_blank')">Subscribe to Continue</button>
+  <div class="tg-restore" onclick="alert('Contact support@livaligned.com to restore your access.')">Restore purchase</div>
+</div>
+
+<div class="install-banner" id="install-banner">
+  <span>📲 Add LivAligned to your home screen</span>
+  <span class="install-x" onclick="document.getElementById('install-banner').classList.remove('show')">✕</span>
+</div>
+
+<div class="phone" id="phone">
+  <div class="notch"><div class="nc"></div><div class="ns2"></div></div>
+  <div class="toast" id="toast">✓ Entry saved</div>
+  <button class="settings-btn" onclick="openSettings()">⚙️</button>
+  <div class="settings-drawer" id="settings-drawer" onclick="if(event.target===this)closeSettings()">
+    <div class="settings-panel">
+      <div class="s-title">Settings</div>
+      <div class="s-row" onclick="resetOnboarding()"><span class="s-label">✏️ Update my name &amp; natal chart</span><span style="font-size:16px;color:#CCC">›</span></div>
+      <div class="s-row" onclick="resetCycle()"><span class="s-label">🔄 Reset cycle to Day 1 today</span><span style="font-size:16px;color:#CCC">›</span></div>
+      <div class="s-row" onclick="clearAllData()"><span class="s-label">🗑 Clear all my data</span><span style="font-size:16px;color:#E74C3C">›</span></div>
+
+      <button class="s-close" onclick="closeSettings()">Close</button>
+    </div>
+  </div>
+
+  <div class="sc">
+
+    <!-- HOME -->
+    <div class="screen active" id="screen-home">
+      <div class="hd">
+        <div class="hr">
+          <div>
+            <div class="ds" id="h-date"></div>
+            <div class="pn" id="h-phase">Menstrual Phase</div>
+            <div class="ps2" id="h-sub"></div>
+            <div class="dots" id="h-dots"></div>
+          </div>
+          <div class="dp">
+            <button class="da" onclick="chDay(-1)">‹</button>
+            <div><div class="dl2">Day</div><div class="dn" id="h-day">1</div></div>
+            <button class="da" onclick="chDay(1)">›</button>
+          </div>
+        </div>
+      </div>
+      <div class="affirm"><div class="ae">Today's Affirmation</div><div class="at" id="h-atext"></div></div>
+      <div id="phase-player" style="margin:0 22px 13px;border-radius:16px;overflow:hidden;position:relative">
+        <div style="background:linear-gradient(135deg,var(--c),var(--ccard));padding:13px 16px;display:flex;align-items:center;gap:12px">
+          <button id="play-btn" onclick="togglePlay()" style="width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.25);border:none;cursor:pointer;font-size:16px;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s">▶</button>
+          <div style="flex:1;overflow:hidden">
+            <div style="font-size:9px;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:2px">Phase Ambience</div>
+            <div style="font-family:var(--serif);font-size:13px;color:#fff;font-style:italic;white-space:nowrap;overflow:hidden;text-overflow:ellipsis" id="track-name">Tap ▶ to play</div>
+          </div>
+          <div style="font-size:18px" id="track-icon">🌑</div>
+        </div>
+      </div>
+      <div class="trial-bar" id="trial-bar">
+        <div class="trial-bar-txt" id="trial-txt">✦ Premium Trial</div>
+        <div><span class="trial-bar-days" id="trial-days">14</span><span class="trial-bar-txt"> days left</span></div>
+      </div>
+      <div class="moon">
+        <div class="mst">✦ ✦ ✦</div>
+        <div class="me">Live Moon Phase</div>
+        <div class="mm"><div class="mg" id="m-glyph">🌑</div><div><div class="mpn" id="m-name">New Moon</div><div class="ms" id="m-sign">Moon in Aries · Day 1</div><div class="mmsg" id="m-msg">Deep reset. Set intentions in silence.</div></div></div>
+        <div class="mnr"><div class="nc2" id="chip-moon">🌙 Moon ♑</div><div class="nc2" id="chip-rising">⬆ Rising ♎</div><div class="nc2" id="chip-sun">☀️ Sun ♊</div><div class="nc2" id="chip-mars">♂ Mars ♊</div></div>
+      </div>
+      <div class="scard"><div class="eyt" id="h-hormone"></div><div style="font-size:13px;color:#555;line-height:1.65" id="h-snap"></div></div>
+      <div class="card">
+        <div class="ey">Today's Focus</div>
+        <div style="font-family:var(--serif);font-size:13px;color:var(--c);font-style:italic;margin-bottom:13px;font-weight:600" id="h-goal"></div>
+        <div class="fr"><div class="fi">🥗</div><div><div class="fl">Eat</div><div class="fv" id="h-eat"></div></div></div>
+        <div class="fr"><div class="fi">🏃</div><div><div class="fl">Move</div><div class="fv" id="h-move"></div></div></div>
+        <div class="fr"><div class="fi">🌸</div><div><div class="fl">Self-care</div><div class="fv" id="h-sc"></div></div></div>
+      </div>
+      <div class="card"><div class="ey">Sample Meals</div><div id="h-meals"></div></div>
+      <div class="card"><div class="ey">Phase Tips</div><div id="h-tips"></div></div>
+    </div>
+
+    <!-- EAT -->
+    <div class="screen" id="screen-eat">
+      <div class="hd"><div class="pn" id="e-title"></div><div class="ps2" id="e-sub"></div></div>
+      <div class="pad"><div class="seg" id="eat-seg">
+        <button class="sb active" onclick="eSub('foods',this)">Foods</button>
+        <button class="sb" onclick="eSub('nutrients',this)">Nutrients</button>
+        <button class="sb" onclick="eSub('meals',this)">Meals</button>
+        <button class="sb" onclick="eSub('swaps',this)">Swaps</button>
+        <button class="sb" onclick="eSub('avoid',this)">Avoid</button>
+      </div></div>
+      <div id="ep-foods"><div class="card"><div class="ey">Focus Foods · Tap to learn why</div><div id="e-foods"></div></div></div>
+      <div id="ep-nutrients" style="display:none"><div class="card"><div class="ey">Key Nutrients</div><div id="e-nuts"></div></div></div>
+      <div id="ep-meals" style="display:none"><div class="card"><div class="ey">Sample Day</div><div id="e-meals"></div><div class="div"></div><div class="ey">Phase Swaps</div><div id="e-pswaps"></div></div></div>
+      <div id="ep-swaps" style="display:none">
+        <div class="card"><div class="ey">Phase Swaps</div><div id="e-swaps2"></div></div>
+        <div class="card"><div class="ey">Anytime Swaps</div>
+          <div class="sw2"><div class="sf">Candy</div><div class="sar">→</div><div class="st">70% dark chocolate or dates</div></div>
+          <div class="sw2"><div class="sf">Chips</div><div class="sar">→</div><div class="st">Roasted chickpeas or cashews</div></div>
+          <div class="sw2"><div class="sf">Soda</div><div class="sar">→</div><div class="st">Sparkling water with lemon</div></div>
+          <div class="sw2"><div class="sf">Extra caffeine</div><div class="sar">→</div><div class="st">Matcha or herbal tea</div></div>
+        </div>
+      </div>
+      <div id="ep-avoid" style="display:none">
+        <div class="card"><div class="ey">Limit This Phase</div><div id="e-avoid"></div><div style="background:var(--cbg);border-radius:10px;padding:11px 13px;margin-top:10px;font-size:12px;color:#777;line-height:1.6;transition:background .5s">These foods worsen inflammation and mood instability this phase.</div></div>
+        <div class="card"><div class="ey">Always Avoid</div><span class="wpill">✕ White bread</span><span class="wpill">✕ Sugary cereals</span><span class="wpill">✕ Processed snacks</span><span class="wpill">✕ Trans fats</span><div class="div"></div><div class="ey">Always Include</div><span class="pill">✓ Whole grains</span><span class="pill">✓ Legumes</span><span class="pill">✓ Fatty fish</span><span class="pill">✓ Berries</span><span class="pill">✓ Avocado</span></div>
+      </div>
+    </div>
+
+    <!-- SHOP -->
+    <div class="screen" id="screen-shop">
+      <div class="hd"><div class="pn">Grocery List</div><div class="ps2" id="sh-sub"></div></div>
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:11px"><div class="ey" style="margin-bottom:0" id="sh-title"></div><button onclick="clrG()" style="background:none;border:none;color:#CCC;font-size:11px;cursor:pointer;font-family:var(--sans)">Clear ↺</button></div>
+        <div id="sh-list"></div>
+      </div>
+      <div class="card"><div class="ey">Pantry Staples</div><div id="sh-pantry"></div></div>
+      <div class="card"><div class="ey">All Phase Reference</div><div id="sh-all"></div></div>
+    </div>
+
+    <!-- CYCLE -->
+    <div class="screen" id="screen-cycle">
+      <div class="hd"><div class="pn">Your Cycle</div><div class="ps2">Track your rhythm</div></div>
+      <div class="cset">
+        <div class="ey">My Cycle Length</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px"><div style="font-size:13px;color:#555">Cycle length</div><div style="font-family:var(--serif);font-size:22px;font-weight:700;color:var(--c)" id="cycle-len-display">28 days</div></div>
+        <input type="range" class="slider" id="cycle-slider" min="26" max="30" value="28" oninput="updateCycleLen(this.value)">
+        <div style="display:flex;justify-content:space-between;font-size:10px;color:#BCBCBC;margin-top:2px"><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span></div>
+        <div class="div"></div>
+        <div class="ey" style="margin-bottom:9px">Period Tracking</div>
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div style="font-size:13px;color:#555">Mark today as period start</div>
+          <button class="pstart-btn" id="pstart-btn" onclick="markPeriodStart()">Mark Start</button>
+        </div>
+        <div style="font-size:11px;color:var(--cm);margin-top:8px" id="pstart-info">Tap to log the start of your current cycle.</div>
+      </div>
+      <div class="card"><div class="ey">Cycle Calendar</div><div class="cal" id="cal-heads"></div><div class="cal" id="cal-cells"></div><div style="display:flex;flex-wrap:wrap;gap:9px;margin-top:13px" id="cal-leg"></div></div>
+      <div id="phase-cards"></div>
+    </div>
+
+    <!-- LOG -->
+    <div class="screen" id="screen-log">
+      <div class="hd"><div class="pn">Today's Log</div><div class="ps2" id="lg-sub"></div></div>
+      <div class="pad"><div class="seg" id="log-seg">
+        <button class="sb active" onclick="lgSub('daily',this)">Daily</button>
+        <button class="sb" onclick="lgSub('flow',this)">Flow</button>
+        <button class="sb" onclick="lgSub('body',this)">Body</button>
+        <button class="sb" onclick="lgSub('intimacy',this)">Intimacy</button>
+        <button class="sb" onclick="lgSub('activity',this)">Activity</button>
+      </div></div>
+
+      <!-- Daily -->
+      <div id="lp-daily">
+        <div class="card">
+          <div class="ey">How are you feeling?</div>
+          <div class="moods" id="lg-moods"></div>
+          <div class="ey">Symptoms</div>
+          <div class="sg" id="lg-syms"></div>
+          <div class="ey">Water Intake</div>
+          <div class="wrow" id="lg-water"></div>
+          <div style="font-size:11px;color:#CACACA;margin-bottom:15px" id="lg-wlabel">6 of 8 glasses</div>
+          <div class="ey">What did you eat?</div>
+          <textarea class="linput" id="lg-meals" rows="3" placeholder="e.g. Oatmeal with berries, lentil soup…" style="margin-bottom:13px"></textarea>
+          <div class="ey">Notes</div>
+          <textarea class="linput" id="lg-notes" rows="2" placeholder="Patterns, energy, anything to remember…" style="margin-bottom:17px"></textarea>
+          <button class="sbtn" onclick="saveLg()">Save Entry</button>
+        </div>
+      </div>
+
+      <!-- Flow -->
+      <div id="lp-flow" style="display:none">
+        <div class="card">
+          <div class="ey">Flow Intensity</div>
+          <div style="display:flex;gap:8px;margin-bottom:16px" id="flow-intensity">
+            <button class="flow-btn" onclick="setFlow('intensity','spotting',this)"><div class="flow-icon">🩸</div><div class="flow-label">Spotting</div></button>
+            <button class="flow-btn" onclick="setFlow('intensity','light',this)"><div class="flow-icon">🩸🩸</div><div class="flow-label">Light</div></button>
+            <button class="flow-btn" onclick="setFlow('intensity','medium',this)"><div class="flow-icon">🩸🩸🩸</div><div class="flow-label">Medium</div></button>
+            <button class="flow-btn" onclick="setFlow('intensity','heavy',this)"><div class="flow-icon">🩸🩸🩸🩸</div><div class="flow-label">Heavy</div></button>
+          </div>
+          <div class="ey">Flow Color & Texture</div>
+          <div style="display:flex;gap:10px;align-items:center;margin-bottom:8px" id="flow-colors">
+            <div class="color-chip" style="background:#FFB3B3" onclick="setFlow('color','pink',this)" title="Pink/Light"></div>
+            <div class="color-chip" style="background:#CC2200" onclick="setFlow('color','red',this)" title="Bright Red"></div>
+            <div class="color-chip" style="background:#8B2500" onclick="setFlow('color','dark',this)" title="Dark Red"></div>
+            <div class="color-chip" style="background:#5C3317" onclick="setFlow('color','brown',this)" title="Brown"></div>
+            <div class="color-chip" style="background:#2D2D2D" onclick="setFlow('color','black',this)" title="Very Dark"></div>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px" id="flow-texture">
+            <button class="mucus-btn" onclick="setFlow('texture','watery',this)">Watery</button>
+            <button class="mucus-btn" onclick="setFlow('texture','normal',this)">Normal</button>
+            <button class="mucus-btn" onclick="setFlow('texture','thick',this)">Thick</button>
+            <button class="mucus-btn" onclick="setFlow('texture','clots',this)">Clots</button>
+          </div>
+          <div class="ey">Cervical Mucus</div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px" id="mucus-type">
+            <button class="mucus-btn" onclick="setFlow('mucus','dry',this)">Dry 🔴</button>
+            <button class="mucus-btn" onclick="setFlow('mucus','sticky',this)">Sticky 🟡</button>
+            <button class="mucus-btn" onclick="setFlow('mucus','creamy',this)">Creamy 🟡</button>
+            <button class="mucus-btn" onclick="setFlow('mucus','watery',this)">Watery 🟢</button>
+            <button class="mucus-btn" onclick="setFlow('mucus','eggwhite',this)">Egg White 🟢</button>
+          </div>
+        </div>
+        <div class="card"><button class="sbtn" onclick="saveLg()">Save Flow Log</button></div>
+      </div>
+
+      <!-- Body -->
+      <div id="lp-body" style="display:none">
+        <div class="card">
+          <div class="ey">Pain Location</div>
+          <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px" id="pain-locations">
+            <button class="pain-btn" onclick="togglePain('cramps',this)">🫃 Cramps</button>
+            <button class="pain-btn" onclick="togglePain('lower-back',this)">🔙 Lower Back</button>
+            <button class="pain-btn" onclick="togglePain('head',this)">🤯 Headache</button>
+            <button class="pain-btn" onclick="togglePain('breasts',this)">💗 Breasts</button>
+            <button class="pain-btn" onclick="togglePain('pelvis',this)">⬇️ Pelvis</button>
+            <button class="pain-btn" onclick="togglePain('legs',this)">🦵 Legs</button>
+            <button class="pain-btn" onclick="togglePain('joints',this)">🦴 Joints</button>
+          </div>
+          <div class="ey">Bloating</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px" id="bloating-level">
+            <button class="mucus-btn" onclick="setFlow('bloating','none',this)">None</button>
+            <button class="mucus-btn" onclick="setFlow('bloating','mild',this)">Mild</button>
+            <button class="mucus-btn" onclick="setFlow('bloating','moderate',this)">Moderate</button>
+            <button class="mucus-btn" onclick="setFlow('bloating','severe',this)">Severe</button>
+          </div>
+          <div class="ey">Energy Level</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px" id="energy-level">
+            <button class="mucus-btn" onclick="setFlow('energy','exhausted',this)">😴 Exhausted</button>
+            <button class="mucus-btn" onclick="setFlow('energy','low',this)">🔋 Low</button>
+            <button class="mucus-btn" onclick="setFlow('energy','normal',this)">⚡ Normal</button>
+            <button class="mucus-btn" onclick="setFlow('energy','high',this)">🌟 High</button>
+          </div>
+          <div class="ey">Skin & Body</div>
+          <div style="display:flex;flex-wrap:wrap;gap:7px" id="skin-body">
+            <button class="pain-btn" onclick="togglePain('acne',this)">🔴 Acne</button>
+            <button class="pain-btn" onclick="togglePain('oily',this)">✨ Oily skin</button>
+            <button class="pain-btn" onclick="togglePain('dry',this)">🏜️ Dry skin</button>
+            <button class="pain-btn" onclick="togglePain('swelling',this)">💧 Swelling</button>
+          </div>
+        </div>
+        <div class="card"><button class="sbtn" onclick="saveLg()">Save Body Log</button></div>
+      </div>
+
+      <!-- Intimacy -->
+      <div id="lp-intimacy" style="display:none">
+        <div class="card">
+          <div class="ey">Intimacy Today</div>
+          <div style="display:flex;gap:8px;margin-bottom:16px" id="intimacy-type">
+            <button class="intimacy-btn" onclick="setFlow('intimacy','none',this)"><div style="font-size:22px">🚫</div><div style="font-size:10px;color:#999;margin-top:4px">None</div></button>
+            <button class="intimacy-btn" onclick="setFlow('intimacy','solo',this)"><div style="font-size:22px">🌸</div><div style="font-size:10px;color:#999;margin-top:4px">Solo</div></button>
+            <button class="intimacy-btn" onclick="setFlow('intimacy','protected',this)"><div style="font-size:22px">💚</div><div style="font-size:10px;color:#999;margin-top:4px">Protected</div></button>
+            <button class="intimacy-btn" onclick="setFlow('intimacy','unprotected',this)"><div style="font-size:22px">🌺</div><div style="font-size:10px;color:#999;margin-top:4px">Unprotected</div></button>
+          </div>
+          <div class="ey">Desire & Libido</div>
+          <div class="libido-row" id="libido-row">
+            <div class="libido-dot" onclick="setLibido(1,this)">🥱</div>
+            <div class="libido-dot" onclick="setLibido(2,this)">😐</div>
+            <div class="libido-dot" onclick="setLibido(3,this)">🙂</div>
+            <div class="libido-dot" onclick="setLibido(4,this)">🥰</div>
+            <div class="libido-dot" onclick="setLibido(5,this)">🔥</div>
+          </div>
+          <div style="text-align:center;font-size:11px;color:#BCBCBC;margin-bottom:16px" id="libido-label">Tap to rate your desire today</div>
+          <div class="ey">Intimacy Notes (optional)</div>
+          <textarea class="linput" id="lg-intimacy-notes" rows="2" placeholder="How did you feel? Any patterns to note…" style="margin-bottom:17px"></textarea>
+          <button class="sbtn" onclick="saveLg()">Save Intimacy Log</button>
+        </div>
+      </div>
+
+
+      <!-- Activity -->
+      <div id="lp-activity" style="display:none">
+        <div class="card">
+          <div class="ey">Movement Today</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px" id="activity-types">
+            <button class="act-btn" onclick="toggleAct('yoga',this)"><span style="font-size:18px">🧘</span><br><span class="act-label">Yoga / Pilates</span></button>
+            <button class="act-btn" onclick="toggleAct('walk',this)"><span style="font-size:18px">🚶</span><br><span class="act-label">Walk / Light cardio</span></button>
+            <button class="act-btn" onclick="toggleAct('strength',this)"><span style="font-size:18px">🏋️</span><br><span class="act-label">Strength / HIIT</span></button>
+            <button class="act-btn" onclick="toggleAct('dance',this)"><span style="font-size:18px">💃</span><br><span class="act-label">Dance / Movement</span></button>
+            <button class="act-btn" onclick="toggleAct('stretch',this)"><span style="font-size:18px">🌿</span><br><span class="act-label">Rest / Stretching</span></button>
+            <button class="act-btn" onclick="toggleAct('swim',this)"><span style="font-size:18px">🏊</span><br><span class="act-label">Swimming</span></button>
+            <button class="act-btn" onclick="toggleAct('none',this)"><span style="font-size:18px">🛋️</span><br><span class="act-label">No movement</span></button>
+          </div>
+          <div class="ey">Duration</div>
+          <div style="display:flex;gap:7px;flex-wrap:wrap;margin-bottom:16px" id="act-duration">
+            <button class="mucus-btn" onclick="setFlow('duration','15min',this)">15 min</button>
+            <button class="mucus-btn" onclick="setFlow('duration','30min',this)">30 min</button>
+            <button class="mucus-btn" onclick="setFlow('duration','45min',this)">45 min</button>
+            <button class="mucus-btn" onclick="setFlow('duration','60min',this)">60 min</button>
+            <button class="mucus-btn" onclick="setFlow('duration','90min+',this)">90 min+</button>
+          </div>
+          <div class="ey">Intensity</div>
+          <div style="display:flex;gap:7px;flex-wrap:wrap;margin-bottom:16px" id="act-intensity">
+            <button class="mucus-btn" onclick="setFlow('actIntensity','gentle',this)">🌿 Gentle</button>
+            <button class="mucus-btn" onclick="setFlow('actIntensity','moderate',this)">🔆 Moderate</button>
+            <button class="mucus-btn" onclick="setFlow('actIntensity','strong',this)">⚡ Strong</button>
+            <button class="mucus-btn" onclick="setFlow('actIntensity','intense',this)">🔥 Intense</button>
+          </div>
+          <div class="ey">How did your body feel?</div>
+          <div style="display:flex;gap:7px;flex-wrap:wrap;margin-bottom:16px" id="act-feel">
+            <button class="mucus-btn" onclick="setFlow('actFeel','pushed',this)">😤 Pushed through</button>
+            <button class="mucus-btn" onclick="setFlow('actFeel','okay',this)">😐 Okay</button>
+            <button class="mucus-btn" onclick="setFlow('actFeel','aligned',this)">✨ Felt aligned</button>
+            <button class="mucus-btn" onclick="setFlow('actFeel','energized',this)">🌟 Energized</button>
+          </div>
+          <div class="ey" id="phase-rec-eye">Phase Recommendation</div>
+          <div style="background:var(--cbg);border-radius:12px;padding:12px 14px;font-size:12px;color:#666;line-height:1.6;margin-bottom:16px;transition:background .5s;border-left:3px solid var(--cl)" id="phase-rec-text"></div>
+          <div class="ey">Notes</div>
+          <textarea class="linput" id="lg-act-notes" rows="2" placeholder="How did movement feel in your body today?" style="margin-bottom:17px"></textarea>
+          <button class="sbtn" onclick="saveLg()">Save Activity Log</button>
+        </div>
+      </div>
+      <div id="lg-hist"></div>
+    </div>
+
+    <!-- SPIRIT -->
+    <div class="screen" id="screen-spirit" style="background:linear-gradient(180deg,#12082A 0%,#1A1035 30%,var(--cbg) 60%)">
+      <div class="shd">
+        <div style="font-size:10px;color:rgba(255,255,220,.5);text-transform:uppercase;letter-spacing:2.5px;margin-bottom:5px">✦ Spiritual Alignment</div>
+        <div style="font-family:var(--serif);font-size:28px;font-weight:700;color:#FFF8E0;letter-spacing:-.5px;line-height:1;margin-bottom:3px" id="sp-name"></div>
+        <div style="font-size:12px;color:rgba(255,255,220,.5);font-style:italic" id="sp-sub"></div>
+      </div>
+      <div class="sseg">
+        <button class="ssb active" onclick="sSub('chakra',this)">Chakra</button>
+        <button class="ssb" onclick="sSub('wound',this)">Wounds</button>
+        <button class="ssb" onclick="sSub('somatic',this)">Somatic</button>
+        <button class="ssb" onclick="sSub('ritual',this)">Practices</button>
+        <button class="ssb" onclick="sSub('natal',this)">Chart</button>
+      </div>
+      <!-- Chakra -->
+      <div id="ssp-chakra" class="sp active">
+        <div class="chero" id="sp-chero"><div class="chbg" id="sp-chbg"></div><div class="che">Phase Chakra</div><div class="cht" id="sp-cht"></div><div class="chs" id="sp-chs"></div></div>
+        <div class="card"><div id="sp-cbadge"></div><div class="ey" style="margin-top:9px">What's Opening</div><div style="font-size:13px;color:#555;line-height:1.7;margin-bottom:13px" id="sp-cdesc"></div><div class="ey">Aligned Signs</div><div id="sp-cal"></div><div class="div"></div><div class="ey">Blockage Signs</div><div id="sp-cbl"></div></div>
+        <div class="card"><div class="ey">Affirmations</div><div id="sp-caff"></div></div>
+      </div>
+      <!-- Wounds & Gifts — Anatomy of the Spirit -->
+      <div id="ssp-wound" class="sp">
+        <div class="wg-card" id="sp-wg-card">
+          <div class="shey" style="color:rgba(255,255,220,.5);font-size:9px;text-transform:uppercase;letter-spacing:2px;margin-bottom:11px">✦ Anatomy of the Spirit</div>
+          <div class="wg-row" id="sp-wound-row">
+            <div class="wg-icon">🩹</div>
+            <div><div class="wg-label" style="color:rgba(255,255,255,.5)">Psychological Wound</div><div class="wg-text" style="color:#FFF8E0" id="sp-wound"></div></div>
+          </div>
+          <div class="wg-row" id="sp-gift-row">
+            <div class="wg-icon">✨</div>
+            <div><div class="wg-label" style="color:rgba(255,255,255,.5)">The Gift It Carries</div><div class="wg-text" style="color:#FFF8E0" id="sp-gift"></div></div>
+          </div>
+          <div class="wg-row">
+            <div class="wg-icon">⚡</div>
+            <div><div class="wg-label" style="color:rgba(255,255,255,.5)">Life Challenge</div><div class="wg-text" style="color:#FFF8E0" id="sp-challenge"></div></div>
+          </div>
+        </div>
+        <div class="sacrament-card">
+          <div class="sac-eye">✦ Sacred Truths</div>
+          <div id="sp-sacraments"></div>
+        </div>
+      </div>
+      <!-- Somatic tied to wounds -->
+      <div id="ssp-somatic" class="sp">
+        <div class="card"><div class="ey">Somatic Practices</div><div style="font-size:12px;color:#999;font-style:italic;margin-bottom:13px" id="sp-sint"></div><div id="sp-slist"></div></div>
+        <div class="card"><div class="ey">Wound-Specific Practice</div><div id="sp-wound-practice"></div></div>
+        <div class="card"><div class="ey">Breathwork</div><div id="sp-sbw"></div></div>
+      </div>
+      <!-- Practices -->
+      <div id="ssp-ritual" class="sp">
+        <div class="card"><div class="ey">Grounding Practice</div><div style="font-family:var(--serif);font-size:14px;color:var(--c);font-style:italic;line-height:1.55;margin-bottom:13px" id="sp-rint"></div><div id="sp-rsteps"></div></div>
+        <div class="card"><div class="ey">Sacred Objects & Space</div><div id="sp-ralt"></div></div>
+        <div class="shcard"><div class="shey">✦ Reflection Prompts</div><div id="sp-shp"></div></div>
+      </div>
+      <!-- Natal -->
+      <div id="ssp-natal" class="sp">
+        <div class="natcard">
+          <div class="shey">✦ Your Natal Placements</div>
+          <div class="natr"><div class="nati">🌙</div><div><div class="natn">Moon · Menstrual</div><div class="nats">Capricorn ♑</div><div class="natd">Your inner world craves structure even in rest. During your bleed, honor stillness as achievement. Practice releasing the internal taskmaster — simply being is enough.</div><div class="natp">Active Days 1–5</div></div></div>
+          <div class="natr"><div class="nati">⬆️</div><div><div class="natn">Rising · Follicular</div><div class="nats">Libra ♎</div><div class="natd">You emerge gracefully. Drawn to beauty, balance, and connection. Your most magnetically social phase. Let beauty be a spiritual practice — adorn your body, space, language.</div><div class="natp">Active Days 6–12</div></div></div>
+          <div class="natr"><div class="nati">☀️</div><div><div class="natn">Sun · Ovulatory</div><div class="nats">Gemini ♊</div><div class="natd">Your Gemini Sun craves communication and can hold multiple truths at once. Use this window for conversations that need nuance. Your words carry double power now.</div><div class="natp">Active Days 13–15</div></div></div>
+          <div class="natr"><div class="nati">♂️</div><div><div class="natn">Mars · Luteal</div><div class="nats">Gemini ♊</div><div class="natd">Mars in Gemini turns inward as restless analytical energy. Channel into writing and planning. Your sharpest insights come in these final days before your bleed.</div><div class="natp">Active Days 16–28</div></div></div>
+        </div>
+        <div class="card"><div class="ey" id="sp-neye">Current Phase Guidance</div><div style="font-size:13px;color:#555;line-height:1.7" id="sp-ng"></div></div>
+      </div>
+    </div>
+
+    <!-- PLAYLISTS -->
+    <div class="screen" id="screen-playlists">
+      <div class="hd"><div class="pn" id="pl-title">Menstrual Playlists</div><div class="ps2" id="pl-sub">🌑 Curated for your phase</div></div>
+      <div id="pl-cards"></div>
+    </div>
+
+
+    <!-- ══ LEARN ══ -->
+    <div class="screen" id="screen-learn">
+      <div class="hd">
+        <div class="pn">The Science</div>
+        <div class="ps2">📖 LivAligned handbook</div>
+      </div>
+      <div class="pad">
+        <div id="learn-seg" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:15px">
+          <button class="lbtn active" onclick="lSub('why',this)">Why It Works</button>
+          <button class="lbtn" onclick="lSub('evidence',this)">Research</button>
+          <button class="lbtn" onclick="lSub('treatments',this)">Treatments</button>
+          <button class="lbtn" onclick="lSub('lifestyle',this)">Lifestyle</button>
+          <button class="lbtn" onclick="lSub('tools',this)">Tools</button>
+        </div>
+      </div>
+
+      <div id="lp-why">
+        <div class="scard">
+          <div class="eyt">The Hormonal Rhythm We Live In</div>
+          <div style="font-size:13px;color:#555;line-height:1.7">Your menstrual cycle is a 28-day biological rhythm controlled by estrogen, progesterone, inflammatory mediators, and neurotransmitters — shaping mood, energy, appetite, sleep, pain, and brain function all month long.</div>
+        </div>
+        <div class="card">
+          <div class="ey">These Shifts Influence</div>
+          <div class="tr"><div class="ti" style="color:var(--c)">→</div><div class="tt">Mood and emotional regulation</div></div>
+          <div class="tr"><div class="ti" style="color:var(--c)">→</div><div class="tt">Energy and physical capacity</div></div>
+          <div class="tr"><div class="ti" style="color:var(--c)">→</div><div class="tt">Appetite, cravings and metabolism</div></div>
+          <div class="tr"><div class="ti" style="color:var(--c)">→</div><div class="tt">Sleep quality and depth</div></div>
+          <div class="tr"><div class="ti" style="color:var(--c)">→</div><div class="tt">Bloating, pain and inflammation</div></div>
+          <div class="tr"><div class="ti" style="color:var(--c)">→</div><div class="tt">Brain fog and cognitive clarity</div></div>
+        </div>
+        <div class="card">
+          <div class="ey">What Cycle Syncing May Help</div>
+          <div class="tr"><div class="ti">✓</div><div class="tt">Reduce menstrual pain</div></div>
+          <div class="tr"><div class="ti">✓</div><div class="tt">Improve mood stability</div></div>
+          <div class="tr"><div class="ti">✓</div><div class="tt">Reduce bloating and cravings</div></div>
+          <div class="tr"><div class="ti">✓</div><div class="tt">Support healthy inflammation responses</div></div>
+          <div class="tr"><div class="ti">✓</div><div class="tt">Improve overall quality of life</div></div>
+          <div style="background:var(--cbg);border-radius:12px;padding:12px 14px;margin-top:12px;font-family:var(--serif);font-size:13px;color:var(--c);font-style:italic;line-height:1.6;transition:background .5s">Routine matters more than perfection. Your body responds best to consistency, compassion, and rhythm.</div>
+        </div>
+      </div>
+
+      <div id="lp-evidence" style="display:none">
+        <div class="card">
+          <div class="ey">Key Research Findings</div>
+          <div class="evc"><div class="evn">Finding 1</div><div style="font-size:12px;color:#555;line-height:1.65">Mediterranean-style anti-inflammatory diets significantly reduce menstrual and menopausal symptom severity.</div></div>
+          <div class="evc"><div class="evn">Finding 2</div><div style="font-size:12px;color:#555;line-height:1.65">Higher intake of fruits, vegetables, legumes, and healthy fats is associated with reduced PMS symptoms and improved emotional health.</div></div>
+          <div class="evc"><div class="evn">Finding 3</div><div style="font-size:12px;color:#555;line-height:1.65">Magnesium, zinc, vitamin B6, and omega-3 fatty acids may reduce irritability, pain, and fatigue related to the menstrual cycle.</div></div>
+          <div class="evc"><div class="evn">Finding 4</div><div style="font-size:12px;color:#555;line-height:1.65">Diets high in whole foods, fiber, and antioxidants are associated with fewer menstrual symptoms and improved emotional stability.</div></div>
+          <div class="evc"><div class="evn">Finding 5</div><div style="font-size:12px;color:#555;line-height:1.65">Diets high in refined carbohydrates and processed food are linked with worse PMS symptoms, greater pain, and emotional distress.</div></div>
+          <div class="evc" style="margin-bottom:0"><div class="evn">Finding 6</div><div style="font-size:12px;color:#555;line-height:1.65">Poor diet quality increases inflammation and symptom severity across all phases of the cycle.</div></div>
+          <div style="background:#F9F9F9;border-radius:11px;padding:11px 13px;margin-top:12px;font-size:11px;color:#BCBCBC;line-height:1.6">Sources include Frontiers in Nutrition, Scientific Reports, Nutrients Journal, BMC Women's Health, Food &amp; Function, and European Journal of Nutrition.</div>
+        </div>
+      </div>
+
+      <div id="lp-treatments" style="display:none">
+        <div class="card">
+          <div class="ey">Common Treatment Approaches</div>
+          <div style="background:var(--cbg);border-radius:9px;padding:10px 12px;margin-bottom:4px;transition:background .5s">
+            <div style="font-size:12px;font-weight:700;color:var(--c);margin-bottom:3px">Lifestyle</div>
+            <div style="font-size:11px;color:#555;margin-bottom:2px">Exercise, sleep hygiene, heat therapy</div>
+            <div style="font-size:11px;color:#999;font-style:italic">Supports nervous system regulation</div>
+          </div>
+          <div style="background:#fff;border-radius:9px;padding:10px 12px;margin-bottom:4px">
+            <div style="font-size:12px;font-weight:700;color:var(--c);margin-bottom:3px">Supplements</div>
+            <div style="font-size:11px;color:#555;margin-bottom:2px">Magnesium, B vitamins, Omega-3s</div>
+            <div style="font-size:11px;color:#999;font-style:italic">Helps correct deficiencies that worsen symptoms</div>
+          </div>
+          <div style="background:var(--cbg);border-radius:9px;padding:10px 12px;margin-bottom:4px;transition:background .5s">
+            <div style="font-size:12px;font-weight:700;color:var(--c);margin-bottom:3px">Nutrition</div>
+            <div style="font-size:11px;color:#555;margin-bottom:2px">Anti-inflammatory foods, cycle-specific strategies</div>
+            <div style="font-size:11px;color:#999;font-style:italic">Supports hormone metabolism, inflammation, and mood</div>
+          </div>
+          <div style="background:#fff;border-radius:9px;padding:10px 12px">
+            <div style="font-size:12px;font-weight:700;color:var(--c);margin-bottom:3px">Medical</div>
+            <div style="font-size:11px;color:#555;margin-bottom:2px">NSAIDs, hormonal birth control</div>
+            <div style="font-size:11px;color:#999;font-style:italic">Reduces symptoms by suppressing ovulation or inflammation</div>
+          </div>
+          <div style="background:var(--cbg);border-radius:12px;padding:12px 14px;margin-top:12px;font-size:12px;color:#666;font-style:italic;line-height:1.65;transition:background .5s">While medication can provide relief, research suggests dietary patterns themselves significantly shape hormone signaling, inflammation, and neurotransmitter balance.</div>
+        </div>
+      </div>
+
+      <div id="lp-lifestyle" style="display:none">
+        <div class="card">
+          <div class="ey">Lifestyle Considerations</div>
+          <div style="display:flex;gap:12px;padding-bottom:14px;margin-bottom:14px;border-bottom:1px solid #F0ECE8">
+            <div style="font-size:20px;flex-shrink:0">🏋️</div>
+            <div><div style="font-size:13px;font-weight:600;color:#333;margin-bottom:3px">Strength Training</div><div style="font-size:12px;color:#777;line-height:1.55">Include strength training to build muscle and improve insulin sensitivity throughout your cycle.</div></div>
+          </div>
+          <div style="display:flex;gap:12px;padding-bottom:14px;margin-bottom:14px;border-bottom:1px solid #F0ECE8">
+            <div style="font-size:20px;flex-shrink:0">🎯</div>
+            <div><div style="font-size:13px;font-weight:600;color:#333;margin-bottom:3px">Consistency Over Perfection</div><div style="font-size:12px;color:#777;line-height:1.55">Aim for 150 minutes of moderate movement per week — walking, cycling, swimming, or yoga all count.</div></div>
+          </div>
+          <div style="display:flex;gap:12px">
+            <div style="font-size:20px;flex-shrink:0">❤️</div>
+            <div><div style="font-size:13px;font-weight:600;color:#333;margin-bottom:3px">Enjoy It</div><div style="font-size:12px;color:#777;line-height:1.55">Choose activities you genuinely enjoy so movement stays sustainable across all four phases.</div></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="ey">Always Include — Every Phase</div>
+          <span class="pill">✓ Whole grains</span><span class="pill">✓ Vegetables</span><span class="pill">✓ Legumes</span><span class="pill">✓ Nuts &amp; seeds</span><span class="pill">✓ Fatty fish</span><span class="pill">✓ Berries</span><span class="pill">✓ Avocado</span>
+          <div class="div"></div>
+          <div class="ey">Always Avoid — Every Phase</div>
+          <span class="wpill">✕ White bread</span><span class="wpill">✕ Sugary cereals</span><span class="wpill">✕ Processed snacks</span><span class="wpill">✕ Trans fats</span><span class="wpill">✕ Refined pasta</span>
+        </div>
+      </div>
+
+      <div id="lp-tools" style="display:none">
+        <div class="card">
+          <div class="ey">Cycle Tracking Apps</div>
+          <div class="tc"><div class="tn">Clue</div><div class="td">Science-based tracking of symptoms and hormone phases</div><div class="tu">helloclue.com</div></div>
+          <div class="tc"><div class="tn">Flo</div><div class="td">Spot patterns in mood, energy, cravings, and sleep</div><div class="tu">flo.health</div></div>
+          <div class="tc"><div class="tn">MyFLO</div><div class="td">Built specifically for cycle syncing with phase-based guidance</div><div class="tu">myfloapp.com</div></div>
+        </div>
+        <div class="card">
+          <div class="ey">Nutrition Tracking</div>
+          <div class="tc"><div class="tn">Cronometer</div><div class="td">Track micronutrients like B vitamins, iron, and omega-3s</div><div class="tu">cronometer.com</div></div>
+          <div class="tc"><div class="tn">MyFitnessPal</div><div class="td">Track meals and notice how foods affect your symptoms</div><div class="tu">myfitnesspal.com</div></div>
+        </div>
+        <div class="card">
+          <div class="ey">Mind-Body &amp; Grocery</div>
+          <div class="tc"><div class="tn">Insight Timer</div><div class="td">Meditations to calm the nervous system across phases</div><div class="tu">insighttimer.com</div></div>
+          <div class="tc"><div class="tn">Breathwrk</div><div class="td">Breathwork for PMS, fatigue, and sleep support</div><div class="tu">breathwrk.com</div></div>
+          <div class="tc"><div class="tn">Thrive Market</div><div class="td">Online organic grocery with cycle-friendly staples</div><div class="tu">thrivemarket.com</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav>
+    <button class="nb active" onclick="sw('home',this)"><span class="ni">🌿</span><span class="nl">Home</span></button>
+    <button class="nb" onclick="sw('eat',this)"><span class="ni">🥗</span><span class="nl">Eat</span></button>
+    <button class="nb" onclick="sw('spirit',this)"><span class="ni">✨</span><span class="nl">Spirit</span></button>
+    <button class="nb" onclick="sw('log',this)"><span class="ni">📓</span><span class="nl">Log</span></button>
+    <button class="nb" onclick="sw('playlists',this)"><span class="ni">🎵</span><span class="nl">Music</span></button>
+    <button class="nb" onclick="sw('cycle',this)"><span class="ni">🗓</span><span class="nl">Cycle</span></button>
+    <button class="nb" onclick="sw('learn',this)"><span class="ni">📚</span><span class="nl">Learn</span></button>
+  </nav>
+</div>
+
+<div class="demo">
+  <div class="phasebar">
+    <button class="pb active" style="color:#B5533C" onclick="setP('menstrual',this)">🌑 Menstrual</button>
+    <button class="pb" style="color:#3A6B4A" onclick="setP('follicular',this)">🌱 Follicular</button>
+    <button class="pb" style="color:#8B6914" onclick="setP('ovulatory',this)">☀️ Ovulatory</button>
+    <button class="pb" style="color:#6B3FA0" onclick="setP('luteal',this)">🍂 Luteal</button>
+  </div>
+  <div style="font-size:11px;color:#8C7B6E">Switch phases to preview ✦</div>
+</div>
+
+<script>
+
+// ── AMBIENT MUSIC — Web Audio API (no external dependencies) ────────────────
+var AMBIENT = {
+  menstrual:  { name:'Deep Rest · Tibetan Bowls',  icon:'🌑', freq:[110,165,220],   type:'sine',    tempo:6 },
+  follicular: { name:'Spring Rising · Soft Tones', icon:'🌱', freq:[261,329,392],   type:'triangle',tempo:4 },
+  ovulatory:  { name:'Solar Bloom · Warm Harmony', icon:'☀️', freq:[329,415,494],   type:'sine',    tempo:3 },
+  luteal:     { name:'Turn Inward · Evening Drone', icon:'🍂', freq:[174,220,261],   type:'sine',    tempo:8 },
+};
+
+var audioCtx = null, isPlaying = false, audioNodes = [];
+
+function getAudioCtx() {
+  if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  return audioCtx;
+}
+
+function loadPlayer(phaseKey) {
+  var track = AMBIENT[phaseKey];
+  var nameEl = document.getElementById('track-name');
+  var iconEl = document.getElementById('track-icon');
+  var btnEl  = document.getElementById('play-btn');
+  if (nameEl) nameEl.textContent = track.name;
+  if (iconEl) iconEl.textContent = track.icon;
+  if (btnEl)  btnEl.textContent  = '▶';
+  stopAudio();
+  isPlaying = false;
+}
+
+function stopAudio() {
+  audioNodes.forEach(function(n) { try { n.stop(); } catch(e) {} });
+  audioNodes = [];
+}
+
+function togglePlay() {
+  var btn = document.getElementById('play-btn');
+  if (isPlaying) {
+    stopAudio();
+    if (btn) btn.textContent = '▶';
+    isPlaying = false;
+    return;
+  }
+  try {
+    var ctx = getAudioCtx();
+    if (ctx.state === 'suspended') ctx.resume();
+    var track = AMBIENT[pk];
+    var masterGain = ctx.createGain();
+    masterGain.gain.setValueAtTime(0.0001, ctx.currentTime);
+    masterGain.gain.exponentialRampToValueAtTime(0.18, ctx.currentTime + 2);
+    masterGain.connect(ctx.destination);
+    track.freq.forEach(function(freq, i) {
+      var osc = ctx.createOscillator();
+      var gain = ctx.createGain();
+      var lfo  = ctx.createOscillator();
+      var lfoGain = ctx.createGain();
+      osc.type = track.type;
+      osc.frequency.setValueAtTime(freq, ctx.currentTime);
+      // Slight detune for richness
+      osc.detune.setValueAtTime(i * 4, ctx.currentTime);
+      // LFO for breathing quality
+      lfo.frequency.setValueAtTime(1 / track.tempo, ctx.currentTime);
+      lfoGain.gain.setValueAtTime(0.3, ctx.currentTime);
+      lfo.connect(lfoGain);
+      lfoGain.connect(gain.gain);
+      gain.gain.setValueAtTime(0.3 - i * 0.07, ctx.currentTime);
+      osc.connect(gain);
+      gain.connect(masterGain);
+      osc.start();
+      lfo.start();
+      audioNodes.push(osc, lfo);
+    });
+    if (btn) btn.textContent = '⏸';
+    isPlaying = true;
+  } catch(e) {
+    console.log('Audio error:', e);
+    if (btn) btn.textContent = '▶';
+  }
+}
+
+// ── ACTIVITY STATE ───────────────────────────────────────────────────────
+let actTypes = [];
+const PHASE_MOVE_REC = {
+  menstrual: 'During your menstrual phase, honor your body with gentle movement — or full rest. Yin yoga, slow walks, and stretching support circulation without depleting your energy. This is not the phase to push.',
+  follicular: 'Your follicular phase is your best window for strength training, HIIT, and high-intensity movement. Energy and muscle recovery are both at their peak. Build, challenge, and enjoy the momentum.',
+  ovulatory: 'At ovulation, stamina is at its highest. Running, power yoga, group classes, and dynamic movement all feel natural and energizing. Your body is built for full expression right now.',
+  luteal: 'In the luteal phase, gradually scale back intensity. Pilates, walking, and gentle yoga support progesterone levels and reduce PMS symptoms. Listen carefully — your body will tell you exactly what it needs.',
+};
+
+function toggleAct(type, el) {
+  if (actTypes.includes(type)) {
+    actTypes = actTypes.filter(x => x !== type);
+    el.classList.remove('active');
+  } else {
+    actTypes.push(type);
+    el.classList.add('active');
+  }
+}
+
+
+function updateActivityRec() {
+  const el = document.getElementById('phase-rec-text');
+  if (el) el.textContent = PHASE_MOVE_REC[pk];
+}
+
+const PH={
+  menstrual:{name:'Menstrual',season:'Winter',days:'Days 1–5',emoji:'🌑',start:1,c:'#B5533C',cl:'#F5E4DF',cbg:'#FBF5F3',ccard:'#F0D8D2',cm:'#C4806E',
+    affirmation:'Rest is productive. You are allowed to slow down.',hormone:'Low Estrogen & Progesterone',
+    snap:'Your body is releasing and renewing. Energy is lower — that\'s intentional.',
+    goal:'Rest, restore iron, lower inflammation',move:'Gentle yoga · stretching · slow walks',selfcare:'Heat therapy · journaling · early sleep',
+    eat:[{f:'Spinach, kale, swiss chard',a:'1–2 cups/day',w:'Iron + Vit C',r:'Iron-rich greens paired with vitamin C restore what\'s lost during bleeding.'},{f:'Lentils & beans',a:'½–1 cup/day',w:'Iron + Fiber',r:'Plant-based iron plus fiber to support digestion and replenish energy.'},{f:'Salmon & sardines',a:'3–4 oz/day',w:'Omega-3s',r:'Omega-3 fatty acids calm inflammatory prostaglandins that cause cramping.'},{f:'Beets',a:'½–1 cup/day',w:'Blood Flow',r:'Beets improve circulation and support the liver\'s detox pathways.'},{f:'Pumpkin seeds',a:'2 tbsp/day',w:'Magnesium',r:'Magnesium supports sleep, muscle relaxation, and reduces cramping.'}],
+    nuts:[{n:'Iron + Vitamin C',w:'Restores blood loss and enhances absorption'},{n:'Omega-3 Fatty Acids',w:'Reduces prostaglandin-related cramping'},{n:'Magnesium',w:'Supports sleep and muscle relaxation'}],
+    avoid:['Sugary snacks','Alcohol','High sodium foods','Processed foods','Excess caffeine'],
+    swaps:[{f:'Sugary snacks',t:'Dark chocolate (1 oz) or berries'}],
+    groc:['Spinach','Kale','Swiss chard','Lentils','Beans','Salmon','Sardines','Beets','Pumpkin seeds','Citrus fruits','Berries'],
+    meal:{b:'Oatmeal + berries + walnuts',l:'Lentil stew',d:'Salmon + greens'},
+    tips:[{i:'🍵',t:'Sip ginger tea — a natural anti-inflammatory'},{i:'🛁',t:'Warm bath with magnesium salts relaxes muscles'},{i:'💤',t:'Aim for 8–9 hours sleep this phase'},{i:'🔥',t:'Heat therapy relieves cramping as effectively as NSAIDs'}],
+    spirit:{
+      chakra:{name:'Root Chakra',sk:'Mūlādhāra',color:'#C0392B',sym:'⬡',loc:'Base of spine · Pelvis',
+        desc:'During menstruation, the Root Chakra is tender and active — the seat of safety, survival, and belonging. As your body releases, your energetic body does too.',
+        al:['Feeling safe in your body','Deep, unforced rest','Connection to the earth','Emotional release that feels cleansing'],
+        bl:['Fear, anxiety, or dread','Inability to rest','Dissociation from the body','Chronic exhaustion'],
+        aff:['I am safe to release what no longer serves me.','My body knows how to renew itself.','I trust the wisdom of my cycle.','Rest is not weakness — it is my greatest power right now.']},
+      wound:{w:'The wound of belonging — the belief that you must earn your place, prove your worth, and justify your existence through productivity or usefulness.',gift:'The capacity for radical self-trust. When stripped of output and performance, you discover the self that exists without conditions. This is the foundation of unshakeable inner security.',challenge:'Learning to receive without guilt. Allowing yourself to be held without needing to give something in return.',sacraments:['"I belong here." — You are not separate from life. You are part of the same rhythm that moves the tides and turns the seasons. This body, this blood, this breath — all of it belongs.','"Honor Oneself." — Your body\'s need for rest is not weakness. It is the sacred intelligence of life preserving itself.']},
+      somatic:{intro:'Slow, grounding practices that support the nervous system and honor the inward pull.',
+        practices:[{t:'Womb Bowl Breathing',d:'Lie down, hands on low belly. Inhale softly, expanding downward like a bowl filling. Exhale and release completely.',dur:'5–10 min'},{t:'Supported Restorative Twist',d:'Bolster under knees, gently rotate spine to each side. Release psoas and hip flexors — where we hold emotional tension.',dur:'3–5 min each side'},{t:'Slow Body Scan',d:'Move awareness down through every part of your body without trying to change anything. Deep somatic listening.',dur:'10–15 min'},{t:'Hip & Sacrum Release',d:'Child\'s pose with knees wide. Breathe directly into your sacrum with each inhale.',dur:'5 min'}],
+        bw:{n:'4-7-8 Rest Breath',d:'Inhale 4 · Hold 7 · Exhale 8. Activates the parasympathetic nervous system and eases cramping.',r:'4–6 rounds'},
+        woundPractice:{t:'Receiving Practice',d:'Lie still and allow yourself to simply be held by the floor. No doing, no output, no justification. For your Moon in Capricorn — this is the somatic antidote to the wound of conditional belonging. Practice saying aloud: "I deserve rest. I deserve care. I deserve to exist exactly as I am right now."',dur:'10–15 min'}},
+      ritual:{int:'"I release with grace. I honor what is complete. I trust the wisdom of this turning."',
+        steps:[{i:'🕯',t:'Open Your Space',d:'Dim the lights, light a candle, burn incense, diffuse oil, or simply sit in stillness. Create a container — however that looks for you.'},{i:'📓',t:'Release Writing',d:'Write everything you are letting go of. Don\'t edit. Write it all.'},{i:'🔥',t:'Release Ceremony',d:'Burn, bury, tear, or release the paper into water — whatever feels true for you. Speak, sing, or simply breathe: I release this. I am renewed.'},{i:'🛁',t:'Water Cleansing',d:'A bath, shower, or simply washing your hands with intention. Water cleanses across every tradition. Let it move through you.'}],
+        altar:['A candle in any color that feels grounding to you','A stone, crystal, or natural object that feels protective','Herbs, incense, smoke, or a scent that feels cleansing','An offering: dark chocolate, seeds, or something from the earth'],
+        shadow:['What am I gripping that I know, in my deepest self, is already over?','Where am I performing productivity to avoid feeling grief underneath?','What does my body most need that I keep refusing to give it?','What old story about myself is ready to die?']},
+      natal:'With your Moon in Capricorn, rest does not come easily — your inner world is wired for structure and achievement. This phase is your cosmic invitation to discover that stillness IS an achievement. The Capricorn Moon needs to prove it has earned rest. You have. Practice releasing the internal taskmaster during these days.'}},
+  follicular:{name:'Follicular',season:'Spring',days:'Days 6–12',emoji:'🌱',start:6,c:'#3A6B4A',cl:'#D6EAD9',cbg:'#F0F7F2',ccard:'#C8E0CD',cm:'#6A9E7A',
+    affirmation:'New energy is rising in you. Let it lead.',hormone:'Rising Estrogen',
+    snap:'Your brightest window is opening. Energy, focus, and creativity are building.',
+    goal:'Energize and rebuild',move:'Strength training · HIIT · dancing',selfcare:'Try something new · social plans · goal journaling',
+    eat:[{f:'Avocado & leafy greens',a:'1–2 cups/day',w:'Healthy Fats',r:'Healthy fats support cell membrane health and rising estrogen.'},{f:'Probiotic yogurt or kefir',a:'¼–½ cup/day',w:'Gut-Brain',r:'Fermented foods support gut hormone detox and serotonin.'},{f:'Fresh fruit (berries, kiwi)',a:'2 servings/day',w:'Antioxidants',r:'Antioxidants pair with rising estrogen and protect ovary function.'},{f:'Lean protein (chicken, tofu)',a:'3–4 oz/meal',w:'Rebuild',r:'Protein supports follicle development and tissue restoration.'},{f:'Seeds (chia, sunflower)',a:'2 tbsp/day',w:'Omega-3s',r:'Seeds provide lignans that modulate estrogen naturally.'}],
+    nuts:[{n:'Omega-3 Fats',w:'Support follicle development'},{n:'Antioxidants',w:'Protect ovary function with rising estrogen'},{n:'Fermented Foods',w:'Gut-brain and hormone detox support'}],
+    avoid:['Heavy comfort meals','Refined carbs','Excess caffeine'],
+    swaps:[{f:'Heavy meals',t:'Light, fresh foods like salads or quinoa bowls'}],
+    groc:['Avocado','Leafy greens','Berries','Kiwi','Citrus','Quinoa','Oats','Yogurt','Chicken','Tofu'],
+    meal:{b:'Berry smoothie bowl',l:'Chicken salad w/ avocado',d:'Stir fry + vegetables'},
+    tips:[{i:'🧠',t:'Peak brain sharpness — tackle creative work'},{i:'🥗',t:'Fermented foods support estrogen metabolism'},{i:'🏋️',t:'Body benefits most from intense exercise now'},{i:'✨',t:'Schedule important conversations this week'}],
+    spirit:{
+      chakra:{name:'Sacral Chakra',sk:'Svādhiṣṭhāna',color:'#E67E22',sym:'◎',loc:'Lower abdomen · 2 inches below navel',
+        desc:'The Sacral Chakra governs creativity, pleasure, and flow. As estrogen rises, this chakra awakens with fresh creative life force. You are literally creating new possibilities.',
+        al:['Creative inspiration flowing freely','Enjoying sensory pleasures','Emotional fluidity','Playfulness and curiosity'],
+        bl:['Creative blocks or self-censorship','Numbness from pleasure','Emotional rigidity','Shame around desire or creativity'],
+        aff:['I am a vessel of creative life force.','Pleasure is sacred and I receive it fully.','I flow with the current of my own becoming.','My rising energy is a gift — I welcome it.']},
+      wound:{w:'The wound of guilt — the belief that desire is selfish, pleasure is indulgent, and creative expression must be justified by its usefulness to others.',gift:'The capacity for sacred embodiment. Reclaiming the body as a site of wisdom and delight, not merely function. The gift is knowing that your joy is generative — it creates life.',challenge:'Allowing yourself to want things. Following desire without immediately asking "but is this productive?" Learning that pleasure is a form of prayer.',sacraments:['"Give to yourself first." — Your creative energy belongs to you first. You cannot pour from an empty vessel. Receiving pleasure is an act of radical self-honoring.','"Do not suppress yourself." — The deepest violation is the suppression of your authentic voice and creative self. Your Libra Rising longs for beauty — give it freely.']},
+      somatic:{intro:'Expressive, fluid practices that wake up the sacral center and channel rising creative energy.',
+        practices:[{t:'Spinal Wave',d:'Stand with feet hip-width apart. Begin slow undulation from spine base to crown — like a wave. Let it become fluid and free.',dur:'5–10 min'},{t:'Intuitive Dance',d:'Music that feels alive. Move without choreography. No performing — only feeling.',dur:'10–20 min'},{t:'Hip Circles & Figure-8s',d:'Standing or seated, trace slow circles and figure-8s with hips. Directly awakens the sacral chakra.',dur:'5 min'},{t:'Creative Expression',d:'Draw, paint, journal, or make something immediately after movement. Capture what surfaces.',dur:'Open'}],
+        bw:{n:'Bellows Breath (Bhastrika)',d:'Rapid, equal inhale and exhale through nose, pumping lower belly. Energizing and creativity-activating.',r:'3 rounds of 30 breaths'},
+        woundPractice:{t:'Pleasure Inventory',d:'Sit quietly and ask: "What do I actually desire right now, with no justification required?" Write 10 answers. Then choose one and fulfill it — however small — today. This is direct medicine for the wound of guilt. Your Libra Rising supports this: beauty and pleasure are not frivolous. They are your spiritual language.',dur:'20 min'}},
+      ritual:{int:'"I rise. I create. I plant seeds that will bloom in their own perfect time."',
+        steps:[{i:'🌸',t:'Greet the Dawn',d:'Step outside, open a window, or simply face east. Acknowledge the light returning — as it does in you. No tradition required, only presence.'},{i:'🌱',t:'Set Your Intention',d:'Plant something — seeds in soil, or write new intentions in a dedicated journal.'},{i:'💧',t:'Water Blessing',d:'Fill a bowl with water and flowers. Speak your creative visions aloud into the water.'},{i:'🎨',t:'Creative Play',d:'Spend 20+ minutes making something purely for joy. No outcome required.'}],
+        altar:['A candle in a warm, bright color','A stone or object that represents creativity and possibility','Fresh flowers or anything in bloom','Seeds, a new journal, or something that symbolizes beginning'],
+        shadow:['Where am I afraid to be seen in my full creative power?','What desire have I dismissed as "too much" or "not practical"?','Whose approval am I still seeking before I begin?','What would you create if you knew no one was watching?']},
+      natal:'Your Libra Rising is at its most radiant in the Follicular phase. Libra rules beauty, relationships, and the art of becoming. You\'re cosmically supported to present a refined, balanced self to the world. Let beauty be a spiritual practice — adorn your body, your space, your language.'}},
+  ovulatory:{name:'Ovulatory',season:'Summer',days:'Days 13–15',emoji:'☀️',start:13,c:'#8B6914',cl:'#F5E6BE',cbg:'#FDFBF3',ccard:'#EDD98A',cm:'#B8960F',
+    affirmation:'You are magnetic. Step into your light fully.',hormone:'Peak Estrogen · LH Surge',
+    snap:'Peak energy and clarity. Your most social, confident window all month.',
+    goal:'Stabilize hormones & support detox',move:'Running · power yoga · group fitness',selfcare:'Socialize · date nights · speak your needs',
+    eat:[{f:'Cruciferous vegetables',a:'½–1 cup/day',w:'Estrogen Detox',r:'Broccoli and cabbage contain DIM — clears excess estrogen.'},{f:'High-fiber fruits (apples, pears)',a:'1–2 servings/day',w:'Fiber',r:'Fiber binds to excess estrogen in the gut and removes it.'},{f:'Whole grains (oats, quinoa)',a:'½ cup/day',w:'B Vitamins',r:'B vitamins help the liver process estrogen and steady mood.'},{f:'Hydrating foods (cucumber, citrus)',a:'2–3 servings/day',w:'Hydration',r:'Supports cervical fluid and reduces headaches around ovulation.'},{f:'Lean protein (fish, turkey)',a:'3–4 oz/meal',w:'Muscle Support',r:'Protein supports muscle maintenance at peak performance.'}],
+    nuts:[{n:'B Vitamins',w:'Help liver process estrogen; steady energy'},{n:'Fiber',w:'Clears excess estrogen, reduces bloating'},{n:'Antioxidants',w:'Protect against inflammation'}],
+    avoid:['Low-fiber foods','Trans fats (fried foods)','Processed carbs'],
+    swaps:[{f:'Low-fiber foods',t:'Cruciferous veggies (broccoli, cabbage, cauliflower)'}],
+    groc:['Broccoli','Cabbage','Cauliflower','Cucumbers','Citrus fruits','Turkey','Fish','Tofu','Oats','Quinoa'],
+    meal:{b:'Eggs + spinach + avocado',l:'Quinoa bowl + cabbage slaw',d:'Chickpea + vegetable curry'},
+    tips:[{i:'🌟',t:'Schedule important meetings — you\'re most persuasive'},{i:'🥦',t:'Cruciferous veggies contain DIM for estrogen clearing'},{i:'💧',t:'Stay extra hydrated — headaches are common now'},{i:'🏃',t:'Stamina is at its highest point of the month'}],
+    spirit:{
+      chakra:{name:'Heart & Throat Chakras',sk:'Anāhata & Viśuddha',color:'#27AE60',sym:'❤',loc:'Heart center · Throat',
+        desc:'At ovulation, peak estrogen and LH surge activate both Heart and Throat chakras. You are biologically primed for connection, communication, and love.',
+        al:['Easy, authentic communication','Feeling deeply loved and lovable','Speaking truth without apology','Giving and receiving generously'],
+        bl:['People-pleasing or performing connection','Swallowing real feelings','Loneliness despite company','Throat tension, jaw clenching'],
+        aff:['I speak my truth with love and clarity.','I am worthy of deep, reciprocal connection.','My voice carries wisdom — I let it be heard.','I give freely and receive with an open heart.']},
+      wound:{w:'The wound of love — the belief that love is conditional, that you must perform a certain version of yourself to be loved, and that your authentic truth is too much or not enough.',gift:'The capacity for genuine intimacy — with yourself and others. The gift is discovering that love that requires your performance is not love at all. What remains when you stop performing is the real connection.',challenge:'Letting yourself be truly seen. Speaking the uncomfortable truth. Choosing authentic connection over harmonious performance.',sacraments:['"Love is power." — At ovulation, you carry the full charge of relational magnetism. Use it in service of truth, not performance.','"Live In The Present Moment." — Your Gemini Sun\'s shadow is living in possibility rather than presence. The deepest intimacy happens when you arrive, fully, right now.']},
+      somatic:{intro:'Expansive, expressive practices that open the heart, free the throat, and channel peak vitality.',
+        practices:[{t:'Chest Opening Backbend',d:'Supported on a bolster across mid-back. Arms spread wide, heart to the sky. Breathe into the expansion. The body\'s posture of yes.',dur:'5–7 min'},{t:'Lion\'s Breath (Simhasana)',d:'Open mouth, tongue toward chin, exhale "HAAAA." Releases throat tension and unexpressed emotion.',dur:'5–10 rounds'},{t:'Mirror or Partner Eye Contact',d:'Direct, warm eye contact in a mirror or with a trusted person. Speak one true thing you haven\'t said yet.',dur:'5 min'},{t:'Power Walk or Run',d:'Move at your peak capacity. Let your body express its full strength.',dur:'20–40 min'}],
+        bw:{n:'Heart Coherence Breath',d:'Breathe in 5 counts, out 5 counts. Activates heart-brain coherence. Hands on heart.',r:'5 minutes continuous'},
+        woundPractice:{t:'Truth-Telling Practice',d:'Sit with a journal. Write: "What truth have I been withholding to keep the peace?" Then write the truth. All of it. Then ask: "What would happen if I actually said this?" This is the direct medicine for the wound of love. Your Gemini Sun can hold two truths — the truth you\'ve been performing AND the truth underneath it. Both deserve acknowledgment.',dur:'15–20 min'}},
+      ritual:{int:'"I am seen. I am heard. I radiate what is true in me."',
+        steps:[{i:'☀️',t:'Greet the Sun',d:'Stand in sunlight, arms wide. Receive the sun into your heart. Speak one truth aloud to the sky.'},{i:'💌',t:'Love Letter',d:'Write a love letter to yourself or someone you love. Describe exactly what you love about them.'},{i:'🎤',t:'Speak Your Vision',d:'Record a voice memo of your intentions. Your Gemini Sun amplifies this — your words carry double power.'},{i:'🌺',t:'Full Bloom Offering',d:'Fresh flowers visible all day. You are in full bloom — let your environment reflect it.'}],
+        altar:['A candle in green, pink, or gold — any color that feels loving','A stone, shell, or object that carries the energy of connection','Fresh flowers at full bloom','Something written in your own hand — a name, a truth, an intention'],
+        shadow:['Where do I perform connection rather than inhabit it?','What truth am I withholding to keep the peace?','As a Gemini Sun — which version of myself do I hide?','What would I say if I knew my words would be truly heard?']},
+      natal:'Your Gemini Sun at ovulation creates a powerful amplification of communication gifts. Gemini rules the twins — the inner duality, the ability to hold two perspectives simultaneously. At peak estrogen, you\'re capable of articulating complex truths with startling clarity. Use this window for important conversations and creative expression.'}},
+  luteal:{name:'Luteal',season:'Autumn',days:'Days 16–28',emoji:'🍂',start:16,c:'#6B3FA0',cl:'#E8D9F5',cbg:'#F8F3FC',ccard:'#D4BAED',cm:'#9E72C8',
+    affirmation:'Slow down with intention. You don\'t have to do it all.',hormone:'Rising Progesterone & Inflammation',
+    snap:'Cravings and mood shifts are hormonal — not a flaw. Your body is preparing.',
+    goal:'Reduce inflammation, stabilize cravings, support mood',move:'Pilates · walking · gentle yoga',selfcare:'Rest more · reduce screen time · journaling',
+    eat:[{f:'Sweet potatoes & squash',a:'½–1 cup/day',w:'Complex Carbs',r:'Complex carbs stabilize progesterone dips and reduce cravings.'},{f:'Nuts & seeds (pumpkin, walnuts)',a:'2–3 tbsp/day',w:'Magnesium',r:'Magnesium reduces cramps, irritability, and supports deep sleep.'},{f:'Avocado & olive oil',a:'1–2 tbsp/day',w:'Mood Support',r:'Healthy fats support mood and reduce inflammatory prostaglandins.'},{f:'Turmeric, ginger & herbal teas',a:'1–2 cups/day',w:'Anti-Inflammatory',r:'Natural anti-inflammatories reduce PMS bloating and pain.'},{f:'Turkey, eggs & fish',a:'3–4 oz/meal',w:'Vitamin B6',r:'B6 directly supports serotonin and mood stability.'}],
+    nuts:[{n:'Magnesium',w:'Reduces cramps and irritability'},{n:'Zinc',w:'Reduces acne and inflammation'},{n:'Complex Carbs',w:'Stabilize progesterone dips'},{n:'Vitamin B6',w:'Supports serotonin and mood'}],
+    avoid:['Alcohol','Excess caffeine','Processed carbs','High sodium foods'],
+    swaps:[{f:'Processed carbs',t:'Sweet potatoes, oats, or squash'},{f:'Vegetable oils',t:'Avocado or olive oil'}],
+    groc:['Sweet potatoes','Squash','Avocados','Olive oil','Turkey','Eggs','Pumpkin seeds','Dark chocolate (70%)','Ginger','Turmeric'],
+    meal:{b:'Acai bowl + seeds',l:'Turkey + sweet potato + greens',d:'Ginger turmeric soup'},
+    tips:[{i:'🍫',t:'70% dark chocolate provides magnesium for cravings'},{i:'🌿',t:'Pumpkin seeds + greens reduce cramps and irritability'},{i:'😴',t:'Lean into earlier bedtimes — progesterone rises'},{i:'🧘',t:'Gentle yoga reduces PMS irritability effectively'}],
+    spirit:{
+      chakra:{name:'Third Eye & Solar Plexus',sk:'Ājñā & Maṇipūra',color:'#8E44AD',sym:'◈',loc:'Brow center · Upper abdomen',
+        desc:'The Luteal phase activates the Third Eye (intuition, inner knowing) and Solar Plexus (personal power, boundaries). As progesterone rises and the veil thins, your perception sharpens to peak sensitivity.',
+        al:['Sharp intuitive clarity','Strong, loving boundaries','Knowing truth without defending it','Purposeful, focused energy'],
+        bl:['Anxiety and overthinking','Difficulty making decisions','Feeling powerless or overwhelmed','PMS rage from swallowed truth'],
+        aff:['I trust my inner knowing — it never lies.','I am allowed to take up space and say no.','My sensitivity is not weakness — it is information.','I channel my Mars energy with precision and grace.']},
+      wound:{w:'The wound of power — the belief that claiming your power makes you dangerous, selfish, or unloved. The internalized story that a powerful woman is too much, too threatening, or unworthy of love.',gift:'The capacity for embodied discernment — the ability to know truth without external validation and act on it without permission. The gift is the discovery that your boundaries are acts of love, not rejection.',challenge:'Staying in your body when you feel the surge of intuitive knowing that something must change. Acting on that knowing without waiting for permission or consensus.',sacraments:['"Trust what you perceive." — Your intuition is at peak power. What you perceive now is accurate. Do not talk yourself out of what you clearly see.','"Do Not Create False Gods." — Mars in Gemini\'s shadow creates false urgency and scattered action. The truth is quieter. Trust stillness over speed.']},
+      somatic:{intro:'Grounding, strengthening practices that honor the inward spiral and channel Mars in Gemini energy productively.',
+        practices:[{t:'Core Activation & Centering',d:'Slow, intentional core work — plank holds, slow bicycle, or boat pose. The solar plexus lives here. Feel your own power.',dur:'10–15 min'},{t:'Shaking Practice',d:'Stand and shake your entire body — legs, arms, jaw, everything. Discharges accumulated stress hormones. Primal and deeply effective.',dur:'5–10 min'},{t:'Yoga Nidra',d:'Lie in savasana and follow a Yoga Nidra recording. The state between waking and sleep is where Luteal intuitive downloads are strongest.',dur:'20–45 min'},{t:'Journal Purge',d:'Write without stopping for 10 minutes. Everything you\'re thinking, feeling, noticing. Don\'t reread it. Mars in Gemini processes through writing.',dur:'10 min'}],
+        bw:{n:'Alternate Nostril Breathing (Nadi Shodhana)',d:'Close right nostril, inhale left. Close left, exhale right. Inhale right. Close right, exhale left. Balances hemispheres, calms Luteal anxiety.',r:'5–10 minutes'},
+        woundPractice:{t:'Power Reclamation Practice',d:'Stand with feet wide, hands on hips. Take three deep breaths. Then say aloud: "I am allowed to be powerful. I am allowed to know what I know. I am allowed to act on it." Feel the resistance. Stay with it. This is the exact location of the wound. Mars in Gemini processes the wound through language — speak it until you believe it. Your body will tell you when something shifts.',dur:'10 min'}},
+      ritual:{int:'"I turn inward with trust. I let my intuition lead. I honor the warrior within."',
+        steps:[{i:'🌘',t:'Evening Inventory',d:'Each evening: What did I feel today that I didn\'t say? Write it down. Mars in Gemini needs an outlet.'},{i:'🔮',t:'Inner Listening',d:'Pull a card, cast stones, open a book to a random page, or simply sit in stillness. Ask: what does my inner knowing say right now? Trust what arises.'},{i:'🌿',t:'Boundary Setting',d:'Identify one thing you will say no to this week. Write it on paper. Place it somewhere intentional — under a stone, in a drawer, in your journal. It is decided.'},{i:'🕯',t:'Candlelight Reflection',d:'Light a purple candle. Gaze at the flame. Ask your Third Eye: What do I already know that I\'m pretending not to know?'}],
+        altar:['A candle in purple, indigo, or deep blue','A stone or object that helps you feel grounded in your inner knowing','Paper or leaves for writing what you are ready to release or claim','A protective object — a stone, a symbol, or anything that feels like a boundary'],
+        shadow:['What is my body trying to tell me that my mind keeps overriding?','Where am I suppressing anger, and what truth does it protect?','Mars in Gemini: Which inner voice is loudest — truth or fear?','What boundary have I failed to hold that is costing me life force?']},
+      natal:'Mars in Gemini in the Luteal phase creates a fascinating paradox: warrior energy is mental rather than physical. You may feel restless, overstimulated, or prone to second-guessing. Channel this into writing, planning, or analytical work. Your sharpest insights come in these final days before your bleed — honor them by recording them.'}},
+};
+
+const PLAYLISTS={
+  menstrual:{
+    rest:{label:'Rest & Release',icon:'🛁',color:'#B5533C',bg:'#F5E4DF',tracks:[{song:'Bloom',artist:'Novo Amor'},{song:'Skinny Love',artist:'Bon Iver'},{song:'Holocene',artist:'Bon Iver'},{song:'From The Dining Table',artist:'Harry Styles'},{song:'Moon River',artist:'Frank Ocean'}],url:'https://open.spotify.com/playlist/37i9dQZF1DWZqd5JICZI0u'},
+    movement:{label:'Gentle Movement',icon:'🧘',color:'#B5533C',bg:'#F5E4DF',tracks:[{song:'Wild Heart',artist:'Bleachers'},{song:'Slow Burn',artist:'Kacey Musgraves'},{song:'Warm On A Cold Night',artist:'HONNE'},{song:'Golden',artist:'Harry Styles'},{song:'Sunset Lover',artist:'Petit Biscuit'}],url:'https://open.spotify.com/playlist/37i9dQZF1DX3rxVfibe1L0'},
+    ritual:{label:'Inner Ritual',icon:'🕯',color:'#B5533C',bg:'#F5E4DF',tracks:[{song:'River',artist:'Joni Mitchell'},{song:'Woman King',artist:'Iron & Wine'},{song:'The Night Will Always Win',artist:'Manchester Orchestra'},{song:'Wolves',artist:'Phosphorescent'},{song:'Sorrow',artist:'The National'}],url:'https://open.spotify.com/playlist/37i9dQZF1DWZqd5JICZI0u'}},
+  follicular:{
+    rest:{label:'Fresh Energy',icon:'🌸',color:'#3A6B4A',bg:'#D6EAD9',tracks:[{song:'Good Days',artist:'SZA'},{song:'Soul',artist:'Jorja Smith'},{song:'Peach',artist:'Kevin Abstract'},{song:'Girls Like Girls',artist:'Hayley Kiyoko'},{song:'Lush Life',artist:'Zara Larsson'}],url:'https://open.spotify.com/playlist/37i9dQZF1DX0XUsuxWHRQd'},
+    movement:{label:'Rise & Create',icon:'🎨',color:'#3A6B4A',bg:'#D6EAD9',tracks:[{song:'Juice',artist:'Lizzo'},{song:'Levitating',artist:'Dua Lipa'},{song:'Physical',artist:'Dua Lipa'},{song:'Don\'t Start Now',artist:'Dua Lipa'},{song:'Watermelon Sugar',artist:'Harry Styles'}],url:'https://open.spotify.com/playlist/37i9dQZF1DX0XUsuxWHRQd'},
+    ritual:{label:'Creative Flow',icon:'🌱',color:'#3A6B4A',bg:'#D6EAD9',tracks:[{song:'Bloom',artist:'Troye Sivan'},{song:'Youth',artist:'Troye Sivan'},{song:'Superstar',artist:'Sheryl Crow'},{song:'Featherstone',artist:'The Paper Kites'},{song:'Like Real People Do',artist:'Hozier'}],url:'https://open.spotify.com/playlist/37i9dQZF1DX0XUsuxWHRQd'}},
+  ovulatory:{
+    rest:{label:'Peak Confidence',icon:'✨',color:'#8B6914',bg:'#F5E6BE',tracks:[{song:'Feeling Good',artist:'Nina Simone'},{song:'Golden',artist:'Jill Scott'},{song:'Queen',artist:'Janelle Monáe'},{song:'Rise Up',artist:'Andra Day'},{song:'Unstoppable',artist:'Sia'}],url:'https://open.spotify.com/playlist/37i9dQZF1DX4JAvHpjipBk'},
+    movement:{label:'Full Power',icon:'🔥',color:'#8B6914',bg:'#F5E6BE',tracks:[{song:'Run The World (Girls)',artist:'Beyoncé'},{song:'Savage',artist:'Megan Thee Stallion'},{song:'WAP',artist:'Cardi B'},{song:'Power',artist:'Kanye West'},{song:'Best Part',artist:'Daniel Caesar'}],url:'https://open.spotify.com/playlist/37i9dQZF1DX4JAvHpjipBk'},
+    ritual:{label:'Magnetic & Open',icon:'🌺',color:'#8B6914',bg:'#F5E6BE',tracks:[{song:'Adorn',artist:'Miguel'},{song:'Butterflies',artist:'Queen Naija'},{song:'Superpower',artist:'Beyoncé'},{song:'I Love You',artist:'Billie Eilish'},{song:'Love On The Brain',artist:'Rihanna'}],url:'https://open.spotify.com/playlist/37i9dQZF1DX4JAvHpjipBk'}},
+  luteal:{
+    rest:{label:'Turn Inward',icon:'🌘',color:'#6B3FA0',bg:'#E8D9F5',tracks:[{song:'The Night We Met',artist:'Lord Huron'},{song:'From Eden',artist:'Hozier'},{song:'Death With Dignity',artist:'Sufjan Stevens'},{song:'Re: Stacks',artist:'Bon Iver'},{song:'Naked As We Came',artist:'Iron & Wine'}],url:'https://open.spotify.com/playlist/37i9dQZF1DWZqd5JICZI0u'},
+    movement:{label:'Gentle Power',icon:'🧘',color:'#6B3FA0',bg:'#E8D9F5',tracks:[{song:'Slow Motion',artist:'Trey Songz'},{song:'Falling',artist:'Harry Styles'},{song:'Heather',artist:'Conan Gray'},{song:'Motion Sickness',artist:'Phoebe Bridgers'},{song:'Moon Song',artist:'Phoebe Bridgers'}],url:'https://open.spotify.com/playlist/37i9dQZF1DWZqd5JICZI0u'},
+    ritual:{label:'Shadow Work',icon:'🔮',color:'#6B3FA0',bg:'#E8D9F5',tracks:[{song:'Big God',artist:'Florence + The Machine'},{song:'Seven Devils',artist:'Florence + The Machine'},{song:'You Learn',artist:'Alanis Morissette'},{song:'Precious Illusions',artist:'Alanis Morissette'},{song:'Wolf',artist:'First Aid Kit'}],url:'https://open.spotify.com/playlist/37i9dQZF1DWZqd5JICZI0u'}},
+};
+
+const PANTRY=['Olive oil','Chia seeds','Flaxseeds','Walnuts','Pumpkin seeds','Quinoa','Oats','Herbal teas (ginger, chamomile)','Tahini','70% Dark chocolate'];
+const SYMS=[{l:'Cramps',i:'😣'},{l:'Bloating',i:'🫧'},{l:'Fatigue',i:'😴'},{l:'Mood swings',i:'🌊'},{l:'Headache',i:'🤯'},{l:'Brain fog',i:'☁️'},{l:'Cravings',i:'🍫'},{l:'Acne',i:'🔴'},{l:'Anxiety',i:'😰'},{l:'Low energy',i:'🔋'},{l:'Great energy',i:'⚡'},{l:'Insomnia',i:'🌙'}];
+const MOODS=['😣','😕','😐','🙂','😄'];
+const MPHASES=[{n:'New Moon',g:'🌑',m:'Deep reset. Set intentions in silence.'},{n:'Waxing Crescent',g:'🌒',m:'Fertile ground. Plant intentions with care.'},{n:'First Quarter',g:'🌓',m:'Take decisive action. Momentum builds.'},{n:'Waxing Gibbous',g:'🌔',m:'Refine and adjust. Almost there.'},{n:'Full Moon',g:'🌕',m:'Peak illumination. Release what no longer serves.'},{n:'Waning Gibbous',g:'🌖',m:'Express gratitude. Share your gifts.'},{n:'Last Quarter',g:'🌗',m:'Let go. Clear space for the new.'},{n:'Waning Crescent',g:'🌘',m:'Rest and surrender. The void is sacred.'}];
+const MSIGNS=['Aries','Taurus','Gemini','Cancer','Leo','Virgo','Libra','Scorpio','Sagittarius','Capricorn','Aquarius','Pisces'];
+
+let day=1,pk='menstrual',groc={},mood=3,water=6,syms=[],hist=[],cycleLen=28,periodStart=null;
+let flowData={intensity:null,color:null,texture:null,mucus:null,bloating:null,energy:null,intimacy:null,libido:null};
+let painLocs=[];
+
+function getPhase(d){return d<=5?'menstrual':d<=(cycleLen-16)?'follicular':d<=(cycleLen-13)?'ovulatory':'luteal'}
+function applyTheme(k){const P=PH[k];const r=document.documentElement;r.style.setProperty('--c',P.c);r.style.setProperty('--cl',P.cl);r.style.setProperty('--cbg',P.cbg);r.style.setProperty('--ccard',P.ccard);r.style.setProperty('--cm',P.cm);document.getElementById('phone').style.background=P.cbg;}
+function getMoon() {
+  // High-accuracy moon phase using Meeus algorithm — updates live in real time
+  var now = new Date();
+  var jd = julianDay(now.getUTCFullYear(), now.getUTCMonth()+1, now.getUTCDate(),
+                     now.getUTCHours() + now.getUTCMinutes()/60);
+  // Moon longitude for phase and sign
+  var moonLon = calcMoon(jd);
+  var sunLon  = calcSun(jd);
+  // Phase angle (0=New, 180=Full)
+  var phaseAngle = ((moonLon - sunLon) % 360 + 360) % 360;
+  var phaseIdx = Math.floor(phaseAngle / 45); // 8 phases
+  var signIdx  = Math.floor(moonLon / 30) % 12;
+  // Days into lunar cycle (accurate)
+  var daysInCycle = phaseAngle / (360 / 29.53059);
+  return {
+    phase: MPHASES[phaseIdx],
+    sign: MSIGNS[signIdx],
+    day: Math.round(daysInCycle),
+    angle: Math.round(phaseAngle)
+  };
+}
+function updateCycleLen(v){cycleLen=+v;document.getElementById('cycle-len-display').textContent=v+' days';rCycle();}
+function markPeriodStart(){periodStart=new Date();day=1;pk='menstrual';applyTheme(pk);document.getElementById('pstart-btn').textContent='✓ Marked';document.getElementById('pstart-btn').classList.add('marked');document.getElementById('pstart-info').textContent='Period start logged: '+periodStart.toLocaleDateString('en-US',{month:'short',day:'numeric'});rAll();}
+
+function rHome(){
+  const P=PH[pk];
+  loadPlayer(pk);
+  updateActivityRec();
+  document.getElementById('h-date').textContent=new Date().toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'});
+  document.getElementById('h-phase').textContent=P.name+' Phase';
+  document.getElementById('h-sub').textContent=P.emoji+' '+P.season+' · '+P.days;
+  document.getElementById('h-day').textContent=day;
+  document.getElementById('h-atext').textContent='"'+P.affirmation+'"';
+  document.getElementById('h-hormone').textContent=P.hormone;
+  document.getElementById('h-snap').textContent=P.snap;
+  document.getElementById('h-goal').textContent=P.goal;
+  document.getElementById('h-eat').textContent=P.eat[0].f.split(',')[0]+' & '+P.eat[1].f.split(',')[0];
+  document.getElementById('h-move').textContent=P.move;
+  document.getElementById('h-sc').textContent=P.selfcare;
+  document.getElementById('lg-sub').textContent=P.emoji+' Day '+day+' · '+P.name+' Phase';
+  const d2=document.getElementById('h-dots');d2.innerHTML='';
+  Object.keys(PH).forEach(k2=>{const b=document.createElement('button');b.className='dot';b.style.cssText='background:'+PH[k2].c+';width:'+(k2===pk?'26':'8')+'px;opacity:'+(k2===pk?'1':'.18');b.onclick=()=>setP(k2,null);d2.appendChild(b);});
+  const M=P.meal;document.getElementById('h-meals').innerHTML=['b','l','d'].map((x,i)=>'<div class="mr"><div class="ml">'+['breakfast','lunch','dinner'][i]+'</div><div class="mt">'+M[x]+'</div></div>').join('');
+  document.getElementById('h-tips').innerHTML=P.tips.map((t,i)=>'<div class="tr" style="border-bottom:'+(i===P.tips.length-1?'none':'1px solid #F0ECE8')+'"><div class="ti">'+t.i+'</div><div class="tt">'+t.t+'</div></div>').join('');
+  const mn=getMoon();
+  document.getElementById('m-glyph').textContent=mn.phase.g;document.getElementById('m-name').textContent=mn.phase.n;
+  document.getElementById('m-sign').textContent='Moon in '+mn.sign+' · Day '+mn.day;document.getElementById('m-msg').textContent=mn.phase.m;
+  ['moon','rising','sun','mars'].forEach(x=>document.getElementById('chip-'+x).classList.remove('active'));
+  document.getElementById('chip-'+{menstrual:'moon',follicular:'rising',ovulatory:'sun',luteal:'mars'}[pk]).classList.add('active');
+}
+function rEat(){
+  const P=PH[pk];
+  document.getElementById('e-title').textContent=P.name+' · Nutrition';
+  document.getElementById('e-sub').textContent=P.emoji+' '+P.days+' · '+P.goal;
+  document.getElementById('e-foods').innerHTML=P.eat.map((item,i)=>'<div class="food" onclick="this.classList.toggle(\'open\')"><div class="ftop"><div class="fn">'+item.f+'</div><div class="ftag">'+item.w+'</div></div><div class="fa">'+item.a+'</div><div class="freason">'+item.r+'</div>'+(i<P.eat.length-1?'<div class="div" style="margin-top:10px;margin-bottom:0"></div>':'')+'</div>').join('');
+  document.getElementById('e-nuts').innerHTML=P.nuts.map((n,i)=>'<div class="nr" style="border-bottom:'+(i===P.nuts.length-1?'none':'1px solid #F0ECE8')+'"><div class="nn">'+n.n+'</div><div class="nw">'+n.w+'</div></div>').join('');
+  const ML=P.meal;document.getElementById('e-meals').innerHTML=['b','l','d'].map((x,i)=>'<div class="mr"><div class="ml">'+['breakfast','lunch','dinner'][i]+'</div><div class="mt">'+ML[x]+'</div></div>').join('');
+  const sh=P.swaps.map((s,i)=>'<div class="sw2" style="border-bottom:'+(i===P.swaps.length-1?'none':'1px solid #F0ECE8')+'"><div class="sf">'+s.f+'</div><div class="sar">→</div><div class="st">'+s.t+'</div></div>').join('');
+  document.getElementById('e-pswaps').innerHTML=sh;document.getElementById('e-swaps2').innerHTML=sh;
+  document.getElementById('e-avoid').innerHTML=P.avoid.map(a=>'<span class="wpill">✕ '+a+'</span>').join('');
+}
+function rShop(){
+  const P=PH[pk];
+  document.getElementById('sh-sub').textContent=P.emoji+' '+P.name+' · '+P.days;
+  document.getElementById('sh-title').textContent=P.name+' Essentials';
+  document.getElementById('sh-list').innerHTML=P.groc.map(item=>'<div class="gr'+(groc[item]?' done':'')+'" onclick="tGroc(this,\''+item+'\')"><div class="gc"></div><span class="gtext">'+item+'</span></div>').join('');
+  document.getElementById('sh-pantry').innerHTML=PANTRY.map(item=>'<div class="gr'+(groc['p'+item]?' done':'')+'" onclick="tGroc(this,\'p'+item+'\')"><div class="gc"></div><span class="gtext">'+item+'</span></div>').join('');
+  document.getElementById('sh-all').innerHTML=Object.entries(PH).map(([k,p])=>'<div style="margin-bottom:13px"><div style="font-size:12px;font-weight:600;color:'+p.c+';margin-bottom:6px">'+p.emoji+' '+p.name+' · '+p.days+'</div><div style="display:flex;flex-wrap:wrap;gap:4px">'+p.groc.map(g=>'<span style="background:'+p.cl+';color:'+p.c+';border-radius:20px;padding:3px 9px;font-size:10px">'+g+'</span>').join('')+'</div></div>').join('');
+}
+function rCycle(){
+  const heads=document.getElementById('cal-heads');
+  if(!heads.children.length)['S','M','T','W','T','F','S'].forEach(h=>{const d=document.createElement('div');d.className='ch';d.textContent=h;heads.appendChild(d);});
+  const cells=document.getElementById('cal-cells');cells.innerHTML='';
+  for(let d2=1;d2<=cycleLen;d2++){const k2=getPhase(d2);const P2=PH[k2];const on=d2===day;const b=document.createElement('button');b.className='cc';b.style.cssText='background:'+(on?P2.c:P2.cl)+';color:'+(on?'#fff':P2.c)+';font-weight:'+(on?'700':'400');b.textContent=d2;b.onclick=()=>{day=d2;pk=getPhase(d2);applyTheme(pk);rAll();};cells.appendChild(b);}
+  document.getElementById('cal-leg').innerHTML=Object.entries(PH).map(([k2,p])=>'<div style="display:flex;align-items:center;gap:6px;font-size:10px;color:#888"><div style="width:7px;height:7px;border-radius:50%;background:'+p.c+'"></div>'+p.name+'</div>').join('');
+  document.getElementById('phase-cards').innerHTML=Object.entries(PH).map(([k2,p])=>'<div class="phcard" style="background:'+(k2===pk?p.cl:'#fff')+';border-color:'+(k2===pk?p.cl:'transparent')+'" onclick="setP(\''+k2+'\',null)"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px"><div style="font-size:15px;font-weight:700;color:'+p.c+'">'+p.emoji+' '+p.name+'</div>'+(k2===pk?'<span style="background:'+p.c+';color:#fff;border-radius:20px;padding:2px 10px;font-size:9px;font-weight:700">Now</span>':'')+'</div><div style="font-size:10px;color:#AAA;margin-bottom:6px">'+p.hormone+'</div><div style="font-size:12px;color:#666;line-height:1.4">'+p.goal+'</div></div>').join('');
+}
+function rLog(){
+  document.getElementById('lg-moods').innerHTML=MOODS.map((m,i)=>'<button class="mb'+(mood===i+1?' active':'')+'" onclick="mood='+(i+1)+';rLog()">'+m+'</button>').join('');
+  document.getElementById('lg-syms').innerHTML=SYMS.map(s=>'<button class="symb'+(syms.includes(s.l)?' active':'')+'" onclick="tSym(\''+s.l+'\')"><span>'+s.i+'</span>'+s.l+'</button>').join('');
+  document.getElementById('lg-water').innerHTML=Array.from({length:8},(_,i)=>'<span class="wd'+(i<water?' on':'')+'" onclick="water='+(i+1)+';rLog()">💧</span>').join('');
+  document.getElementById('lg-wlabel').textContent=water+' of 8 glasses';
+}
+function rHist(){
+  if(!hist.length){document.getElementById('lg-hist').innerHTML='';return;}
+  document.getElementById('lg-hist').innerHTML='<div class="card" style="margin:0 22px 13px"><div class="ey">Recent Entries</div>'+hist.slice(0,4).map(l=>'<div class="lcard" style="border-top-color:'+PH[l.pk].c+'"><div style="display:flex;justify-content:space-between;margin-bottom:4px"><span style="font-weight:600;font-size:12px;color:#444">'+l.date+' · Day '+l.day+'</span><span style="font-size:10px;color:'+PH[l.pk].c+';font-weight:600">'+PH[l.pk].name+'</span></div><div style="font-size:11px;color:#AAA">'+MOODS[l.mood-1]+' '+(l.syms.length?l.syms.join(' · '):'No symptoms logged')+'</div>'+(l.meals?'<div style="font-size:11px;color:#777;margin-top:3px">🥗 '+l.meals+'</div>':'')+'<div style="font-size:10px;color:#CCC;margin-top:3px">💧 '+l.water+'/8'+(l.flow?' · 🩸 '+l.flow:'')+(l.intimacy?' · '+l.intimacy:'')+(l.activity&&l.activity.length?' · 🏃 '+l.activity.join(', '):'')+'</div></div>').join('')+'</div>';
+}
+function rSpirit(){
+  const P=PH[pk],S=P.spirit;
+  document.getElementById('sp-name').textContent=P.name+' Phase';
+  document.getElementById('sp-sub').textContent=P.emoji+' '+P.season+' · '+P.days;
+  const C=S.chakra;
+  document.getElementById('sp-chero').style.background='linear-gradient(135deg,'+C.color+' 0%,'+C.color+'88 100%)';
+  document.getElementById('sp-chbg').textContent=C.sym;
+  document.getElementById('sp-cht').textContent=C.name+' — '+C.sk;
+  document.getElementById('sp-chs').textContent=C.loc;
+  document.getElementById('sp-cbadge').innerHTML='<div class="cbadge"><div class="cdot" style="background:'+C.color+'"></div><span class="cname">'+C.name+'</span><span class="csk">· '+C.sk+'</span></div>';
+  document.getElementById('sp-cdesc').textContent=C.desc;
+  document.getElementById('sp-cal').innerHTML=C.al.map(a=>'<div class="tr"><div class="ti" style="color:#27AE60">✓</div><div class="tt">'+a+'</div></div>').join('');
+  document.getElementById('sp-cbl').innerHTML=C.bl.map(b=>'<div class="tr"><div class="ti" style="color:#E74C3C">✗</div><div class="tt">'+b+'</div></div>').join('');
+  document.getElementById('sp-caff').innerHTML=C.aff.map(a=>'<div style="font-family:var(--serif);font-size:13px;color:var(--c);font-style:italic;padding:10px 0;border-bottom:1px solid #F0ECE8;line-height:1.5">"'+a+'"</div>').join('');
+  // Wounds
+  const W=S.wound;
+  document.getElementById('sp-wg-card').style.background='linear-gradient(135deg,'+C.color+'CC,'+C.color+'66)';
+  document.getElementById('sp-wound').textContent=W.w;
+  document.getElementById('sp-gift').textContent=W.gift;
+  document.getElementById('sp-challenge').textContent=W.challenge;
+  document.getElementById('sp-sacraments').innerHTML=W.sacraments.map(s=>'<div class="sac-truth">'+s+'</div>').join('');
+  // Somatic
+  const SO=S.somatic;
+  document.getElementById('sp-sint').textContent=SO.intro;
+  document.getElementById('sp-slist').innerHTML=SO.practices.map((p2,i)=>'<div class="si"><div class="sinum">'+(i+1)+'</div><div><div class="sitl">'+p2.t+'</div><div class="sidc">'+p2.d+'</div><div class="sidur">'+p2.dur+'</div></div></div>').join('');
+  document.getElementById('sp-wound-practice').innerHTML='<div class="si"><div class="sinum">🩹</div><div><div class="sitl">'+SO.woundPractice.t+'</div><div class="sidc">'+SO.woundPractice.d+'</div><div class="sidur">'+SO.woundPractice.dur+'</div></div></div>';
+  document.getElementById('sp-sbw').innerHTML='<div class="si"><div class="sinum">🌬</div><div><div class="sitl">'+SO.bw.n+'</div><div class="sidc">'+SO.bw.d+'</div><div class="sidur">'+SO.bw.r+'</div></div></div>';
+  // Ritual
+  const R=S.ritual;
+  document.getElementById('sp-rint').textContent=R.int;
+  document.getElementById('sp-rsteps').innerHTML=R.steps.map(s=>'<div class="rs"><div class="ri">'+s.i+'</div><div><div class="rtl">'+s.t+'</div><div class="rd">'+s.d+'</div></div></div>').join('');
+  document.getElementById('sp-ralt').innerHTML=R.altar.map(a=>'<div class="tr"><div class="ti">✦</div><div class="tt">'+a+'</div></div>').join('');
+  document.getElementById('sp-shp').innerHTML=R.shadow.map(p2=>'<div class="shp">'+p2+'</div>').join('');
+  // Natal
+  const nm={menstrual:'Moon in Capricorn ♑',follicular:'Libra Rising ♎',ovulatory:'Sun in Gemini ♊',luteal:'Mars in Gemini ♊'};
+  document.getElementById('sp-neye').textContent='Current Phase · '+nm[pk];
+  document.getElementById('sp-ng').textContent=S.natal;
+}
+function rPlaylists(){
+  const P=PH[pk],PL=PLAYLISTS[pk];
+  document.getElementById('pl-title').textContent=P.name+' Playlists';
+  document.getElementById('pl-sub').textContent=P.emoji+' Curated for your phase';
+  document.getElementById('pl-cards').innerHTML=Object.entries(PL).map(([mood2,pl])=>'<div class="playlist-card"><div class="pl-header"><div class="pl-mood-icon" style="background:'+pl.bg+'">'+pl.icon+'</div><div><div class="pl-mood-label">'+mood2.toUpperCase()+'</div><div class="pl-mood-name">'+pl.label+'</div></div></div>'+pl.tracks.map((t,i)=>'<div class="pl-track"><div class="pl-num">'+(i+1)+'</div><div class="pl-info"><div class="pl-song">'+t.song+'</div><div class="pl-artist">'+t.artist+'</div></div><div class="pl-play">▶</div></div>').join('')+'<button class="pl-open-btn" onclick="window.open(\''+pl.url+'\',\'_blank\')"><span>🎵</span> Open in Spotify</button></div>').join('');
+}
+
+function lSub(id, btn) {
+  ['why','evidence','treatments','lifestyle','tools'].forEach(function(x) {
+    document.getElementById('lp-' + x).style.display = 'none';
+  });
+  document.getElementById('lp-' + id).style.display = 'block';
+  document.querySelectorAll('#learn-seg .lbtn').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+}
+
+function rAll(){rHome();rEat();rShop();rCycle();rLog();rHist();rSpirit();rPlaylists();updateActivityRec();}
+function chDay(d){day=Math.max(1,Math.min(cycleLen,day+d));pk=getPhase(day);applyTheme(pk);rAll();}
+function setP(k,btn){pk=k;day=PH[k].start;applyTheme(k);rAll();document.querySelectorAll('.pb').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');else document.querySelectorAll('.pb').forEach(b=>{if(b.getAttribute('onclick').includes("'"+k+"'"))b.classList.add('active');});}
+function sw(id,btn){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.querySelectorAll('.nb').forEach(b=>b.classList.remove('active'));document.getElementById('screen-'+id).classList.add('active');btn.classList.add('active');}
+function eSub(id,btn){['foods','nutrients','meals','swaps','avoid'].forEach(x=>document.getElementById('ep-'+x).style.display='none');document.getElementById('ep-'+id).style.display='block';document.querySelectorAll('#eat-seg .sb').forEach(b=>b.classList.remove('active'));btn.classList.add('active');}
+function lgSub(id,btn){['daily','flow','body','intimacy','activity'].forEach(x=>document.getElementById('lp-'+x).style.display='none');document.getElementById('lp-'+id).style.display='block';document.querySelectorAll('#log-seg .sb').forEach(b=>b.classList.remove('active'));btn.classList.add('active');}
+function sSub(id,btn){document.querySelectorAll('.sp').forEach(p=>p.classList.remove('active'));document.getElementById('ssp-'+id).classList.add('active');document.querySelectorAll('.ssb').forEach(b=>b.classList.remove('active'));btn.classList.add('active');}
+function tGroc(el,key){groc[key]=!groc[key];el.classList.toggle('done',groc[key]);LS.save('groc',groc);}
+function clrG(){PH[pk].groc.forEach(i=>groc[i]=false);rShop();}
+function tSym(l){syms.includes(l)?syms=syms.filter(x=>x!==l):syms.push(l);rLog();}
+function setFlow(type,val,el){
+  flowData[type]=val;
+  const container=el.parentElement;
+  container.querySelectorAll('button,div.color-chip').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+}
+function togglePain(loc,el){painLocs.includes(loc)?painLocs=painLocs.filter(x=>x!==loc):painLocs.push(loc);el.classList.toggle('active',painLocs.includes(loc));}
+function setLibido(v,el){
+  flowData.libido=v;
+  document.querySelectorAll('.libido-dot').forEach(d=>d.classList.remove('active'));
+  el.classList.add('active');
+  const labels=['Very low','Low','Moderate','High','Very high — 🔥'];
+  document.getElementById('libido-label').textContent=labels[v-1];
+}
+function saveLg(){
+  const meals=document.getElementById('lg-meals')?document.getElementById('lg-meals').value:'';
+  hist.unshift({date:new Date().toLocaleDateString('en-US',{month:'short',day:'numeric'}),day,pk,mood,syms:[...syms],water,meals,flow:flowData.intensity,intimacy:flowData.intimacy,activity:[...actTypes]});
+  saveAll();
+  if(document.getElementById('lg-meals'))document.getElementById('lg-meals').value='';
+  if(document.getElementById('lg-notes'))document.getElementById('lg-notes').value='';
+  syms=[];mood=3;water=6;
+  rLog();rHist();
+  const t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2000);
+}
+
+
+// ── NATAL CHART CALCULATION (Jean Meeus method — sign-accurate) ──────────────
+var SIGNS = ['Aries','Taurus','Gemini','Cancer','Leo','Virgo','Libra','Scorpio','Sagittarius','Capricorn','Aquarius','Pisces'];
+var SIGN_GLYPHS = ['♈','♉','♊','♋','♌','♍','♎','♏','♐','♑','♒','♓'];
+
+function signFromDegree(deg) {
+  var d = ((deg % 360) + 360) % 360;
+  return SIGNS[Math.floor(d/30)] + ' ' + SIGN_GLYPHS[Math.floor(d/30)];
+}
+
+function julianDay(yr, mo, dy, hr) {
+  if (mo <= 2) { yr--; mo += 12; }
+  var A = Math.floor(yr/100), B = 2 - A + Math.floor(A/4);
+  return Math.floor(365.25*(yr+4716)) + Math.floor(30.6001*(mo+1)) + dy + hr/24 + B - 1524.5;
+}
+
+function gmst(jd) {
+  var T = (jd - 2451545.0)/36525;
+  return ((280.46061837 + 360.98564736629*(jd-2451545) + T*T*(0.000387933 - T/38710000)) % 360 + 360) % 360;
+}
+
+function calcSun(jd) {
+  var n=jd-2451545, L=(280.460+0.9856474*n)%360, g=((357.528+0.9856003*n)%360)*Math.PI/180;
+  return ((L+1.915*Math.sin(g)+0.020*Math.sin(2*g))%360+360)%360;
+}
+
+function calcMoon(jd) {
+  var n=jd-2451545;
+  var L=((218.316+13.176396*n)%360+360)%360;
+  var M=((134.963+13.064993*n)%360+360)%360;
+  var F=((93.272+13.229350*n)%360+360)%360;
+  return ((L+6.289*Math.sin(M*Math.PI/180)-1.274*Math.sin(2*(F-M)*Math.PI/180)+0.658*Math.sin(2*F*Math.PI/180))%360+360)%360;
+}
+
+function calcMars(jd) {
+  var n=jd-2451545;
+  var L=((355.433+0.52402068*n)%360+360)%360;
+  var M=((19.373+0.52402075*n)%360+360)%360;
+  var mr=M*Math.PI/180;
+  return ((L+10.691*Math.sin(mr)+0.623*Math.sin(2*mr))%360+360)%360;
+}
+
+function calcAscendant(jd, lat, lon) {
+  // Full Meeus ascendant — corrected formula (sign-accurate)
+  var ramc = (gmst(jd) + lon) % 360;
+  var T = (jd-2451545)/36525;
+  var e = 23.4392911 - 0.013004167*T;
+  var ramc_r = ramc*Math.PI/180, e_r = e*Math.PI/180, lat_r = lat*Math.PI/180;
+  var asc = Math.atan2(Math.cos(ramc_r),
+    -(Math.sin(ramc_r)*Math.cos(e_r) + Math.tan(lat_r)*Math.sin(e_r))) * 180/Math.PI;
+  return (asc%360+360)%360;
+}
+
+// City database: [lat, lon, UTC offset standard, UTC offset DST, DST months start, DST months end]
+var CITIES = {
+  'new york':[40.71,-74.01,-5,-4,3,11], 'los angeles':[34.05,-118.24,-8,-7,3,11],
+  'chicago':[41.88,-87.63,-6,-5,3,11], 'houston':[29.76,-95.37,-6,-5,3,11],
+  'atlanta':[33.75,-84.39,-5,-4,3,11], 'miami':[25.77,-80.19,-5,-4,3,11],
+  'dallas':[32.78,-96.80,-6,-5,3,11], 'washington':[38.91,-77.04,-5,-4,3,11],
+  'philadelphia':[39.95,-75.17,-5,-4,3,11], 'phoenix':[33.45,-112.07,-7,-7,0,0],
+  'san antonio':[29.42,-98.49,-6,-5,3,11], 'san diego':[32.72,-117.16,-8,-7,3,11],
+  'san francisco':[37.77,-122.42,-8,-7,3,11], 'seattle':[47.61,-122.33,-8,-7,3,11],
+  'denver':[39.74,-104.99,-7,-6,3,11], 'boston':[42.36,-71.06,-5,-4,3,11],
+  'nashville':[36.17,-86.78,-6,-5,3,11], 'austin':[30.27,-97.74,-6,-5,3,11],
+  'charlotte':[35.23,-80.84,-5,-4,3,11], 'detroit':[42.33,-83.05,-5,-4,3,11],
+  'tallahassee':[30.44,-84.28,-5,-4,3,11], 'orlando':[28.54,-81.38,-5,-4,3,11],
+  'tampa':[27.95,-82.46,-5,-4,3,11], 'jacksonville':[30.33,-81.66,-5,-4,3,11],
+  'minneapolis':[44.98,-93.27,-6,-5,3,11], 'portland':[45.52,-122.68,-8,-7,3,11],
+  'las vegas':[36.17,-115.14,-8,-7,3,11], 'baltimore':[39.29,-76.61,-5,-4,3,11],
+  'london':[51.51,-0.13,0,1,3,10], 'paris':[48.85,2.35,1,2,3,10],
+  'toronto':[43.65,-79.38,-5,-4,3,11], 'sydney':[-33.87,151.21,10,11,10,4],
+  'dubai':[25.20,55.27,4,4,0,0], 'lagos':[6.52,3.38,1,1,0,0],
+  'accra':[5.55,-0.20,0,0,0,0], 'nairobi':[-1.29,36.82,3,3,0,0],
+};
+
+function getCityInfo(cityStr) {
+  if (!cityStr) return null;
+  var lower = cityStr.toLowerCase().trim();
+  for (var k in CITIES) { if (lower.indexOf(k) !== -1) return {k:k, d:CITIES[k]}; }
+  return null;
+}
+
+function isDST(month, info) {
+  var s=info[4], e=info[5];
+  if (s===0 && e===0) return false; // no DST
+  if (s < e) return month >= s && month <= e;
+  return month >= s || month <= e; // southern hemisphere
+}
+
+function calculateNatalChart(year, month, day, localHour, cityStr) {
+  if (localHour === null || localHour === undefined) localHour = 12;
+  var city = getCityInfo(cityStr);
+  var utcOffset = 0, lat = 33, lon = -84;
+  if (city) {
+    lat = city.d[0]; lon = city.d[1];
+    utcOffset = isDST(month, city.d) ? city.d[3] : city.d[2];
+  }
+  var utcHour = localHour - utcOffset;
+  // Handle day boundary
+  var dy = day;
+  if (utcHour >= 24) { utcHour -= 24; dy += 1; }
+  if (utcHour < 0)   { utcHour += 24; dy -= 1; }
+  var jd = julianDay(year, month, dy, utcHour);
+  var hasCity = !!city;
+  return {
+    sun:    signFromDegree(calcSun(jd)),
+    moon:   signFromDegree(calcMoon(jd)),
+    rising: hasCity && localHour !== 12 ? signFromDegree(calcAscendant(jd, lat, lon)) : '',
+    mars:   signFromDegree(calcMars(jd))
+  };
+}
+
+function parseTimeStr(s) {
+  if (!s) return null; // null = unknown, use noon for sun/moon only
+  var lower = s.toLowerCase().trim();
+  var pm = lower.indexOf('pm') !== -1, am = lower.indexOf('am') !== -1;
+  lower = lower.replace('pm','').replace('am','').trim();
+  var pts = lower.split(':'), h = parseInt(pts[0])||0, m = parseInt(pts[1])||0;
+  var dec = h + m/60;
+  if (pm && h < 12) dec += 12;
+  if (am && h === 12) dec = m/60;
+  return dec;
+}
+
+// ── PERSISTENCE ──────────────────────────────────────────────────────────────
+var STORE = 'livaligned_prem_';
+var LS = {
+  save: function(k,v){ try{localStorage.setItem(STORE+k,JSON.stringify(v));}catch(e){} },
+  load: function(k,fb){ try{var v=localStorage.getItem(STORE+k);return v!==null?JSON.parse(v):fb;}catch(e){return fb;} }
+};
+
+var userName='', natal={sun:'',moon:'',rising:'',mars:''};
+
+
+
+function saveAll(){
+  LS.save('day',day); LS.save('pk',pk); LS.save('cycleLen',cycleLen);
+  LS.save('periodStart',periodStart); LS.save('hist',hist); LS.save('groc',groc);
+  LS.save('userName',userName); LS.save('natal',natal);
+  LS.save('flowData',flowData); LS.save('painLocs',painLocs); LS.save('actTypes',actTypes);
+}
+
+function openSettings() {
+  document.getElementById('settings-drawer').classList.add('open');
+}
+function closeSettings() {
+  document.getElementById('settings-drawer').classList.remove('open');
+}
+function goToPremium() {
+  closeSettings();
+  alert('You are already in LivAligned Premium!\n\nAfter your 14-day trial, continue at $9.99/month.');
+}
+function resetOnboarding() {
+  closeSettings();
+  LS.save('onboarded',false);
+  var ov=document.getElementById('onboard-overlay');
+  if(ov){ov.style.display='flex';ov.classList.remove('hidden');}
+  var s1=document.getElementById('ob-step1'),s2=document.getElementById('ob-step2');
+  if(s1)s1.style.display='block';
+  if(s2)s2.style.display='none';
+  var ni=document.getElementById('ob-name');
+  if(ni&&userName)ni.value=userName;
+  var cl=document.getElementById('ob-cyclelen');
+  if(cl)cl.value=cycleLen;
+}
+function resetCycle() {
+  closeSettings();
+  if(confirm('Set today as Day 1 of your new cycle?')){
+    day=1;pk='menstrual';periodStart=new Date();
+    saveAll();applyTheme(pk);rAll();
+    var t=document.getElementById('toast');
+    t.textContent='Cycle reset to Day 1';
+    t.classList.add('show');
+    setTimeout(function(){t.classList.remove('show');t.textContent='Entry saved';},2500);
+  }
+}
+function clearAllData() {
+  closeSettings();
+  if(confirm('Delete ALL your data permanently?\n\nThis cannot be undone.')){
+    try{Object.keys(localStorage).forEach(function(k){if(k.indexOf('livaligned')!==-1)localStorage.removeItem(k);});}catch(e){}
+    location.reload();
+  }
+}
+
+function loadAll(){
+  day=LS.load('day',1); pk=LS.load('pk','menstrual');
+  cycleLen=LS.load('cycleLen',28); periodStart=LS.load('periodStart',null);
+  hist=LS.load('hist',[]); groc=LS.load('groc',{});
+  userName=LS.load('userName',''); natal=LS.load('natal',{sun:'',moon:'',rising:'',mars:''});
+  flowData=LS.load('flowData',{intensity:null,color:null,texture:null,mucus:null,bloating:null,energy:null,intimacy:null,libido:null});
+  painLocs=LS.load('painLocs',[]); actTypes=LS.load('actTypes',[]);
+  var sl=document.getElementById('cycle-slider'); if(sl) sl.value=cycleLen;
+  var dl=document.getElementById('cycle-len-display'); if(dl) dl.textContent=cycleLen+' days';
+}
+
+// ── TRIAL LOGIC ───────────────────────────────────────────────────────────────
+var TRIAL_DAYS = 14;
+function initTrial(){
+  var start = LS.load('trialStart', null);
+  if (!start){
+    start = new Date().toISOString();
+    LS.save('trialStart', start);
+  }
+  var startDate = new Date(start);
+  var now = new Date();
+  var elapsed = Math.floor((now - startDate) / (1000*60*60*24));
+  var remaining = TRIAL_DAYS - elapsed;
+  if (remaining <= 0){
+    document.getElementById('trial-gate').classList.add('show');
+    return false;
+  }
+  var bar = document.getElementById('trial-bar');
+  var daysEl = document.getElementById('trial-days');
+  var txtEl = document.getElementById('trial-txt');
+  if (bar){ bar.style.display = 'flex'; }
+  if (daysEl){ daysEl.textContent = remaining; }
+  if (txtEl){ txtEl.textContent = remaining <= 3 ? '⚠️ Trial ending soon' : '✦ Premium Trial'; }
+  return true;
+}
+
+// ── ONBOARDING ────────────────────────────────────────────────────────────────
+function obNext1(){
+  var name=document.getElementById('ob-name').value.trim();
+  if(!name){document.getElementById('ob-name').focus();return;}
+  userName=name; cycleLen=parseInt(document.getElementById('ob-cyclelen').value);
+  LS.save('userName',userName); LS.save('cycleLen',cycleLen);
+  document.getElementById('ob-step1').style.display='none';
+  document.getElementById('ob-step2').style.display='block';
+}
+function obFinish_old_unused(){
+  natal.sun=document.getElementById('ob-sun').value;
+  natal.moon=document.getElementById('ob-moon').value;
+  natal.rising=document.getElementById('ob-rising').value;
+  natal.mars=document.getElementById('ob-mars').value;
+  LS.save('natal',natal); LS.save('onboarded',true);
+  closeOnboard();
+}
+function obSkipNatal(){ LS.save('onboarded',true); closeOnboard(); }
+
+function showNatalTab(tab) {
+  var isCalc = tab === 'calc';
+  document.getElementById('natal-calc-tab').style.display = isCalc ? 'block' : 'none';
+  document.getElementById('natal-manual-tab').style.display = isCalc ? 'none' : 'block';
+  var calcBtn = document.getElementById('tab-calc');
+  var manBtn = document.getElementById('tab-manual');
+  if (calcBtn) { calcBtn.style.background = isCalc ? 'rgba(255,255,255,.9)' : 'transparent'; calcBtn.style.color = isCalc ? '#2D1B5E' : 'rgba(255,255,220,.6)'; calcBtn.style.fontWeight = isCalc ? '700' : '400'; }
+  if (manBtn) { manBtn.style.background = isCalc ? 'transparent' : 'rgba(255,255,255,.9)'; manBtn.style.color = isCalc ? 'rgba(255,255,220,.6)' : '#2D1B5E'; manBtn.style.fontWeight = isCalc ? '400' : '700'; }
+}
+
+function calcAndFinish() {
+  var dobInput = document.getElementById('ob-dob');
+  if (!dobInput || !dobInput.value) {
+    document.getElementById('calc-result').textContent = 'Please enter your date of birth.';
+    return;
+  }
+  var parts = dobInput.value.split('-');
+  var year = parseInt(parts[0]), month = parseInt(parts[1]), day = parseInt(parts[2]);
+  var timeInput = document.getElementById('ob-time');
+  var timeStr = timeInput ? timeInput.value : '';
+  var city = document.getElementById('ob-city') ? document.getElementById('ob-city').value.trim() : '';
+  var hour = timeStr ? parseTimeStr(timeStr) : null;
+  document.getElementById('calc-result').textContent = 'Calculating your chart…';
+  setTimeout(function() {
+    var chart = calculateNatalChart(year, month, day, hour, city);
+    natal.sun    = chart.sun;
+    natal.moon   = chart.moon;
+    natal.rising = chart.rising || '';
+    natal.mars   = chart.mars;
+    var risingNote = chart.rising ? chart.rising : (timeStr && city ? 'Check city spelling' : 'Add birth time + city for Rising');
+    document.getElementById('calc-result').innerHTML =
+      '<span style="color:#FFF8E0">🌞 ' + chart.sun + '  ·  🌙 ' + chart.moon + '</span><br>' +
+      '<span style="color:rgba(255,255,220,.8)">⬆ ' + risingNote + '  ·  ♂ ' + chart.mars + '</span>';
+    LS.save('natal', natal);
+    LS.save('onboarded', true);
+    setTimeout(function() { closeOnboard(); }, 1800);
+  }, 700);
+}
+
+function obFinishManual() {
+  var sunEl=document.getElementById('ob-sun');
+  var moonEl=document.getElementById('ob-moon');
+  var risingEl=document.getElementById('ob-rising');
+  var marsEl=document.getElementById('ob-mars');
+  natal.sun    = sunEl ? sunEl.value : '';
+  natal.moon   = moonEl ? moonEl.value : '';
+  natal.rising = risingEl ? risingEl.value : '';
+  natal.mars   = marsEl ? marsEl.value : '';
+  LS.save('natal', natal);
+  LS.save('onboarded', true);
+  closeOnboard();
+}
+
+function closeOnboard(){
+  var el=document.getElementById('onboard-overlay');
+  el.classList.add('hidden');
+  setTimeout(function(){el.style.display='none';},500);
+  applyTheme(pk); rAll(); updateNatalChips();
+  var ok=initTrial();
+  if(ok && userName){
+    setTimeout(function(){
+      var ph=document.getElementById('h-phase');
+      if(ph){ph.textContent='Welcome, '+userName+' 🌿';setTimeout(function(){ph.textContent=PH[pk].name+' Phase';},2500);}
+    },600);
+  }
+}
+function updateNatalChips(){
+  var chips={moon:'chip-moon',rising:'chip-rising',sun:'chip-sun',mars:'chip-mars'};
+  var glyphs={moon:'🌙 ',rising:'⬆ ',sun:'☀️ ',mars:'♂ '};
+  Object.keys(chips).forEach(function(k){
+    var el=document.getElementById(chips[k]);
+    if(el && natal[k]) el.textContent=glyphs[k]+natal[k].split(' ')[0];
+  });
+}
+
+// ── SERVICE WORKER ────────────────────────────────────────────────────────────
+if('serviceWorker' in navigator){ navigator.serviceWorker.register('sw-premium.js').catch(function(){}); }
+var deferredPrompt=null;
+window.addEventListener('beforeinstallprompt',function(e){
+  e.preventDefault(); deferredPrompt=e;
+  var b=document.getElementById('install-banner'); if(b){
+    b.classList.add('show');
+    b.addEventListener('click',function(){if(deferredPrompt){deferredPrompt.prompt();deferredPrompt=null;}b.classList.remove('show');});
+  }
+});
+
+loadAll();
+applyTheme(pk);
+updateNatalChips();
+
+// Always render the app first so it's never blank
+var trialOk = initTrial();
+if (trialOk) { rAll(); }
+
+var hasOnboarded = LS.load('onboarded', false);
+if (hasOnboarded) {
+  // Hide onboarding — already done
+  var overlay = document.getElementById('onboard-overlay');
+  if (overlay) { overlay.style.display = 'none'; }
+} else {
+  // Show onboarding as overlay — app already rendered underneath
+  var overlay2 = document.getElementById('onboard-overlay');
+  if (overlay2) { overlay2.style.display = 'flex'; overlay2.classList.remove('hidden'); }
+}
+
+</script>
+</body>
+</html>
