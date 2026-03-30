@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LivAligned — Free</title>
+<meta name="theme-color" content="#B5533C">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="LivAligned">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23B5533C'/><text y='.9em' font-size='72' x='12'>🌿</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--c:#B5533C;--cl:#F5E4DF;--cbg:#FBF5F3;--ccard:#F0D8D2;--cm:#C4806E;--serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;--r:20px;--sh:0 2px 20px rgba(0,0,0,.06)}
+body{background:#E8E0D8;background-image:radial-gradient(ellipse at 20% 20%,#D4C8BE,transparent 60%),radial-gradient(ellipse at 80% 80%,#C8BEB4,transparent 60%);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:36px 20px 60px;font-family:var(--sans)}
+.pt{font-family:var(--serif);font-size:24px;color:#4A3728;margin-bottom:3px;letter-spacing:-.5px}
+.badge{background:rgba(255,255,255,.85);color:#2D1B5E;border-radius:20px;padding:4px 12px;font-size:10px;font-weight:700;letter-spacing:.5px;margin-left:8px}
+.ps0{font-size:12px;color:#8C7B6E;margin-bottom:28px}
+.phone{width:375px;height:780px;background:var(--cbg);border-radius:44px;box-shadow:0 30px 80px rgba(0,0,0,.22),0 0 0 10px #2A2A2A,0 0 0 12px #4A4A4A;overflow:hidden;position:relative;transition:background .5s}
+.notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:120px;height:30px;background:#2A2A2A;border-radius:0 0 18px 18px;z-index:50;display:flex;align-items:center;justify-content:center;gap:8px}
+.nc{width:10px;height:10px;background:#1A1A1A;border-radius:50%}
+.ns2{width:40px;height:5px;background:#1A1A1A;border-radius:3px}
+.sc{position:absolute;top:0;left:0;right:0;bottom:0;overflow:hidden}
+.screen{position:absolute;top:0;left:0;right:0;bottom:0;overflow-y:auto;overflow-x:hidden;padding:40px 0 80px;opacity:0;pointer-events:none;transform:translateY(10px);transition:opacity .3s,transform .3s,background .5s;scrollbar-width:none;background:var(--cbg)}
+.screen::-webkit-scrollbar{display:none}
+.screen.active{opacity:1;pointer-events:all;transform:translateY(0)}
+nav{position:absolute;bottom:0;left:0;right:0;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-top:1px solid rgba(0,0,0,.06);display:flex;z-index:20;padding-bottom:6px;box-shadow:0 -4px 20px rgba(0,0,0,.05)}
+.nb{flex:1;padding:8px 0 4px;background:none;border:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;color:#C0B8B0;transition:color .25s}
+.nb.active{color:var(--c)}
+.ni{font-size:17px;line-height:1}
+.nl{font-size:9px;font-weight:600;letter-spacing:.8px;text-transform:uppercase}
+.hd{padding:12px 22px 14px}
+.hr{display:flex;justify-content:space-between;align-items:flex-start}
+.ds{font-size:10px;color:var(--cm);text-transform:uppercase;letter-spacing:2.5px;margin-bottom:5px}
+.pn{font-family:var(--serif);font-size:30px;font-weight:700;color:var(--c);letter-spacing:-.8px;line-height:1;margin-bottom:3px}
+.ps2{font-size:12px;color:var(--cm);font-style:italic}
+.dp{background:var(--cl);border-radius:40px;padding:8px 13px;display:flex;align-items:center;gap:7px;transition:background .5s;flex-shrink:0}
+.da{background:none;border:none;color:var(--c);font-size:19px;cursor:pointer;padding:0 2px;opacity:.5;line-height:1}
+.dl2{font-size:9px;color:var(--cm);text-transform:uppercase;letter-spacing:1.2px;text-align:center}
+.dn{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--c);text-align:center;line-height:1}
+.dots{display:flex;gap:5px;margin-top:11px}
+.dot{height:8px;border-radius:8px;border:none;cursor:pointer;transition:all .5s}
+.affirm{margin:0 22px 13px;background:var(--ccard);border-radius:13px;padding:13px 17px;border-left:3px solid var(--c);transition:all .5s}
+.ae{font-size:9px;color:var(--cm);text-transform:uppercase;letter-spacing:2px;margin-bottom:4px}
+.at{font-family:var(--serif);font-size:13px;color:var(--c);font-style:italic;line-height:1.55}
+.card{background:#fff;border-radius:var(--r);padding:17px 19px;box-shadow:var(--sh);margin:0 22px 13px}
+.scard{background:var(--ccard);border-radius:var(--r);padding:15px 18px;margin:0 22px 13px;transition:background .5s}
+.ey{font-size:10px;font-weight:600;color:#C0C0C0;text-transform:uppercase;letter-spacing:1.8px;margin-bottom:11px}
+.eyt{font-size:10px;font-weight:600;color:var(--cm);text-transform:uppercase;letter-spacing:1.8px;margin-bottom:9px}
+.div{height:1px;background:#F0ECE8;margin:13px 0}
+.fr{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid #F0ECE8}
+.fr:last-child{border-bottom:none;padding-bottom:0}
+.fr:first-child{padding-top:0}
+.fi{font-size:19px;flex-shrink:0;margin-top:1px}
+.fl{font-size:9px;color:var(--cm);text-transform:uppercase;letter-spacing:1.2px;font-weight:600;margin-bottom:2px}
+.fv{font-size:13px;color:#555;line-height:1.4}
+.tr{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid #F0ECE8}
+.tr:last-child{border-bottom:none}
+.ti{font-size:15px;flex-shrink:0;margin-top:1px}
+.tt{font-size:12px;color:#666;line-height:1.55}
+.mr{display:flex;gap:11px;align-items:center;background:var(--cbg);border-radius:12px;padding:10px 13px;margin-bottom:8px;transition:background .5s}
+.mr:last-child{margin-bottom:0}
+.ml{font-size:9px;color:var(--cm);text-transform:uppercase;letter-spacing:1.2px;width:56px;flex-shrink:0;font-weight:600}
+.mt{font-size:13px;color:#444}
+.food{padding-bottom:12px;margin-bottom:12px;border-bottom:1px solid #F0ECE8;cursor:pointer}
+.food:last-child{padding-bottom:0;margin-bottom:0;border-bottom:none}
+.ftop{display:flex;justify-content:space-between;align-items:flex-start}
+.fn{font-size:13px;font-weight:600;color:#3A3A3A;flex:1;margin-right:7px}
+.fa{font-size:10px;color:#BCBCBC;margin-top:2px}
+.ftag{background:var(--cl);color:var(--c);border-radius:20px;padding:3px 9px;font-size:10px;font-weight:700;flex-shrink:0;transition:background .5s}
+.freason{font-size:12px;color:#777;line-height:1.55;margin-top:8px;padding:9px 11px;background:var(--cbg);border-radius:10px;font-style:italic;border-left:2px solid var(--cl);display:none}
+.food.open .freason{display:block}
+.gr{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #F0ECE8;cursor:pointer;transition:opacity .2s}
+.gr:last-child{border-bottom:none}
+.gr.done{opacity:.3}
+.gc{width:22px;height:22px;border-radius:50%;border:2px solid #E0DAD4;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;transition:all .2s}
+.gr.done .gc{background:var(--c);border-color:var(--c)}
+.gr.done .gc::after{content:"✓"}
+.gtext{font-size:13px;color:#444}
+.gr.done .gtext{text-decoration:line-through;color:#BBB}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.ch{text-align:center;font-size:9px;color:#C8C8C8;padding-bottom:6px}
+.cc{aspect-ratio:1;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:11px;border:none;font-family:var(--sans);transition:all .15s}
+.moon{margin:0 22px 13px;background:linear-gradient(135deg,#1A1035,#2D1B5E 50%,#1A2A4A);border-radius:var(--r);padding:17px 19px;color:#fff;position:relative;overflow:hidden}
+.moon::before{content:'';position:absolute;top:-30px;right:-30px;width:110px;height:110px;background:radial-gradient(circle,rgba(255,255,220,.12),transparent 70%);border-radius:50%}
+.mst{position:absolute;top:10px;left:18px;font-size:9px;opacity:.4;letter-spacing:3px}
+.me{font-size:9px;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:2px;margin-bottom:9px}
+.mm{display:flex;align-items:center;gap:13px;margin-bottom:11px}
+.mg{font-size:36px;line-height:1;filter:drop-shadow(0 0 10px rgba(255,255,220,.6))}
+.mpn{font-family:var(--serif);font-size:17px;font-weight:700;color:#FFF8E0;margin-bottom:2px}
+.ms{font-size:11px;color:rgba(255,255,255,.6);margin-bottom:3px}
+.mmsg{font-size:12px;color:rgba(255,255,220,.85);font-style:italic;line-height:1.4}
+.mnr{display:flex;gap:5px;flex-wrap:wrap;margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.1)}
+.nc2{background:rgba(255,255,255,.1);border-radius:20px;padding:4px 9px;font-size:10px;color:rgba(255,255,220,.8);border:1px solid rgba(255,255,255,.15)}
+.nc2.active{background:rgba(255,255,220,.2);border-color:rgba(255,255,220,.4);color:#FFF8E0;font-weight:600}
+.cset{background:#fff;border-radius:var(--r);padding:17px 19px;box-shadow:var(--sh);margin:0 22px 13px}
+.slider{width:100%;accent-color:var(--c);margin:8px 0}
+.pstart-btn{background:var(--c);color:#fff;border:none;border-radius:12px;padding:10px 18px;font-size:13px;font-weight:600;cursor:pointer;font-family:var(--sans);transition:background .5s}
+.pstart-btn.marked{background:#27AE60}
+.phcard{background:#fff;border-radius:17px;padding:14px 18px;margin:0 22px 10px;box-shadow:var(--sh);cursor:pointer;border:1px solid transparent;transition:all .3s}
+.moods{display:flex;justify-content:space-around;margin-bottom:18px}
+.mb{font-size:26px;background:none;border:none;cursor:pointer;filter:grayscale(1) opacity(.2);transform:scale(1);transition:all .22s}
+.mb.active{filter:none;transform:scale(1.22)}
+.wrow{display:flex;gap:6px;margin-bottom:4px}
+.wd{font-size:20px;cursor:pointer;filter:grayscale(1) opacity(.18);transition:filter .2s}
+.wd.on{filter:none}
+.linput{width:100%;background:var(--cbg);border:1px solid var(--cl);border-radius:13px;padding:11px 12px;font-size:12px;font-family:var(--sans);resize:none;outline:none;color:#444;line-height:1.5;transition:all .5s}
+.sbtn{width:100%;padding:14px;border-radius:15px;border:none;background:var(--c);color:#fff;font-size:14px;font-weight:600;cursor:pointer;font-family:var(--sans);transition:background .5s}
+.jprompt{font-family:var(--serif);font-size:13px;color:var(--c);font-style:italic;line-height:1.55;margin-bottom:10px;padding:11px 14px;background:var(--ccard);border-radius:11px;border-left:3px solid var(--c);transition:all .5s}
+.jhistory{font-size:12px;color:#777;font-style:italic;line-height:1.45;margin-top:5px;padding:8px 10px;background:var(--cbg);border-radius:9px;border-left:2px solid var(--cl)}
+.upgrade-card{background:linear-gradient(135deg,#1A1035,#2D1B5E);border-radius:var(--r);padding:20px;margin:0 22px 13px;position:relative;overflow:hidden}
+.upgrade-card::before{content:'✦';position:absolute;right:16px;top:12px;font-size:40px;opacity:.12;color:#FFF8E0}
+.upg-eye{font-size:9px;color:rgba(255,255,220,.5);text-transform:uppercase;letter-spacing:2px;margin-bottom:6px}
+.upg-title{font-family:var(--serif);font-size:18px;font-weight:700;color:#FFF8E0;margin-bottom:5px;line-height:1.25}
+.upg-sub{font-size:12px;color:rgba(255,255,220,.7);line-height:1.5;margin-bottom:14px}
+.upg-feat{font-size:11px;color:rgba(255,255,220,.8);display:flex;align-items:center;gap:6px;margin-bottom:5px}
+.upg-btn{background:#FFF8E0;color:#2D1B5E;border:none;border-radius:30px;padding:11px 22px;font-size:13px;font-weight:700;cursor:pointer;font-family:var(--sans);margin-top:14px;display:inline-block}
+.toast{position:absolute;top:55px;left:50%;transform:translateX(-50%) translateY(-10px);background:var(--c);color:#fff;border-radius:30px;padding:9px 20px;font-size:12px;font-weight:600;z-index:100;box-shadow:0 4px 20px rgba(0,0,0,.15);white-space:nowrap;opacity:0;transition:all .3s;pointer-events:none}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.demo{display:flex;flex-direction:column;align-items:center;margin-top:22px;gap:8px}
+.phasebar{display:flex;gap:6px;background:rgba(255,255,255,.5);padding:7px 11px;border-radius:30px;backdrop-filter:blur(8px);flex-wrap:wrap;justify-content:center}
+.pb{padding:5px 12px;border-radius:20px;border:none;cursor:pointer;font-size:11px;font-weight:600;font-family:var(--sans);transition:all .25px;background:transparent;color:#8C7B6E}
+.pb.active{background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.12)}
+@media(max-width:480px){.phone{width:100%;max-width:375px;height:85vh;border-radius:32px};body{padding:18px 12px 40px}}
+
+.evc{background:var(--cbg);border:1px solid var(--cl);border-radius:12px;padding:12px 14px;margin-bottom:9px;transition:all .5s}
+.evn{font-size:10px;color:var(--cm);font-weight:600;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:4px}
+.tc{background:#fff;border-radius:13px;padding:12px 15px;margin-bottom:9px;box-shadow:0 1px 8px rgba(0,0,0,.04);border-left:3px solid var(--cl);transition:border-color .5s}
+.tc:last-child{margin-bottom:0}
+.tn{font-size:13px;font-weight:700;color:var(--c);margin-bottom:2px}
+.td{font-size:12px;color:#777;line-height:1.4}
+.tu{font-size:10px;color:#C0C0C0;margin-top:3px}
+.pill{display:inline-block;background:var(--cl);color:var(--c);border-radius:20px;padding:5px 11px;font-size:11px;font-weight:700;margin:0 4px 5px 0;transition:background .5s}
+.wpill{display:inline-block;background:#FFF0EE;color:#B5533C;border-radius:20px;padding:5px 11px;font-size:11px;margin:0 4px 5px 0}
+.lbtn{padding:7px 14px;border-radius:20px;border:2px solid var(--cl);background:#fff;color:var(--c);font-size:11px;font-weight:600;cursor:pointer;font-family:var(--sans);transition:all .22s;white-space:nowrap}
+.lbtn.active{background:var(--c);color:#fff;border-color:var(--c)}
+
+/* ── ONBOARDING ── */
+.onboard-overlay{position:fixed;top:0;left:0;right:0;bottom:0;z-index:500;background:linear-gradient(160deg,#1A1035 0%,#2D1B5E 40%,#B5533C 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 32px;transition:opacity .5s}
+.onboard-overlay.hidden{opacity:0;pointer-events:none}
+.ob-logo{font-family:var(--serif);font-size:42px;font-weight:700;color:#FFF8E0;margin-bottom:8px;letter-spacing:-1px}
+.ob-sub{font-size:13px;color:rgba(255,255,220,.6);font-style:italic;margin-bottom:48px;letter-spacing:.3px}
+.ob-step{width:100%;max-width:340px}
+.ob-label{font-size:10px;color:rgba(255,255,220,.55);text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;font-family:var(--sans)}
+.ob-input{width:100%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:13px 16px;font-size:14px;font-family:var(--sans);color:#FFF8E0;outline:none;margin-bottom:16px;transition:border .2s}
+.ob-input:focus{border-color:rgba(255,255,220,.5)}
+.ob-input::placeholder{color:rgba(255,255,220,.35)}
+.ob-select{width:100%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:13px 16px;font-size:13px;font-family:var(--sans);color:#FFF8E0;outline:none;margin-bottom:16px;cursor:pointer;appearance:none;-webkit-appearance:none}
+.ob-select option{background:#2D1B5E;color:#FFF8E0}
+.ob-select:focus{border-color:rgba(255,255,220,.5)}
+.ob-row{display:flex;gap:10px}
+.ob-row .ob-select{flex:1}
+.ob-btn{width:100%;padding:15px;border-radius:30px;border:none;background:#FFF8E0;color:#2D1B5E;font-size:15px;font-weight:700;cursor:pointer;font-family:var(--sans);margin-top:8px;letter-spacing:.3px;transition:transform .15s}
+.ob-btn:active{transform:scale(.97)}
+.ob-skip{font-size:12px;color:rgba(255,255,220,.4);text-align:center;margin-top:16px;cursor:pointer;text-decoration:underline}
+.ob-welcome{font-family:var(--serif);font-size:22px;color:#FFF8E0;font-style:italic;text-align:center;margin-bottom:24px;line-height:1.5}
+.ob-stars{font-size:28px;margin-bottom:16px;letter-spacing:6px}
+/* install banner */
+.install-banner{display:none;position:fixed;bottom:96px;left:50%;transform:translateX(-50%);background:#1A1035;color:#FFF8E0;border-radius:16px;padding:12px 20px;font-size:12px;font-family:var(--sans);z-index:200;box-shadow:0 4px 20px rgba(0,0,0,.3);white-space:nowrap;align-items:center;gap:10px}
+.install-banner.show{display:flex}
+.install-x{cursor:pointer;opacity:.5;font-size:16px;margin-left:6px}
+
+.settings-btn{position:absolute;top:48px;right:22px;background:none;border:none;cursor:pointer;font-size:20px;z-index:30;opacity:.45;transition:opacity .2s}
+.settings-drawer{position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.55);z-index:400;display:none;align-items:flex-end}
+.settings-drawer.open{display:flex}
+.settings-panel{background:var(--cbg);border-radius:24px 24px 0 0;padding:28px 24px 40px;width:100%;transition:background .5s}
+.s-title{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--c);margin-bottom:20px}
+.s-row{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid #F0ECE8;cursor:pointer}
+.s-row:last-of-type{border-bottom:none}
+.s-label{font-size:14px;color:#444}
+.s-close{width:100%;padding:14px;border-radius:15px;border:none;background:var(--cl);color:var(--c);font-size:14px;font-weight:600;cursor:pointer;font-family:var(--sans);margin-top:18px;transition:background .5s}
+</style>
+</head>
+<body>
+
+<div style="display:flex;align-items:center;margin-bottom:3px">
+  <div class="pt">🌿 LivAligned</div>
+  <span class="badge">FREE</span>
+</div>
+<div class="ps0">Free version — tap through every screen</div>
+
+
+<!-- ══ ONBOARDING OVERLAY ══ -->
+<div class="onboard-overlay" id="onboard-overlay">
+  <!-- Step 1: Welcome + Name -->
+  <div class="ob-step" id="ob-step1">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="ob-stars">🌿✦🌙</div>
+      <div class="ob-logo">LivAligned</div>
+      <div class="ob-sub">Live in alignment — in every phase</div>
+    </div>
+    <div class="ob-label">Your name</div>
+    <input class="ob-input" id="ob-name" type="text" placeholder="What should we call you?" maxlength="30">
+    <div class="ob-label">Your cycle length</div>
+    <select class="ob-select" id="ob-cyclelen">
+      <option value="26">26 days</option>
+      <option value="27">27 days</option>
+      <option value="28" selected>28 days (average)</option>
+      <option value="29">29 days</option>
+      <option value="30">30 days</option>
+    </select>
+    <button class="ob-btn" onclick="obNext1()">Continue →</button>
+    <div class="ob-skip" onclick="obSkip()">Skip for now</div>
+  </div>
+
+  <!-- Step 2: Natal chart — birth date OR manual -->
+  <div class="ob-step" id="ob-step2" style="display:none">
+    <div style="text-align:center;margin-bottom:24px">
+      <div style="font-size:24px;margin-bottom:10px">🌙 ☀️ ⬆️ ♂️</div>
+      <div class="ob-label" style="text-align:center;font-size:11px;line-height:1.65;color:rgba(255,255,220,.7)">Enter your birth details and we'll calculate<br>your Sun, Moon, Rising, and Mars signs.<br>Or enter them manually if you know them.</div>
+    </div>
+    <!-- Tab toggle -->
+    <div style="display:flex;background:rgba(255,255,255,.1);border-radius:30px;padding:3px;margin-bottom:20px;gap:3px">
+      <button id="tab-calc" onclick="showNatalTab('calc')" style="flex:1;padding:8px;border-radius:26px;border:none;cursor:pointer;font-size:12px;font-weight:700;background:rgba(255,255,255,.9);color:#2D1B5E;font-family:var(--sans)">Calculate for me</button>
+      <button id="tab-manual" onclick="showNatalTab('manual')" style="flex:1;padding:8px;border-radius:26px;border:none;cursor:pointer;font-size:12px;background:transparent;color:rgba(255,255,220,.6);font-family:var(--sans)">I know my signs</button>
+    </div>
+
+    <!-- Calculate tab -->
+    <div id="natal-calc-tab">
+      <div class="ob-label">Date of birth</div>
+      <input class="ob-input" id="ob-dob" type="date" style="color-scheme:dark">
+      <div class="ob-label">Birth time <span style="color:rgba(255,255,220,.35);font-size:9px">(optional — needed for Rising)</span></div>
+      <input class="ob-input" id="ob-time" type="time" placeholder="e.g. 14:30" style="color-scheme:dark">
+      <div class="ob-label">Birth city <span style="color:rgba(255,255,220,.35);font-size:9px">(optional — needed for Rising)</span></div>
+      <input class="ob-input" id="ob-city" type="text" placeholder="e.g. Atlanta, Chicago, Miami…" maxlength="50">
+      <button class="ob-btn" onclick="calcAndFinish()" style="margin-bottom:8px">Calculate My Chart →</button>
+      <div id="calc-result" style="font-size:12px;color:rgba(255,255,220,.7);text-align:center;min-height:20px;margin-bottom:8px"></div>
+    </div>
+
+    <!-- Manual tab -->
+    <div id="natal-manual-tab" style="display:none">
+      <div class="ob-label">Sun sign</div>
+      <select class="ob-select" id="ob-sun">
+        <option value="">Select Sun sign</option>
+        <option>Aries ♈</option><option>Taurus ♉</option><option>Gemini ♊</option><option>Cancer ♋</option>
+        <option>Leo ♌</option><option>Virgo ♍</option><option>Libra ♎</option><option>Scorpio ♏</option>
+        <option>Sagittarius ♐</option><option>Capricorn ♑</option><option>Aquarius ♒</option><option>Pisces ♓</option>
+      </select>
+      <div class="ob-row">
+        <div style="flex:1"><div class="ob-label">Moon</div>
+          <select class="ob-select" id="ob-moon">
+            <option value="">Moon</option>
+            <option>Aries ♈</option><option>Taurus ♉</option><option>Gemini ♊</option><option>Cancer ♋</option>
+            <option>Leo ♌</option><option>Virgo ♍</option><option>Libra ♎</option><option>Scorpio ♏</option>
+            <option>Sagittarius ♐</option><option>Capricorn ♑</option><option>Aquarius ♒</option><option>Pisces ♓</option>
+          </select>
+        </div>
+        <div style="flex:1"><div class="ob-label">Rising</div>
+          <select class="ob-select" id="ob-rising">
+            <option value="">Rising</option>
+            <option>Aries ♈</option><option>Taurus ♉</option><option>Gemini ♊</option><option>Cancer ♋</option>
+            <option>Leo ♌</option><option>Virgo ♍</option><option>Libra ♎</option><option>Scorpio ♏</option>
+            <option>Sagittarius ♐</option><option>Capricorn ♑</option><option>Aquarius ♒</option><option>Pisces ♓</option>
+          </select>
+        </div>
+      </div>
+      <div class="ob-label">Mars sign</div>
+      <select class="ob-select" id="ob-mars">
+        <option value="">Mars sign</option>
+        <option>Aries ♈</option><option>Taurus ♉</option><option>Gemini ♊</option><option>Cancer ♋</option>
+        <option>Leo ♌</option><option>Virgo ♍</option><option>Libra ♎</option><option>Scorpio ♏</option>
+        <option>Sagittarius ♐</option><option>Capricorn ♑</option><option>Aquarius ♒</option><option>Pisces ♓</option>
+      </select>
+      <button class="ob-btn" onclick="obFinishManual()">Enter LivAligned →</button>
+    </div>
+    <div class="ob-skip" onclick="obSkip()">Skip — I'll add this later</div>
+  </div>
+</div>
+
+<!-- Install banner for PWA -->
+<div class="install-banner" id="install-banner">
+  <span>📲 Add LivAligned to your home screen</span>
+  <span class="install-x" onclick="document.getElementById('install-banner').classList.remove('show')">✕</span>
+</div>
+
+<div class="phone" id="phone">
+  <div class="notch"><div class="nc"></div><div class="ns2"></div></div>
+  <div class="toast" id="toast">✓ Entry saved</div>
+  <button class="settings-btn" onclick="openSettings()">⚙️</button>
+  <div class="settings-drawer" id="settings-drawer" onclick="if(event.target===this)closeSettings()">
+    <div class="settings-panel">
+      <div class="s-title">Settings</div>
+      <div class="s-row" onclick="resetOnboarding()"><span class="s-label">✏️ Update my name &amp; natal chart</span><span style="font-size:16px;color:#CCC">›</span></div>
+      <div class="s-row" onclick="resetCycle()"><span class="s-label">🔄 Reset cycle to Day 1 today</span><span style="font-size:16px;color:#CCC">›</span></div>
+      <div class="s-row" onclick="clearAllData()"><span class="s-label">🗑 Clear all my data</span><span style="font-size:16px;color:#E74C3C">›</span></div>
+<div class="s-row" onclick="goToPremium()" style="border-bottom:none"><span class="s-label" style="color:var(--c);font-weight:600">✦ Upgrade to Premium — $9.99/mo</span><span style="color:var(--c);font-size:16px">›</span></div>
+      <button class="s-close" onclick="closeSettings()">Close</button>
+    </div>
+  </div>
+
+  <div class="sc">
+
+    <!-- ══ HOME ══ -->
+    <div class="screen active" id="screen-home">
+      <div class="hd">
+        <div class="hr">
+          <div>
+            <div class="ds" id="h-date"></div>
+            <div class="pn" id="h-phase">Menstrual Phase</div>
+            <div class="ps2" id="h-sub">🌑 Winter · Days 1–5</div>
+            <div class="dots" id="h-dots"></div>
+          </div>
+          <div class="dp">
+            <button class="da" onclick="chDay(-1)">‹</button>
+            <div><div class="dl2">Day</div><div class="dn" id="h-day">1</div></div>
+            <button class="da" onclick="chDay(1)">›</button>
+          </div>
+        </div>
+      </div>
+      <div class="affirm"><div class="ae">Today's Affirmation</div><div class="at" id="h-atext"></div></div>
+      <div class="moon">
+        <div class="mst">✦ ✦ ✦</div>
+        <div class="me">Live Moon Phase</div>
+        <div class="mm">
+          <div class="mg" id="m-glyph">🌑</div>
+          <div>
+            <div class="mpn" id="m-name">New Moon</div>
+            <div class="ms" id="m-sign">Moon in Aries · Day 1</div>
+            <div class="mmsg" id="m-msg">Deep reset. Set intentions in silence.</div>
+          </div>
+        </div>
+        <div class="mnr">
+          <div class="nc2" id="chip-moon">🌙 Moon ♑</div>
+          <div class="nc2" id="chip-rising">⬆ Rising ♎</div>
+          <div class="nc2" id="chip-sun">☀️ Sun ♊</div>
+          <div class="nc2" id="chip-mars">♂ Mars ♊</div>
+        </div>
+      </div>
+      <div class="scard">
+        <div class="eyt" id="h-hormone"></div>
+        <div style="font-size:13px;color:#555;line-height:1.65" id="h-snap"></div>
+      </div>
+      <div class="card">
+        <div class="ey">Today's Focus</div>
+        <div style="font-family:var(--serif);font-size:13px;color:var(--c);font-style:italic;margin-bottom:13px;font-weight:600" id="h-goal"></div>
+        <div class="fr"><div class="fi">🥗</div><div><div class="fl">Eat</div><div class="fv" id="h-eat"></div></div></div>
+        <div class="fr"><div class="fi">🏃</div><div><div class="fl">Move</div><div class="fv" id="h-move"></div></div></div>
+        <div class="fr"><div class="fi">🌸</div><div><div class="fl">Self-care</div><div class="fv" id="h-sc"></div></div></div>
+      </div>
+      <div class="card"><div class="ey">Sample Meals</div><div id="h-meals"></div></div>
+      <div class="card"><div class="ey">Phase Tips</div><div id="h-tips"></div></div>
+    </div>
+
+    <!-- ══ EAT ══ -->
+    <div class="screen" id="screen-eat">
+      <div class="hd"><div class="pn" id="e-title"></div><div class="ps2" id="e-sub"></div></div>
+      <div class="card"><div class="ey">Focus Foods · Tap to learn why</div><div id="e-foods"></div></div>
+      <div class="upgrade-card">
+        <div class="upg-eye">✦ Premium Feature</div>
+        <div class="upg-title">Full Nutrition Guidance</div>
+        <div class="upg-sub">Unlock nutrients, phase meal plans, food swaps, and your avoid list.</div>
+        <div class="upg-feat">✦ Key nutrients + why they matter each phase</div>
+        <div class="upg-feat">✦ 3-meal sample plans per phase</div>
+        <div class="upg-feat">✦ Craving swap guide + always avoid list</div>
+        <div class="upg-feat">✦ Curated Spotify playlists + ambient music</div>
+        <div class="upg-feat">✦ Full Spirit tab with chakra + shadow work</div>
+        <button class="upg-btn" onclick="goToPremium()">Upgrade to Premium — $9.99/mo</button>
+      </div>
+    </div>
+
+    <!-- ══ SHOP ══ -->
+    <div class="screen" id="screen-shop">
+      <div class="hd"><div class="pn">Grocery List</div><div class="ps2" id="sh-sub"></div></div>
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:11px">
+          <div class="ey" style="margin-bottom:0" id="sh-title"></div>
+          <button onclick="clrG()" style="background:none;border:none;color:#CCC;font-size:11px;cursor:pointer;font-family:var(--sans)">Clear ↺</button>
+        </div>
+        <div id="sh-list"></div>
+      </div>
+      <div class="upgrade-card">
+        <div class="upg-eye">✦ Premium Feature</div>
+        <div class="upg-title">Pantry Staples + All Phase View</div>
+        <div class="upg-sub">See all 4 phase grocery lists at once and build your core pantry.</div>
+        <div class="upg-feat">✦ 12 pantry staples to always have on hand</div>
+        <div class="upg-feat">✦ All 4 phase grocery lists in one view</div>
+        <div class="upg-feat">✦ Instacart & Thrive Market tips</div>
+        <button class="upg-btn" onclick="goToPremium()">Upgrade to Premium — $9.99/mo</button>
+      </div>
+    </div>
+
+    <!-- ══ CYCLE ══ -->
+    <div class="screen" id="screen-cycle">
+      <div class="hd"><div class="pn">Your Cycle</div><div class="ps2">Track your rhythm</div></div>
+      <div class="cset">
+        <div class="ey">My Cycle Length</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+          <div style="font-size:13px;color:#555">Cycle length</div>
+          <div style="font-family:var(--serif);font-size:22px;font-weight:700;color:var(--c)" id="cycle-len-display">28 days</div>
+        </div>
+        <input type="range" class="slider" id="cycle-slider" min="26" max="30" value="28" oninput="updateCycleLen(this.value)">
+        <div style="display:flex;justify-content:space-between;font-size:10px;color:#BCBCBC;margin-top:2px">
+          <span>26</span><span>27</span><span>28</span><span>29</span><span>30</span>
+        </div>
+        <div class="div"></div>
+        <div class="ey" style="margin-bottom:9px">Period Tracking</div>
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div style="font-size:13px;color:#555">Mark today as period start</div>
+          <button class="pstart-btn" id="pstart-btn" onclick="markPeriodStart()">Mark Start</button>
+        </div>
+        <div style="font-size:11px;color:var(--cm);margin-top:8px" id="pstart-info">Tap to log the start of your current cycle.</div>
+      </div>
+      <div class="card">
+        <div class="ey">Cycle Calendar · Tap any day</div>
+        <div class="cal" id="cal-heads"></div>
+        <div class="cal" id="cal-cells"></div>
+        <div style="display:flex;flex-wrap:wrap;gap:9px;margin-top:13px" id="cal-leg"></div>
+      </div>
+      <div id="phase-cards"></div>
+    </div>
+
+    <!-- ══ LOG ══ -->
+    <div class="screen" id="screen-log">
+      <div class="hd"><div class="pn">Today's Log</div><div class="ps2" id="lg-sub"></div></div>
+      <div class="card">
+        <div class="ey">How are you feeling?</div>
+        <div class="moods" id="lg-moods"></div>
+        <div class="ey">Water Intake</div>
+        <div class="wrow" id="lg-water"></div>
+        <div style="font-size:11px;color:#CACACA;margin-bottom:18px" id="lg-wlabel">6 of 8 glasses</div>
+        <div class="div"></div>
+        <div class="ey" style="margin-bottom:6px">Today's Journal</div>
+        <div class="jprompt" id="jp-prompt">✦ What is my body trying to tell me today?</div>
+        <textarea class="linput" id="lg-journal" rows="5" placeholder="Write freely. This space is yours alone…" style="margin-bottom:17px"></textarea>
+        <button class="sbtn" onclick="saveLg()">Save Entry</button>
+      </div>
+      <div class="upgrade-card">
+        <div class="upg-eye">✦ Premium Feature</div>
+        <div class="upg-title">Full Cycle Logging</div>
+        <div class="upg-sub">Track everything your body is telling you — all in one place.</div>
+        <div class="upg-feat">✦ Symptoms, meals & daily notes</div>
+        <div class="upg-feat">✦ Flow intensity, color & texture</div>
+        <div class="upg-feat">✦ Cervical mucus & discharge tracking</div>
+        <div class="upg-feat">✦ Intimacy & desire logging</div>
+        <div class="upg-feat">✦ Activity levels throughout your cycle</div>
+        <div class="upg-feat">✦ Full Spirit & chakra alignment tab</div>
+        <button class="upg-btn" onclick="goToPremium()">Upgrade to Premium — $9.99/mo</button>
+      </div>
+      <div id="lg-hist"></div>
+    </div>
+
+
+    <!-- ══ LEARN ══ -->
+    <div class="screen" id="screen-learn">
+      <div class="hd">
+        <div class="pn">The Science</div>
+        <div class="ps2">📖 LivAligned handbook</div>
+      </div>
+      <div class="pad">
+        <div id="learn-seg" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:15px">
+          <button class="lbtn active" onclick="lSub('why',this)">Why It Works</button>
+          <button class="lbtn" onclick="lSub('evidence',this)">Research</button>
+          <button class="lbtn" onclick="lSub('treatments',this)">Treatments</button>
+          <button class="lbtn" onclick="lSub('lifestyle',this)">Lifestyle</button>
+          <button class="lbtn" onclick="lSub('tools',this)">Tools</button>
+        </div>
+      </div>
+
+      <div id="lp-why">
+        <div class="scard">
+          <div class="eyt">The Hormonal Rhythm We Live In</div>
+          <div style="font-size:13px;color:#555;line-height:1.7">Your menstrual cycle is a 28-day biological rhythm controlled by estrogen, progesterone, inflammatory mediators, and neurotransmitters — shaping mood, energy, appetite, sleep, pain, and brain function all month long.</div>
+        </div>
+        <div class="card">
+          <div class="ey">These Shifts Influence</div>
+          <div class="tr"><div class="ti" style="color:var(--c)">→</div><div class="tt">Mood and emotional regulation</div></div>
+          <div class="tr"><div class="ti" style="color:var(--c)">→</div><div class="tt">Energy and physical capacity</div></div>
+          <div class="tr"><div class="ti" style="color:var(--c)">→</div><div class="tt">Appetite, cravings and metabolism</div></div>
+          <div class="tr"><div class="ti" style="color:var(--c)">→</div><div class="tt">Sleep quality and depth</div></div>
+          <div class="tr"><div class="ti" style="color:var(--c)">→</div><div class="tt">Bloating, pain and inflammation</div></div>
+          <div class="tr"><div class="ti" style="color:var(--c)">→</div><div class="tt">Brain fog and cognitive clarity</div></div>
+        </div>
+        <div class="card">
+          <div class="ey">What Cycle Syncing May Help</div>
+          <div class="tr"><div class="ti">✓</div><div class="tt">Reduce menstrual pain</div></div>
+          <div class="tr"><div class="ti">✓</div><div class="tt">Improve mood stability</div></div>
+          <div class="tr"><div class="ti">✓</div><div class="tt">Reduce bloating and cravings</div></div>
+          <div class="tr"><div class="ti">✓</div><div class="tt">Support healthy inflammation responses</div></div>
+          <div class="tr"><div class="ti">✓</div><div class="tt">Improve overall quality of life</div></div>
+          <div style="background:var(--cbg);border-radius:12px;padding:12px 14px;margin-top:12px;font-family:var(--serif);font-size:13px;color:var(--c);font-style:italic;line-height:1.6;transition:background .5s">Routine matters more than perfection. Your body responds best to consistency, compassion, and rhythm.</div>
+        </div>
+      </div>
+
+      <div id="lp-evidence" style="display:none">
+        <div class="card">
+          <div class="ey">Key Research Findings</div>
+          <div class="evc"><div class="evn">Finding 1</div><div style="font-size:12px;color:#555;line-height:1.65">Mediterranean-style anti-inflammatory diets significantly reduce menstrual and menopausal symptom severity.</div></div>
+          <div class="evc"><div class="evn">Finding 2</div><div style="font-size:12px;color:#555;line-height:1.65">Higher intake of fruits, vegetables, legumes, and healthy fats is associated with reduced PMS symptoms and improved emotional health.</div></div>
+          <div class="evc"><div class="evn">Finding 3</div><div style="font-size:12px;color:#555;line-height:1.65">Magnesium, zinc, vitamin B6, and omega-3 fatty acids may reduce irritability, pain, and fatigue related to the menstrual cycle.</div></div>
+          <div class="evc"><div class="evn">Finding 4</div><div style="font-size:12px;color:#555;line-height:1.65">Diets high in whole foods, fiber, and antioxidants are associated with fewer menstrual symptoms and improved emotional stability.</div></div>
+          <div class="evc"><div class="evn">Finding 5</div><div style="font-size:12px;color:#555;line-height:1.65">Diets high in refined carbohydrates and processed food are linked with worse PMS symptoms, greater pain, and emotional distress.</div></div>
+          <div class="evc" style="margin-bottom:0"><div class="evn">Finding 6</div><div style="font-size:12px;color:#555;line-height:1.65">Poor diet quality increases inflammation and symptom severity across all phases of the cycle.</div></div>
+          <div style="background:#F9F9F9;border-radius:11px;padding:11px 13px;margin-top:12px;font-size:11px;color:#BCBCBC;line-height:1.6">Sources include Frontiers in Nutrition, Scientific Reports, Nutrients Journal, BMC Women's Health, Food &amp; Function, and European Journal of Nutrition.</div>
+        </div>
+      </div>
+
+      <div id="lp-treatments" style="display:none">
+        <div class="card">
+          <div class="ey">Common Treatment Approaches</div>
+          <div style="background:var(--cbg);border-radius:9px;padding:10px 12px;margin-bottom:4px;transition:background .5s">
+            <div style="font-size:12px;font-weight:700;color:var(--c);margin-bottom:3px">Lifestyle</div>
+            <div style="font-size:11px;color:#555;margin-bottom:2px">Exercise, sleep hygiene, heat therapy</div>
+            <div style="font-size:11px;color:#999;font-style:italic">Supports nervous system regulation</div>
+          </div>
+          <div style="background:#fff;border-radius:9px;padding:10px 12px;margin-bottom:4px">
+            <div style="font-size:12px;font-weight:700;color:var(--c);margin-bottom:3px">Supplements</div>
+            <div style="font-size:11px;color:#555;margin-bottom:2px">Magnesium, B vitamins, Omega-3s</div>
+            <div style="font-size:11px;color:#999;font-style:italic">Helps correct deficiencies that worsen symptoms</div>
+          </div>
+          <div style="background:var(--cbg);border-radius:9px;padding:10px 12px;margin-bottom:4px;transition:background .5s">
+            <div style="font-size:12px;font-weight:700;color:var(--c);margin-bottom:3px">Nutrition</div>
+            <div style="font-size:11px;color:#555;margin-bottom:2px">Anti-inflammatory foods, cycle-specific strategies</div>
+            <div style="font-size:11px;color:#999;font-style:italic">Supports hormone metabolism, inflammation, and mood</div>
+          </div>
+          <div style="background:#fff;border-radius:9px;padding:10px 12px">
+            <div style="font-size:12px;font-weight:700;color:var(--c);margin-bottom:3px">Medical</div>
+            <div style="font-size:11px;color:#555;margin-bottom:2px">NSAIDs, hormonal birth control</div>
+            <div style="font-size:11px;color:#999;font-style:italic">Reduces symptoms by suppressing ovulation or inflammation</div>
+          </div>
+          <div style="background:var(--cbg);border-radius:12px;padding:12px 14px;margin-top:12px;font-size:12px;color:#666;font-style:italic;line-height:1.65;transition:background .5s">While medication can provide relief, research suggests dietary patterns themselves significantly shape hormone signaling, inflammation, and neurotransmitter balance.</div>
+        </div>
+      </div>
+
+      <div id="lp-lifestyle" style="display:none">
+        <div class="card">
+          <div class="ey">Lifestyle Considerations</div>
+          <div style="display:flex;gap:12px;padding-bottom:14px;margin-bottom:14px;border-bottom:1px solid #F0ECE8">
+            <div style="font-size:20px;flex-shrink:0">🏋️</div>
+            <div><div style="font-size:13px;font-weight:600;color:#333;margin-bottom:3px">Strength Training</div><div style="font-size:12px;color:#777;line-height:1.55">Include strength training to build muscle and improve insulin sensitivity throughout your cycle.</div></div>
+          </div>
+          <div style="display:flex;gap:12px;padding-bottom:14px;margin-bottom:14px;border-bottom:1px solid #F0ECE8">
+            <div style="font-size:20px;flex-shrink:0">🎯</div>
+            <div><div style="font-size:13px;font-weight:600;color:#333;margin-bottom:3px">Consistency Over Perfection</div><div style="font-size:12px;color:#777;line-height:1.55">Aim for 150 minutes of moderate movement per week — walking, cycling, swimming, or yoga all count.</div></div>
+          </div>
+          <div style="display:flex;gap:12px">
+            <div style="font-size:20px;flex-shrink:0">❤️</div>
+            <div><div style="font-size:13px;font-weight:600;color:#333;margin-bottom:3px">Enjoy It</div><div style="font-size:12px;color:#777;line-height:1.55">Choose activities you genuinely enjoy so movement stays sustainable across all four phases.</div></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="ey">Always Include — Every Phase</div>
+          <span class="pill">✓ Whole grains</span><span class="pill">✓ Vegetables</span><span class="pill">✓ Legumes</span><span class="pill">✓ Nuts &amp; seeds</span><span class="pill">✓ Fatty fish</span><span class="pill">✓ Berries</span><span class="pill">✓ Avocado</span>
+          <div class="div"></div>
+          <div class="ey">Always Avoid — Every Phase</div>
+          <span class="wpill">✕ White bread</span><span class="wpill">✕ Sugary cereals</span><span class="wpill">✕ Processed snacks</span><span class="wpill">✕ Trans fats</span><span class="wpill">✕ Refined pasta</span>
+        </div>
+      </div>
+
+      <div id="lp-tools" style="display:none">
+        <div class="card">
+          <div class="ey">Cycle Tracking Apps</div>
+          <div class="tc"><div class="tn">Clue</div><div class="td">Science-based tracking of symptoms and hormone phases</div><div class="tu">helloclue.com</div></div>
+          <div class="tc"><div class="tn">Flo</div><div class="td">Spot patterns in mood, energy, cravings, and sleep</div><div class="tu">flo.health</div></div>
+          <div class="tc"><div class="tn">MyFLO</div><div class="td">Built specifically for cycle syncing with phase-based guidance</div><div class="tu">myfloapp.com</div></div>
+        </div>
+        <div class="card">
+          <div class="ey">Nutrition Tracking</div>
+          <div class="tc"><div class="tn">Cronometer</div><div class="td">Track micronutrients like B vitamins, iron, and omega-3s</div><div class="tu">cronometer.com</div></div>
+          <div class="tc"><div class="tn">MyFitnessPal</div><div class="td">Track meals and notice how foods affect your symptoms</div><div class="tu">myfitnesspal.com</div></div>
+        </div>
+        <div class="card">
+          <div class="ey">Mind-Body &amp; Grocery</div>
+          <div class="tc"><div class="tn">Insight Timer</div><div class="td">Meditations to calm the nervous system across phases</div><div class="tu">insighttimer.com</div></div>
+          <div class="tc"><div class="tn">Breathwrk</div><div class="td">Breathwork for PMS, fatigue, and sleep support</div><div class="tu">breathwrk.com</div></div>
+          <div class="tc"><div class="tn">Thrive Market</div><div class="td">Online organic grocery with cycle-friendly staples</div><div class="tu">thrivemarket.com</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav>
+    <button class="nb active" onclick="sw('home',this)"><span class="ni">🌿</span><span class="nl">Home</span></button>
+    <button class="nb" onclick="sw('eat',this)"><span class="ni">🥗</span><span class="nl">Eat</span></button>
+    <button class="nb" onclick="sw('shop',this)"><span class="ni">🛒</span><span class="nl">Shop</span></button>
+    <button class="nb" onclick="sw('cycle',this)"><span class="ni">🗓</span><span class="nl">Cycle</span></button>
+    <button class="nb" onclick="sw('log',this)"><span class="ni">📓</span><span class="nl">Log</span></button>
+    <button class="nb" onclick="sw('learn',this)"><span class="ni">📚</span><span class="nl">Learn</span></button>
+  </nav>
+</div>
+
+<div class="demo">
+  <div class="phasebar">
+    <button class="pb active" style="color:#B5533C" onclick="setP('menstrual',this)">🌑 Menstrual</button>
+    <button class="pb" style="color:#3A6B4A" onclick="setP('follicular',this)">🌱 Follicular</button>
+    <button class="pb" style="color:#8B6914" onclick="setP('ovulatory',this)">☀️ Ovulatory</button>
+    <button class="pb" style="color:#6B3FA0" onclick="setP('luteal',this)">🍂 Luteal</button>
+  </div>
+  <div style="font-size:11px;color:#8C7B6E">Switch phases to preview ✦</div>
+</div>
+
+<script>
+// ── DATA ──────────────────────────────────────────────────────────────────────
+const PH = {
+  menstrual: {
+    name:'Menstrual', season:'Winter', days:'Days 1–5', emoji:'🌑', start:1,
+    c:'#B5533C', cl:'#F5E4DF', cbg:'#FBF5F3', ccard:'#F0D8D2', cm:'#C4806E',
+    affirmation:'Rest is productive. You are allowed to slow down.',
+    hormone:'Low Estrogen & Progesterone',
+    snap:'Your body is releasing and renewing. Energy is lower — that\'s intentional. Honor the need for rest, warmth, and nourishment.',
+    goal:'Rest, restore iron, lower inflammation',
+    move:'Gentle yoga · stretching · slow walks',
+    selfcare:'Heat therapy · journaling · early sleep',
+    eat:[
+      {f:'Spinach, kale, swiss chard', a:'1–2 cups cooked/day', w:'Iron + Vit C', r:'Iron-rich greens paired with vitamin C restore what\'s lost during bleeding.'},
+      {f:'Lentils & beans', a:'½–1 cup/day', w:'Iron + Fiber', r:'Plant-based iron plus fiber to support digestion and replenish energy.'},
+      {f:'Salmon & sardines', a:'3–4 oz/day', w:'Omega-3s', r:'Omega-3 fatty acids calm inflammatory prostaglandins that cause cramping.'},
+      {f:'Beets', a:'½–1 cup/day', w:'Blood Flow', r:'Beets improve circulation and support the liver\'s detox pathways.'},
+      {f:'Pumpkin seeds', a:'2 tbsp/day', w:'Magnesium', r:'Magnesium supports sleep, muscle relaxation, and reduces cramping.'},
+    ],
+    groc:['Spinach','Kale','Swiss chard','Lentils','Beans','Salmon','Sardines','Beets','Pumpkin seeds','Citrus fruits','Berries'],
+    meal:{b:'Oatmeal + berries + walnuts', l:'Lentil stew', d:'Salmon + greens'},
+    tips:[
+      {i:'🍵', t:'Sip ginger tea — a natural anti-inflammatory that eases cramping'},
+      {i:'🛁', t:'Warm bath with magnesium salts relaxes muscles and supports sleep'},
+      {i:'💤', t:'Aim for 8–9 hours — progesterone drop disrupts rest this phase'},
+      {i:'🔥', t:'Heat therapy can relieve cramping as effectively as NSAIDs'},
+    ]
+  },
+  follicular: {
+    name:'Follicular', season:'Spring', days:'Days 6–12', emoji:'🌱', start:6,
+    c:'#3A6B4A', cl:'#D6EAD9', cbg:'#F0F7F2', ccard:'#C8E0CD', cm:'#6A9E7A',
+    affirmation:'New energy is rising in you. Let it lead.',
+    hormone:'Rising Estrogen',
+    snap:'Your brightest window is opening. Energy, focus, and creativity are building in you.',
+    goal:'Energize and rebuild',
+    move:'Strength training · HIIT · dancing',
+    selfcare:'Try something new · social plans · goal journaling',
+    eat:[
+      {f:'Avocado & leafy greens', a:'1–2 cups/day', w:'Healthy Fats', r:'Healthy fats support cell membrane health and rising estrogen production.'},
+      {f:'Probiotic yogurt or kefir', a:'¼–½ cup/day', w:'Gut-Brain', r:'Fermented foods support gut hormone detox pathways and serotonin production.'},
+      {f:'Fresh fruit (berries, kiwi)', a:'2 servings/day', w:'Antioxidants', r:'Antioxidants pair with rising estrogen and protect ovary function.'},
+      {f:'Lean protein (chicken, tofu)', a:'3–4 oz/meal', w:'Rebuild', r:'Protein supports follicle development and restores tissue from menstruation.'},
+      {f:'Seeds (chia, sunflower)', a:'2 tbsp/day', w:'Omega-3s', r:'Seeds provide lignans that help modulate estrogen levels naturally.'},
+    ],
+    groc:['Avocado','Leafy greens','Berries','Kiwi','Citrus','Quinoa','Oats','Yogurt','Chicken','Tofu'],
+    meal:{b:'Berry smoothie bowl', l:'Chicken salad w/ avocado', d:'Stir fry + vegetables'},
+    tips:[
+      {i:'🧠', t:'Peak brain sharpness — tackle creative work and hard decisions now'},
+      {i:'🥗', t:'Fermented foods support estrogen metabolism in your gut microbiome'},
+      {i:'🏋️', t:'Your body benefits most from intense exercise right now'},
+      {i:'✨', t:'Schedule important conversations and asks this week'},
+    ]
+  },
+  ovulatory: {
+    name:'Ovulatory', season:'Summer', days:'Days 13–15', emoji:'☀️', start:13,
+    c:'#8B6914', cl:'#F5E6BE', cbg:'#FDFBF3', ccard:'#EDD98A', cm:'#B8960F',
+    affirmation:'You are magnetic. Step into your light fully.',
+    hormone:'Peak Estrogen · LH Surge',
+    snap:'Peak energy and clarity. Your most social, confident window all month.',
+    goal:'Stabilize hormones & support detox',
+    move:'Running · power yoga · group fitness',
+    selfcare:'Socialize · date nights · speak your needs',
+    eat:[
+      {f:'Cruciferous vegetables', a:'½–1 cup/day', w:'Estrogen Detox', r:'Broccoli and cabbage contain DIM — a compound that clears excess estrogen.'},
+      {f:'High-fiber fruits (apples, pears)', a:'1–2 servings/day', w:'Fiber', r:'Fiber binds to excess estrogen in the gut and removes it effectively.'},
+      {f:'Whole grains (oats, quinoa)', a:'½ cup/day', w:'B Vitamins', r:'B vitamins help the liver process estrogen and keep energy and mood steady.'},
+      {f:'Hydrating foods (cucumber, citrus)', a:'2–3 servings/day', w:'Hydration', r:'Supports cervical fluid and reduces headaches common around ovulation.'},
+      {f:'Lean protein (fish, turkey)', a:'3–4 oz/meal', w:'Muscle Support', r:'Protein supports muscle maintenance during peak physical performance.'},
+    ],
+    groc:['Broccoli','Cabbage','Cauliflower','Cucumbers','Citrus fruits','Turkey','Fish','Tofu','Oats','Quinoa'],
+    meal:{b:'Eggs + spinach + avocado', l:'Quinoa bowl + cabbage slaw', d:'Chickpea + vegetable curry'},
+    tips:[
+      {i:'🌟', t:'Schedule your most important meetings — you\'re at your most persuasive'},
+      {i:'🥦', t:'Cruciferous veggies contain DIM which clears excess estrogen naturally'},
+      {i:'💧', t:'Stay extra hydrated — cervical fluid peaks and headaches are common'},
+      {i:'🏃', t:'Your stamina is at its highest point of the entire month'},
+    ]
+  },
+  luteal: {
+    name:'Luteal', season:'Autumn', days:'Days 16–28', emoji:'🍂', start:16,
+    c:'#6B3FA0', cl:'#E8D9F5', cbg:'#F8F3FC', ccard:'#D4BAED', cm:'#9E72C8',
+    affirmation:'Slow down with intention. You don\'t have to do it all.',
+    hormone:'Rising Progesterone & Inflammation',
+    snap:'Cravings and mood shifts are hormonal — not a flaw. Your body is preparing.',
+    goal:'Reduce inflammation, stabilize cravings, support mood',
+    move:'Pilates · walking · gentle yoga',
+    selfcare:'Rest more · reduce screen time · journaling',
+    eat:[
+      {f:'Sweet potatoes & squash', a:'½–1 cup/day', w:'Complex Carbs', r:'Complex carbs stabilize progesterone dips and naturally reduce carb cravings.'},
+      {f:'Nuts & seeds (pumpkin, walnuts)', a:'2–3 tbsp/day', w:'Magnesium', r:'Magnesium reduces cramps, irritability, and supports deep sleep during PMS.'},
+      {f:'Avocado & olive oil', a:'1–2 tbsp/day', w:'Mood Support', r:'Healthy fats support mood regulation and reduce inflammatory prostaglandins.'},
+      {f:'Turmeric, ginger & herbal teas', a:'1–2 cups/day', w:'Anti-Inflammatory', r:'Natural anti-inflammatories reduce PMS bloating, pain, and irritability.'},
+      {f:'Turkey, eggs & fish', a:'3–4 oz/meal', w:'Vitamin B6', r:'Vitamin B6 in turkey and eggs directly supports serotonin and mood stability.'},
+    ],
+    groc:['Sweet potatoes','Squash','Avocados','Olive oil','Turkey','Eggs','Pumpkin seeds','Dark chocolate (70%)','Ginger','Turmeric'],
+    meal:{b:'Acai bowl + seeds', l:'Turkey + sweet potato + greens', d:'Ginger turmeric soup'},
+    tips:[
+      {i:'🍫', t:'70% dark chocolate provides magnesium and satisfies cravings naturally'},
+      {i:'🌿', t:'Pumpkin seeds and leafy greens reduce cramps and irritability'},
+      {i:'😴', t:'Rising progesterone makes you sleepier — lean into earlier bedtimes'},
+      {i:'🧘', t:'Gentle yoga and breathwork reduce PMS irritability better than rest alone'},
+    ]
+  }
+};
+
+const JOURNAL_PROMPTS = {
+  menstrual: [
+    'What am I ready to release this cycle?',
+    'What does my body most need that I keep refusing to give it?',
+    'Where have I been performing strength instead of honoring rest?',
+    'What old story about myself feels ready to die?',
+    'What truth has been quietly asking for my attention?',
+  ],
+  follicular: [
+    'What new vision is trying to emerge in me right now?',
+    'What desire have I been dismissing as impractical?',
+    'If I had no fear of judgment, what would I create?',
+    'Where am I shrinking to make others more comfortable?',
+    'What seeds am I planting — in my body, my work, my relationships?',
+  ],
+  ovulatory: [
+    'What truth have I been withholding to keep the peace?',
+    'Where am I performing connection instead of inhabiting it?',
+    'What would I say if I knew my words would truly be heard?',
+    'Who do I feel most authentically myself around, and why?',
+    'What am I in full bloom for right now?',
+  ],
+  luteal: [
+    'What is my body trying to tell me that my mind keeps overriding?',
+    'Where am I suppressing anger — and what truth is it protecting?',
+    'What boundary have I failed to hold that is costing me energy?',
+    'What do I already know that I am pretending not to know?',
+    'What needs to be said, written, or released before my next cycle begins?',
+  ]
+};
+
+const MPHASES = [
+  {n:'New Moon', g:'🌑', m:'Deep reset. Set intentions in silence.'},
+  {n:'Waxing Crescent', g:'🌒', m:'Fertile ground. Plant intentions with care.'},
+  {n:'First Quarter', g:'🌓', m:'Take decisive action. Momentum is building.'},
+  {n:'Waxing Gibbous', g:'🌔', m:'Refine and adjust. You\'re almost there.'},
+  {n:'Full Moon', g:'🌕', m:'Peak illumination. Release what no longer serves.'},
+  {n:'Waning Gibbous', g:'🌖', m:'Express gratitude. Share your gifts freely.'},
+  {n:'Last Quarter', g:'🌗', m:'Let go. Clear space for the new cycle.'},
+  {n:'Waning Crescent', g:'🌘', m:'Rest and surrender. The void is sacred.'},
+];
+const MSIGNS = ['Aries','Taurus','Gemini','Cancer','Leo','Virgo','Libra','Scorpio','Sagittarius','Capricorn','Aquarius','Pisces'];
+const MOODS = ['😣','😕','😐','🙂','😄'];
+
+// ── STATE ─────────────────────────────────────────────────────────────────────
+let day = 1, pk = 'menstrual', groc = {}, mood = 3, water = 6, hist = [], cycleLen = 28, periodStart = null;
+
+// ── HELPERS ───────────────────────────────────────────────────────────────────
+function getPhase(d) {
+  if (d <= 5) return 'menstrual';
+  if (d <= cycleLen - 16) return 'follicular';
+  if (d <= cycleLen - 13) return 'ovulatory';
+  return 'luteal';
+}
+
+function applyTheme(k) {
+  const P = PH[k];
+  const r = document.documentElement;
+  r.style.setProperty('--c', P.c);
+  r.style.setProperty('--cl', P.cl);
+  r.style.setProperty('--cbg', P.cbg);
+  r.style.setProperty('--ccard', P.ccard);
+  r.style.setProperty('--cm', P.cm);
+  document.getElementById('phone').style.background = P.cbg;
+}
+
+function getMoon() {
+  // High-accuracy moon phase using Meeus algorithm — updates live in real time
+  var now = new Date();
+  var jd = julianDay(now.getUTCFullYear(), now.getUTCMonth()+1, now.getUTCDate(),
+                     now.getUTCHours() + now.getUTCMinutes()/60);
+  // Moon longitude for phase and sign
+  var moonLon = calcMoon(jd);
+  var sunLon  = calcSun(jd);
+  // Phase angle (0=New, 180=Full)
+  var phaseAngle = ((moonLon - sunLon) % 360 + 360) % 360;
+  var phaseIdx = Math.floor(phaseAngle / 45); // 8 phases
+  var signIdx  = Math.floor(moonLon / 30) % 12;
+  // Days into lunar cycle (accurate)
+  var daysInCycle = phaseAngle / (360 / 29.53059);
+  return {
+    phase: MPHASES[phaseIdx],
+    sign: MSIGNS[signIdx],
+    day: Math.round(daysInCycle),
+    angle: Math.round(phaseAngle)
+  };
+}
+
+function getTodayPrompt() {
+  const prompts = JOURNAL_PROMPTS[pk];
+  return prompts[new Date().getDate() % prompts.length];
+}
+
+// ── RENDER FUNCTIONS ──────────────────────────────────────────────────────────
+function rHome() {
+  const P = PH[pk];
+  document.getElementById('h-date').textContent = new Date().toLocaleDateString('en-US', {weekday:'long', month:'long', day:'numeric'});
+  document.getElementById('h-phase').textContent = P.name + ' Phase';
+  document.getElementById('h-sub').textContent = P.emoji + ' ' + P.season + ' · ' + P.days;
+  document.getElementById('h-day').textContent = day;
+  document.getElementById('h-atext').textContent = '"' + P.affirmation + '"';
+  document.getElementById('h-hormone').textContent = P.hormone;
+  document.getElementById('h-snap').textContent = P.snap;
+  document.getElementById('h-goal').textContent = P.goal;
+  document.getElementById('h-eat').textContent = P.eat[0].f.split(',')[0] + ' & ' + P.eat[1].f.split(',')[0];
+  document.getElementById('h-move').textContent = P.move;
+  document.getElementById('h-sc').textContent = P.selfcare;
+  document.getElementById('lg-sub').textContent = P.emoji + ' Day ' + day + ' · ' + P.name + ' Phase';
+
+  // Phase dots
+  const dotsEl = document.getElementById('h-dots');
+  dotsEl.innerHTML = '';
+  Object.keys(PH).forEach(function(k2) {
+    const b = document.createElement('button');
+    b.className = 'dot';
+    b.style.cssText = 'background:' + PH[k2].c + ';width:' + (k2 === pk ? '26' : '8') + 'px;opacity:' + (k2 === pk ? '1' : '.18');
+    b.onclick = function() { setP(k2, null); };
+    dotsEl.appendChild(b);
+  });
+
+  // Meals
+  const M = P.meal;
+  document.getElementById('h-meals').innerHTML =
+    ['b','l','d'].map(function(x, i) {
+      return '<div class="mr"><div class="ml">' + ['breakfast','lunch','dinner'][i] + '</div><div class="mt">' + M[x] + '</div></div>';
+    }).join('');
+
+  // Tips
+  document.getElementById('h-tips').innerHTML =
+    P.tips.map(function(t, i) {
+      return '<div class="tr" style="border-bottom:' + (i === P.tips.length - 1 ? 'none' : '1px solid #F0ECE8') + '"><div class="ti">' + t.i + '</div><div class="tt">' + t.t + '</div></div>';
+    }).join('');
+
+  // Moon
+  const mn = getMoon();
+  document.getElementById('m-glyph').textContent = mn.phase.g;
+  document.getElementById('m-name').textContent = mn.phase.n;
+  document.getElementById('m-sign').textContent = 'Moon in ' + mn.sign + ' · Day ' + mn.day + ' of cycle';
+  document.getElementById('m-msg').textContent = mn.phase.m;
+  ['moon','rising','sun','mars'].forEach(function(x) {
+    document.getElementById('chip-' + x).classList.remove('active');
+  });
+  var chipMap = {menstrual:'moon', follicular:'rising', ovulatory:'sun', luteal:'mars'};
+  document.getElementById('chip-' + chipMap[pk]).classList.add('active');
+}
+
+function rEat() {
+  const P = PH[pk];
+  document.getElementById('e-title').textContent = P.name + ' · Nutrition';
+  document.getElementById('e-sub').textContent = P.emoji + ' ' + P.days + ' · ' + P.goal;
+  document.getElementById('e-foods').innerHTML =
+    P.eat.map(function(item, i) {
+      return '<div class="food" onclick="this.classList.toggle(\'open\')">' +
+        '<div class="ftop"><div class="fn">' + item.f + '</div><div class="ftag">' + item.w + '</div></div>' +
+        '<div class="fa">' + item.a + '</div>' +
+        '<div class="freason">' + item.r + '</div>' +
+        (i < P.eat.length - 1 ? '<div class="div" style="margin-top:10px;margin-bottom:0"></div>' : '') +
+        '</div>';
+    }).join('');
+}
+
+function rShop() {
+  const P = PH[pk];
+  document.getElementById('sh-sub').textContent = P.emoji + ' ' + P.name + ' Phase · ' + P.days;
+  document.getElementById('sh-title').textContent = P.name + ' Essentials';
+  document.getElementById('sh-list').innerHTML =
+    P.groc.map(function(item) {
+      return '<div class="gr' + (groc[item] ? ' done' : '') + '" onclick="tGroc(this,\'' + item + '\')">' +
+        '<div class="gc"></div><span class="gtext">' + item + '</span></div>';
+    }).join('');
+}
+
+function rCycle() {
+  const headsEl = document.getElementById('cal-heads');
+  if (!headsEl.children.length) {
+    ['S','M','T','W','T','F','S'].forEach(function(h) {
+      const d = document.createElement('div');
+      d.className = 'ch';
+      d.textContent = h;
+      headsEl.appendChild(d);
+    });
+  }
+  const cellsEl = document.getElementById('cal-cells');
+  cellsEl.innerHTML = '';
+  for (let d2 = 1; d2 <= cycleLen; d2++) {
+    const k2 = getPhase(d2);
+    const P2 = PH[k2];
+    const on = d2 === day;
+    const b = document.createElement('button');
+    b.className = 'cc';
+    b.style.cssText = 'background:' + (on ? P2.c : P2.cl) + ';color:' + (on ? '#fff' : P2.c) + ';font-weight:' + (on ? '700' : '400');
+    b.textContent = d2;
+    b.onclick = (function(d3) {
+      return function() { day = d3; pk = getPhase(d3); applyTheme(pk); rAll(); };
+    })(d2);
+    cellsEl.appendChild(b);
+  }
+  document.getElementById('cal-leg').innerHTML =
+    Object.entries(PH).map(function(entry) {
+      return '<div style="display:flex;align-items:center;gap:6px;font-size:10px;color:#888">' +
+        '<div style="width:7px;height:7px;border-radius:50%;background:' + entry[1].c + '"></div>' +
+        entry[1].name + ' · ' + entry[1].days + '</div>';
+    }).join('');
+  document.getElementById('phase-cards').innerHTML =
+    Object.entries(PH).map(function(entry) {
+      const k2 = entry[0], p = entry[1];
+      const isNow = k2 === pk;
+      return '<div class="phcard" style="background:' + (isNow ? p.cl : '#fff') + ';border-color:' + (isNow ? p.cl : 'transparent') + '" onclick="setP(\'' + k2 + '\',null)">' +
+        '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px">' +
+        '<div style="font-size:15px;font-weight:700;color:' + p.c + '">' + p.emoji + ' ' + p.name + '</div>' +
+        (isNow ? '<span style="background:' + p.c + ';color:#fff;border-radius:20px;padding:2px 10px;font-size:9px;font-weight:700">Now</span>' : '') +
+        '</div>' +
+        '<div style="font-size:10px;color:#AAA;margin-bottom:6px">' + p.hormone + '</div>' +
+        '<div style="font-size:12px;color:#666;line-height:1.4">' + p.goal + '</div>' +
+        '</div>';
+    }).join('');
+}
+
+function rLog() {
+  document.getElementById('lg-moods').innerHTML =
+    MOODS.map(function(m, i) {
+      return '<button class="mb' + (mood === i + 1 ? ' active' : '') + '" onclick="mood=' + (i + 1) + ';rLog()">' + m + '</button>';
+    }).join('');
+  document.getElementById('lg-water').innerHTML =
+    Array.from({length: 8}, function(_, i) {
+      return '<span class="wd' + (i < water ? ' on' : '') + '" onclick="water=' + (i + 1) + ';rLog()">💧</span>';
+    }).join('');
+  document.getElementById('lg-wlabel').textContent = water + ' of 8 glasses';
+  document.getElementById('jp-prompt').textContent = '✦ ' + getTodayPrompt();
+}
+
+function rHist() {
+  if (!hist.length) {
+    document.getElementById('lg-hist').innerHTML = '';
+    return;
+  }
+  var html = '<div class="card" style="margin:0 22px 13px"><div class="ey">Recent Entries</div>';
+  hist.slice(0, 4).forEach(function(l) {
+    html += '<div style="padding:12px 0;border-bottom:1px solid #F0ECE8">';
+    html += '<div style="display:flex;justify-content:space-between;margin-bottom:4px">';
+    html += '<span style="font-weight:600;font-size:12px;color:#444">' + l.date + ' · Day ' + l.day + '</span>';
+    html += '<span style="font-size:10px;color:' + PH[l.pk].c + ';font-weight:600">' + PH[l.pk].name + '</span>';
+    html += '</div>';
+    html += '<div style="font-size:11px;color:#AAA">' + MOODS[l.mood - 1] + ' · 💧 ' + l.water + '/8</div>';
+    if (l.journal && l.journal.trim()) {
+      var excerpt = l.journal.trim().substring(0, 90) + (l.journal.trim().length > 90 ? '…' : '');
+      html += '<div class="jhistory">"' + excerpt + '"</div>';
+    }
+    html += '</div>';
+  });
+  html += '</div>';
+  document.getElementById('lg-hist').innerHTML = html;
+}
+
+
+function lSub(id, btn) {
+  ['why','evidence','treatments','lifestyle','tools'].forEach(function(x) {
+    document.getElementById('lp-' + x).style.display = 'none';
+  });
+  document.getElementById('lp-' + id).style.display = 'block';
+  document.querySelectorAll('#learn-seg .lbtn').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+}
+
+function rAll() {
+  rHome(); rEat(); rShop(); rCycle(); rLog(); rHist();
+}
+
+// ── INTERACTIONS ──────────────────────────────────────────────────────────────
+function chDay(delta) {
+  day = Math.max(1, Math.min(cycleLen, day + delta));
+  pk = getPhase(day);
+  applyTheme(pk);
+  rAll();
+}
+
+function setP(k, btn) {
+  pk = k;
+  day = PH[k].start;
+  applyTheme(k);
+  rAll();
+  document.querySelectorAll('.pb').forEach(function(b) { b.classList.remove('active'); });
+  if (btn) {
+    btn.classList.add('active');
+  } else {
+    document.querySelectorAll('.pb').forEach(function(b) {
+      if (b.getAttribute('onclick') && b.getAttribute('onclick').indexOf("'" + k + "'") !== -1) {
+        b.classList.add('active');
+      }
+    });
+  }
+}
+
+function sw(id, btn) {
+  document.querySelectorAll('.screen').forEach(function(s) { s.classList.remove('active'); });
+  document.querySelectorAll('.nb').forEach(function(b) { b.classList.remove('active'); });
+  document.getElementById('screen-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+
+function tGroc(el, key) {
+  groc[key] = !groc[key];
+  el.classList.toggle('done', groc[key]);
+  LS.save('groc', groc);
+}
+
+function clrG() {
+  PH[pk].groc.forEach(function(i) { groc[i] = false; });
+  rShop();
+}
+
+function updateCycleLen(v) {
+  cycleLen = parseInt(v);
+  document.getElementById('cycle-len-display').textContent = v + ' days';
+  LS.save('cycleLen', cycleLen);
+  rCycle();
+}
+
+function markPeriodStart() {
+  periodStart = new Date();
+  day = 1;
+  pk = 'menstrual';
+  applyTheme(pk);
+  document.getElementById('pstart-btn').textContent = '✓ Marked';
+  document.getElementById('pstart-btn').classList.add('marked');
+  document.getElementById('pstart-info').textContent = 'Period start logged: ' +
+    periodStart.toLocaleDateString('en-US', {month:'short', day:'numeric'});
+  saveAll();
+  rAll();
+}
+
+function saveLg() {
+  var journalText = document.getElementById('lg-journal').value;
+  hist.unshift({
+    date: new Date().toLocaleDateString('en-US', {month:'short', day:'numeric'}),
+    day: day,
+    pk: pk,
+    mood: mood,
+    water: water,
+    journal: journalText
+  });
+  document.getElementById('lg-journal').value = '';
+  mood = 3;
+  water = 6;
+  saveAll();
+  rLog();
+  rHist();
+  var t = document.getElementById('toast');
+  t.classList.add('show');
+  setTimeout(function() { t.classList.remove('show'); }, 2000);
+}
+
+// ── INIT ──────────────────────────────────────────────────────────────────────
+
+
+// ── NATAL CHART CALCULATION (Jean Meeus method — sign-accurate) ──────────────
+var SIGNS = ['Aries','Taurus','Gemini','Cancer','Leo','Virgo','Libra','Scorpio','Sagittarius','Capricorn','Aquarius','Pisces'];
+var SIGN_GLYPHS = ['♈','♉','♊','♋','♌','♍','♎','♏','♐','♑','♒','♓'];
+
+function signFromDegree(deg) {
+  var d = ((deg % 360) + 360) % 360;
+  return SIGNS[Math.floor(d/30)] + ' ' + SIGN_GLYPHS[Math.floor(d/30)];
+}
+
+function julianDay(yr, mo, dy, hr) {
+  if (mo <= 2) { yr--; mo += 12; }
+  var A = Math.floor(yr/100), B = 2 - A + Math.floor(A/4);
+  return Math.floor(365.25*(yr+4716)) + Math.floor(30.6001*(mo+1)) + dy + hr/24 + B - 1524.5;
+}
+
+function gmst(jd) {
+  var T = (jd - 2451545.0)/36525;
+  return ((280.46061837 + 360.98564736629*(jd-2451545) + T*T*(0.000387933 - T/38710000)) % 360 + 360) % 360;
+}
+
+function calcSun(jd) {
+  var n=jd-2451545, L=(280.460+0.9856474*n)%360, g=((357.528+0.9856003*n)%360)*Math.PI/180;
+  return ((L+1.915*Math.sin(g)+0.020*Math.sin(2*g))%360+360)%360;
+}
+
+function calcMoon(jd) {
+  var n=jd-2451545;
+  var L=((218.316+13.176396*n)%360+360)%360;
+  var M=((134.963+13.064993*n)%360+360)%360;
+  var F=((93.272+13.229350*n)%360+360)%360;
+  return ((L+6.289*Math.sin(M*Math.PI/180)-1.274*Math.sin(2*(F-M)*Math.PI/180)+0.658*Math.sin(2*F*Math.PI/180))%360+360)%360;
+}
+
+function calcMars(jd) {
+  var n=jd-2451545;
+  var L=((355.433+0.52402068*n)%360+360)%360;
+  var M=((19.373+0.52402075*n)%360+360)%360;
+  var mr=M*Math.PI/180;
+  return ((L+10.691*Math.sin(mr)+0.623*Math.sin(2*mr))%360+360)%360;
+}
+
+function calcAscendant(jd, lat, lon) {
+  // Full Meeus ascendant — corrected formula (sign-accurate)
+  var ramc = (gmst(jd) + lon) % 360;
+  var T = (jd-2451545)/36525;
+  var e = 23.4392911 - 0.013004167*T;
+  var ramc_r = ramc*Math.PI/180, e_r = e*Math.PI/180, lat_r = lat*Math.PI/180;
+  var asc = Math.atan2(Math.cos(ramc_r),
+    -(Math.sin(ramc_r)*Math.cos(e_r) + Math.tan(lat_r)*Math.sin(e_r))) * 180/Math.PI;
+  return (asc%360+360)%360;
+}
+
+// City database: [lat, lon, UTC offset standard, UTC offset DST, DST months start, DST months end]
+var CITIES = {
+  'new york':[40.71,-74.01,-5,-4,3,11], 'los angeles':[34.05,-118.24,-8,-7,3,11],
+  'chicago':[41.88,-87.63,-6,-5,3,11], 'houston':[29.76,-95.37,-6,-5,3,11],
+  'atlanta':[33.75,-84.39,-5,-4,3,11], 'miami':[25.77,-80.19,-5,-4,3,11],
+  'dallas':[32.78,-96.80,-6,-5,3,11], 'washington':[38.91,-77.04,-5,-4,3,11],
+  'philadelphia':[39.95,-75.17,-5,-4,3,11], 'phoenix':[33.45,-112.07,-7,-7,0,0],
+  'san antonio':[29.42,-98.49,-6,-5,3,11], 'san diego':[32.72,-117.16,-8,-7,3,11],
+  'san francisco':[37.77,-122.42,-8,-7,3,11], 'seattle':[47.61,-122.33,-8,-7,3,11],
+  'denver':[39.74,-104.99,-7,-6,3,11], 'boston':[42.36,-71.06,-5,-4,3,11],
+  'nashville':[36.17,-86.78,-6,-5,3,11], 'austin':[30.27,-97.74,-6,-5,3,11],
+  'charlotte':[35.23,-80.84,-5,-4,3,11], 'detroit':[42.33,-83.05,-5,-4,3,11],
+  'tallahassee':[30.44,-84.28,-5,-4,3,11], 'orlando':[28.54,-81.38,-5,-4,3,11],
+  'tampa':[27.95,-82.46,-5,-4,3,11], 'jacksonville':[30.33,-81.66,-5,-4,3,11],
+  'minneapolis':[44.98,-93.27,-6,-5,3,11], 'portland':[45.52,-122.68,-8,-7,3,11],
+  'las vegas':[36.17,-115.14,-8,-7,3,11], 'baltimore':[39.29,-76.61,-5,-4,3,11],
+  'london':[51.51,-0.13,0,1,3,10], 'paris':[48.85,2.35,1,2,3,10],
+  'toronto':[43.65,-79.38,-5,-4,3,11], 'sydney':[-33.87,151.21,10,11,10,4],
+  'dubai':[25.20,55.27,4,4,0,0], 'lagos':[6.52,3.38,1,1,0,0],
+  'accra':[5.55,-0.20,0,0,0,0], 'nairobi':[-1.29,36.82,3,3,0,0],
+};
+
+function getCityInfo(cityStr) {
+  if (!cityStr) return null;
+  var lower = cityStr.toLowerCase().trim();
+  for (var k in CITIES) { if (lower.indexOf(k) !== -1) return {k:k, d:CITIES[k]}; }
+  return null;
+}
+
+function isDST(month, info) {
+  var s=info[4], e=info[5];
+  if (s===0 && e===0) return false; // no DST
+  if (s < e) return month >= s && month <= e;
+  return month >= s || month <= e; // southern hemisphere
+}
+
+function calculateNatalChart(year, month, day, localHour, cityStr) {
+  if (localHour === null || localHour === undefined) localHour = 12;
+  var city = getCityInfo(cityStr);
+  var utcOffset = 0, lat = 33, lon = -84;
+  if (city) {
+    lat = city.d[0]; lon = city.d[1];
+    utcOffset = isDST(month, city.d) ? city.d[3] : city.d[2];
+  }
+  var utcHour = localHour - utcOffset;
+  // Handle day boundary
+  var dy = day;
+  if (utcHour >= 24) { utcHour -= 24; dy += 1; }
+  if (utcHour < 0)   { utcHour += 24; dy -= 1; }
+  var jd = julianDay(year, month, dy, utcHour);
+  var hasCity = !!city;
+  return {
+    sun:    signFromDegree(calcSun(jd)),
+    moon:   signFromDegree(calcMoon(jd)),
+    rising: hasCity && localHour !== 12 ? signFromDegree(calcAscendant(jd, lat, lon)) : '',
+    mars:   signFromDegree(calcMars(jd))
+  };
+}
+
+function parseTimeStr(s) {
+  if (!s) return null; // null = unknown, use noon for sun/moon only
+  var lower = s.toLowerCase().trim();
+  var pm = lower.indexOf('pm') !== -1, am = lower.indexOf('am') !== -1;
+  lower = lower.replace('pm','').replace('am','').trim();
+  var pts = lower.split(':'), h = parseInt(pts[0])||0, m = parseInt(pts[1])||0;
+  var dec = h + m/60;
+  if (pm && h < 12) dec += 12;
+  if (am && h === 12) dec = m/60;
+  return dec;
+}
+
+// ── PERSISTENCE (localStorage) ───────────────────────────────────────────────
+const LS = {
+  save: function(key, val) {
+    try { localStorage.setItem('livaligned_' + key, JSON.stringify(val)); } catch(e) {}
+  },
+  load: function(key, fallback) {
+    try {
+      var v = localStorage.getItem('livaligned_' + key);
+      return v !== null ? JSON.parse(v) : fallback;
+    } catch(e) { return fallback; }
+  }
+};
+
+function saveAll() {
+  LS.save('day', day);
+  LS.save('pk', pk);
+  LS.save('cycleLen', cycleLen);
+  LS.save('periodStart', periodStart);
+  LS.save('hist', hist);
+  LS.save('groc', groc);
+  LS.save('userName', userName);
+  LS.save('natal', natal);
+}
+
+function openSettings() {
+  document.getElementById('settings-drawer').classList.add('open');
+}
+function closeSettings() {
+  document.getElementById('settings-drawer').classList.remove('open');
+}
+function goToPremium() {
+  closeSettings();
+  if (confirm('LivAligned Premium — $9.99/month\n\n14-day free trial included.\n\nTap OK to open Premium in a new tab.')) {
+    window.open('https://livaligned.vercel.app/LivAligned-PREMIUM.html', '_blank');
+  }
+}
+function resetOnboarding() {
+  closeSettings();
+  LS.save('onboarded', false);
+  var ov = document.getElementById('onboard-overlay');
+  if (ov) { ov.style.display = 'flex'; ov.classList.remove('hidden'); }
+  var s1 = document.getElementById('ob-step1');
+  var s2 = document.getElementById('ob-step2');
+  if (s1) s1.style.display = 'block';
+  if (s2) s2.style.display = 'none';
+  var ni = document.getElementById('ob-name');
+  if (ni && userName) ni.value = userName;
+  var cl = document.getElementById('ob-cyclelen');
+  if (cl) cl.value = cycleLen;
+}
+function resetCycle() {
+  closeSettings();
+  if (confirm('Set today as Day 1 of your new cycle?')) {
+    day = 1; pk = 'menstrual'; periodStart = new Date();
+    saveAll(); applyTheme(pk); rAll();
+    var t = document.getElementById('toast');
+    t.textContent = '✓ Cycle reset to Day 1';
+    t.classList.add('show');
+    setTimeout(function() { t.classList.remove('show'); t.textContent = '✓ Entry saved'; }, 2500);
+  }
+}
+function clearAllData() {
+  closeSettings();
+  if (confirm('Delete ALL your data permanently?\n\nJournal entries, logs, natal chart, settings — everything.\n\nThis cannot be undone.')) {
+    try {
+      Object.keys(localStorage).forEach(function(k) {
+        if (k.indexOf('livaligned') !== -1) localStorage.removeItem(k);
+      });
+    } catch(e) {}
+    location.reload();
+  }
+}
+
+
+function loadAll() {
+  day        = LS.load('day', 1);
+  pk         = LS.load('pk', 'menstrual');
+  cycleLen   = LS.load('cycleLen', 28);
+  periodStart= LS.load('periodStart', null);
+  hist       = LS.load('hist', []);
+  groc       = LS.load('groc', {});
+  userName   = LS.load('userName', '');
+  natal      = LS.load('natal', {sun:'', moon:'', rising:'', mars:''});
+  // Sync cycle slider
+  var slider = document.getElementById('cycle-slider');
+  if (slider) { slider.value = cycleLen; }
+  var display = document.getElementById('cycle-len-display');
+  if (display) { display.textContent = cycleLen + ' days'; }
+}
+
+// ── ONBOARDING ───────────────────────────────────────────────────────────────
+var userName = '';
+var natal = {sun:'', moon:'', rising:'', mars:''};
+
+function obNext1() {
+  var name = document.getElementById('ob-name').value.trim();
+  if (!name) { document.getElementById('ob-name').focus(); return; }
+  userName = name;
+  cycleLen = parseInt(document.getElementById('ob-cyclelen').value);
+  LS.save('userName', userName);
+  LS.save('cycleLen', cycleLen);
+  document.getElementById('ob-step1').style.display = 'none';
+  document.getElementById('ob-step2').style.display = 'block';
+}
+
+function obFinish() {
+  natal.sun    = document.getElementById('ob-sun').value;
+  natal.moon   = document.getElementById('ob-moon').value;
+  natal.rising = document.getElementById('ob-rising').value;
+  natal.mars   = document.getElementById('ob-mars').value;
+  LS.save('natal', natal);
+  LS.save('onboarded', true);
+  closeOnboard();
+}
+
+function obSkip() {
+  LS.save('onboarded', true);
+  closeOnboard();
+}
+
+
+function showNatalTab(tab) {
+  var isCalc = tab === 'calc';
+  document.getElementById('natal-calc-tab').style.display = isCalc ? 'block' : 'none';
+  document.getElementById('natal-manual-tab').style.display = isCalc ? 'none' : 'block';
+  var calcBtn = document.getElementById('tab-calc');
+  var manBtn = document.getElementById('tab-manual');
+  if (calcBtn) { calcBtn.style.background = isCalc ? 'rgba(255,255,255,.9)' : 'transparent'; calcBtn.style.color = isCalc ? '#2D1B5E' : 'rgba(255,255,220,.6)'; calcBtn.style.fontWeight = isCalc ? '700' : '400'; }
+  if (manBtn) { manBtn.style.background = isCalc ? 'transparent' : 'rgba(255,255,255,.9)'; manBtn.style.color = isCalc ? 'rgba(255,255,220,.6)' : '#2D1B5E'; manBtn.style.fontWeight = isCalc ? '400' : '700'; }
+}
+
+function calcAndFinish() {
+  var dobInput = document.getElementById('ob-dob');
+  if (!dobInput || !dobInput.value) {
+    document.getElementById('calc-result').textContent = 'Please enter your date of birth.';
+    return;
+  }
+  var parts = dobInput.value.split('-');
+  var year = parseInt(parts[0]), month = parseInt(parts[1]), day = parseInt(parts[2]);
+  var timeInput = document.getElementById('ob-time');
+  var timeStr = timeInput ? timeInput.value : '';
+  var city = document.getElementById('ob-city') ? document.getElementById('ob-city').value.trim() : '';
+  var hour = timeStr ? parseTimeStr(timeStr) : null;
+  document.getElementById('calc-result').textContent = 'Calculating your chart…';
+  setTimeout(function() {
+    var chart = calculateNatalChart(year, month, day, hour, city);
+    natal.sun    = chart.sun;
+    natal.moon   = chart.moon;
+    natal.rising = chart.rising || '';
+    natal.mars   = chart.mars;
+    var risingNote = chart.rising ? chart.rising : (timeStr && city ? 'Check city spelling' : 'Add birth time + city for Rising');
+    document.getElementById('calc-result').innerHTML =
+      '<span style="color:#FFF8E0">🌞 ' + chart.sun + '  ·  🌙 ' + chart.moon + '</span><br>' +
+      '<span style="color:rgba(255,255,220,.8)">⬆ ' + risingNote + '  ·  ♂ ' + chart.mars + '</span>';
+    LS.save('natal', natal);
+    LS.save('onboarded', true);
+    setTimeout(function() { closeOnboard(); }, 1800);
+  }, 700);
+}
+
+function obFinishManual() {
+  var sunEl=document.getElementById('ob-sun');
+  var moonEl=document.getElementById('ob-moon');
+  var risingEl=document.getElementById('ob-rising');
+  var marsEl=document.getElementById('ob-mars');
+  natal.sun    = sunEl ? sunEl.value : '';
+  natal.moon   = moonEl ? moonEl.value : '';
+  natal.rising = risingEl ? risingEl.value : '';
+  natal.mars   = marsEl ? marsEl.value : '';
+  LS.save('natal', natal);
+  LS.save('onboarded', true);
+  closeOnboard();
+}
+
+function closeOnboard() {
+  var el = document.getElementById('onboard-overlay');
+  el.classList.add('hidden');
+  setTimeout(function() { el.style.display = 'none'; }, 500);
+  applyTheme(pk);
+  rAll();
+  updateNatalChips();
+}
+
+function updateNatalChips() {
+  var moonEl = document.getElementById('chip-moon');
+  var risingEl = document.getElementById('chip-rising');
+  var sunEl = document.getElementById('chip-sun');
+  var marsEl = document.getElementById('chip-mars');
+  if (moonEl && natal.moon) moonEl.textContent = '🌙 ' + natal.moon.split(' ')[0];
+  if (risingEl && natal.rising) risingEl.textContent = '⬆ ' + natal.rising.split(' ')[0];
+  if (sunEl && natal.sun) sunEl.textContent = '☀️ ' + natal.sun.split(' ')[0];
+  if (marsEl && natal.mars) marsEl.textContent = '♂ ' + natal.mars.split(' ')[0];
+}
+
+function updateGreeting() {
+  var phaseEl = document.getElementById('h-phase');
+  if (phaseEl && userName) {
+    phaseEl.textContent = 'Hello, ' + userName + ' 🌿';
+    setTimeout(function() {
+      phaseEl.textContent = PH[pk].name + ' Phase';
+    }, 2200);
+  }
+}
+
+// ── PWA: SERVICE WORKER + INSTALL PROMPT ─────────────────────────────────────
+var deferredPrompt = null;
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch(function() {});
+}
+window.addEventListener('beforeinstallprompt', function(e) {
+  e.preventDefault();
+  deferredPrompt = e;
+  var banner = document.getElementById('install-banner');
+  if (banner) {
+    banner.classList.add('show');
+    banner.addEventListener('click', function() {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then(function() { deferredPrompt = null; });
+      }
+      banner.classList.remove('show');
+    });
+  }
+});
+
+loadAll();
+applyTheme(pk);
+updateNatalChips();
+
+// Check if onboarded
+var hasOnboarded = LS.load('onboarded', false);
+if (hasOnboarded) {
+  var overlay = document.getElementById('onboard-overlay');
+  if (overlay) { overlay.style.display = 'none'; }
+  rAll();
+  updateGreeting();
+} else {
+  // Show onboarding — don't call rAll yet
+}
+</script>
+</body>
+</html>
